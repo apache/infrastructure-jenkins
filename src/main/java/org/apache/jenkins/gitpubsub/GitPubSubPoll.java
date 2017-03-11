@@ -35,6 +35,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jenkins.plugins.asynchttpclient.AHC;
@@ -65,12 +66,14 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
     protected void execute(TaskListener listener) throws IOException, InterruptedException {
         if (longPollRequest != null) {
             if (lastTime - System.currentTimeMillis() > TimeUnit.SECONDS.toMillis(60)) {
+                LOGGER.log(Level.FINE, "GitPubSub request looks dead, restarting...");
                 longPollRequest.cancel(false);
-            }
-            if (!longPollRequest.isDone()) {
+            } else if (!longPollRequest.isDone() && !longPollRequest.isCancelled()) {
                 // still alive
                 return;
             }
+        } else {
+            LOGGER.log(Level.INFO, "Starting GitPubSub request...");
         }
         AsyncHttpClient.BoundRequestBuilder builder1 =
                 AHC.instance().prepareGet("http://gitpubsub-wip.apache.org:2069/json/*");
@@ -108,6 +111,15 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
         public Response onCompleted(Response response) throws Exception {
             LOGGER.log(Level.FINE, "Received GitPubSub Closed");
             return super.onCompleted(response);
+        }
+
+        @Override
+        public void onThrowable(Throwable t) {
+            if (t instanceof TimeoutException) {
+                LOGGER.log(Level.FINE, "Timeout", t);
+            } else {
+                LOGGER.log(Level.WARNING, "Uncaught exception", t);
+            }
         }
 
         @Override
