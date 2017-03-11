@@ -13,7 +13,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
+<?jelly escape-by-default='true'?>
 <div>
   Converts the Apache <a href="https://www.apache.org/dev/gitpubsub.html">GitPubSub</a> stream into SCM API Events.
 </div>
