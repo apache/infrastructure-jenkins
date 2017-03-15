@@ -74,6 +74,11 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
      */
     private static int requestRecycleMins =
             Integer.getInteger(GitPubSubPoll.class.getName() + ".requestRecycleMins", 5);
+    /**
+     * Kill switch to disable notification of {@link GitSCM}.
+     */
+    private static boolean disableNotifyScm =
+            Boolean.getBoolean(GitPubSubPoll.class.getName() + ".disableNotifyScm");
 
     /**
      * The last timestamp received.
@@ -264,7 +269,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
         @Override
         public boolean isMatch(@NonNull SCM scm) {
-            if (scm instanceof GitSCM) {
+            if (scm instanceof GitSCM && !disableNotifyScm) {
                 GitSCM git = (GitSCM) scm;
                 if (git.getExtensions().get(IgnoreNotifyCommit.class) != null) {
                     return false;
