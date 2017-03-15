@@ -171,13 +171,6 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
                 try {
                     if ("stillalive".equals(fieldName)) {
                         lastTS = fieldValue.asLong();
-                    } else if ("commit".equals(fieldName)) { // TODO delete once GitPubSub supports "push" events
-                        if ("git".equals(fieldValue.get("repository").textValue())
-                                && fieldValue.has("project")
-                                && fieldValue.get("ref").asText().startsWith(Constants.R_HEADS)
-                                && fieldValue.has("sha")) {
-                            SCMHeadEvent.fireNow(new Commit(UPDATED, fieldValue, GITPUBSUB_URL));
-                        }
                     } else if ("push".equals(fieldName)) {
                         if ("git".equals(fieldValue.get("repository").textValue())
                                 && fieldValue.has("project")
@@ -205,85 +198,6 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
             return recycleAt - System.nanoTime() > 0 ? STATE.CONTINUE : STATE.ABORT;
         }
 
-    }
-
-    // TODO delete once GitPubSub supports "push" events
-    private class Commit extends SCMHeadEvent<JsonNode> {
-        private final URIish remoteUri;
-
-        public Commit(Type type, JsonNode payload, String origin) {
-            super(type, payload, origin);
-            // pre-parse the remote uri
-            URIish event;
-            try {
-                event = new URIish(
-                        "https://"
-                                + payload.get("server").asText() +
-                                ".apache.org/repos/asf/"
-                                + Util.rawEncode(payload.get("project").asText())
-                                + ".git"
-                );
-            } catch (URISyntaxException e) {
-                event = null;
-            }
-            this.remoteUri = event;
-        }
-
-        @Override
-        public boolean isMatch(@NonNull SCMNavigator navigator) {
-            return false;
-        }
-
-        @NonNull
-        @Override
-        public String getSourceName() {
-            return getPayload().get("project").asText();
-        }
-
-        @NonNull
-        @Override
-        public Map<SCMHead, SCMRevision> heads(@NonNull SCMSource source) {
-            if (source instanceof GitSCMSource) {
-                GitSCMSource git = (GitSCMSource) source;
-                if (git.isIgnoreOnPushNotifications() || remoteUri == null) {
-                    return Collections.emptyMap();
-                }
-                URIish remoteUri;
-                try {
-                    remoteUri = new URIish(git.getRemote());
-                } catch (URISyntaxException e) {
-                    return Collections.emptyMap();
-                }
-
-                if (GitStatus.looselyMatches(this.remoteUri, remoteUri)) {
-                    String ref = getPayload().get("ref").asText();
-                    SCMHead head = new SCMHead(ref.substring(Constants.R_HEADS.length()));
-                    String sha1 = getPayload().get("sha").asText();
-                    return Collections.<SCMHead, SCMRevision>singletonMap(head,
-                            StringUtils.isBlank(sha1) ? new AbstractGitSCMSource.SCMRevisionImpl(
-                                    head, sha1) : null);
-                }
-            }
-            return Collections.emptyMap();
-        }
-
-        @Override
-        public boolean isMatch(@NonNull SCM scm) {
-            if (scm instanceof GitSCM) {
-                GitSCM git = (GitSCM) scm;
-                if (git.getExtensions().get(IgnoreNotifyCommit.class) != null) {
-                    return false;
-                }
-                for (RemoteConfig repository : git.getRepositories()) {
-                    for (URIish remoteUri : repository.getURIs()) {
-                        if (GitStatus.looselyMatches(this.remoteUri, remoteUri)) {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
     }
 
     private class Push extends SCMHeadEvent<JsonNode> {
