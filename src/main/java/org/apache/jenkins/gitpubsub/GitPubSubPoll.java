@@ -15,6 +15,7 @@
  */
 package org.apache.jenkins.gitpubsub;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ning.http.client.AsyncCompletionHandlerBase;
@@ -33,12 +34,15 @@ import hudson.plugins.git.extensions.impl.IgnoreNotifyCommit;
 import hudson.scm.SCM;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jenkins.plugins.asynchttpclient.AHC;
@@ -84,10 +88,15 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
      * The last timestamp received.
      */
     private volatile long lastTS;
+    private long lastTSStuck;
     /**
      * The last time we received anything.
      */
     private volatile long lastTime;
+    private final AtomicInteger pushEvents = new AtomicInteger();
+    private final AtomicInteger aliveEvents = new AtomicInteger();
+    private final AtomicInteger allEvents = new AtomicInteger();
+    private long lastReport;
     /**
      * The current request.
      */
@@ -99,14 +108,26 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
     @Override
     protected void execute(TaskListener listener) throws IOException, InterruptedException {
+        if (lastReport < System.currentTimeMillis()) {
+            if (lastReport == 0) {
+                lastReport = System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(15);
+            } else {
+                lastReport = lastReport + TimeUnit.MINUTES.toMillis(15);
+                LOGGER.log(Level.INFO, "GitPubSub {0,number} events processed. "
+                                + "stillalive: {1,number}; push: {2,number}",
+                        new Object[]{allEvents.get(), aliveEvents.get(), pushEvents.get()});
+            }
+        }
         if (longPollRequest != null) {
             if (lastTime - System.currentTimeMillis() > TimeUnit.SECONDS.toMillis(60)) {
                 LOGGER.log(Level.FINE, "GitPubSub request looks dead, restarting...");
                 longPollRequest.cancel(false);
             } else if (!longPollRequest.isDone() && !longPollRequest.isCancelled()) {
+                LOGGER.log(Level.FINER, "GitPubSub request looks alive");
                 // still alive
                 return;
             }
+            LOGGER.log(Level.FINE, "GitPubSub request completed, restarting...");
         } else {
             LOGGER.log(Level.INFO, "Starting GitPubSub request...");
         }
@@ -146,6 +167,8 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
         private long recycleAt = System.nanoTime() + TimeUnit.MINUTES.toNanos(requestRecycleMins);
 
+        private byte[] partialBody = null;
+
         @Override
         public Response onCompleted(Response response) throws Exception {
             LOGGER.log(Level.FINE, "Connection closed");
@@ -158,25 +181,66 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
                 LOGGER.log(Level.FINE, "Connection timeout", t);
             } else {
                 LOGGER.log(Level.WARNING, "Unexpected exception", t);
+                long _lastTS = lastTS;
+                if (_lastTS != 0 && _lastTS == lastTSStuck) {
+                    LOGGER.log(Level.WARNING, "Unsticking X-Fetch-Since to hopefully bypass issue");
+                    lastTS = 0;
+                    lastTSStuck = 0;
+                } else {
+                    // track the last TS, so that next time we bomb we can reset to skip past broken event
+                    lastTSStuck = _lastTS;
+                }
             }
         }
 
         @Override
-        public STATE onBodyPartReceived(HttpResponseBodyPart content) throws Exception {
+        public synchronized STATE onBodyPartReceived(HttpResponseBodyPart content) throws Exception {
             lastTime = System.currentTimeMillis();
-            JsonNode json = mapper.readTree(content.getBodyPartBytes());
+            byte[] body = content.getBodyPartBytes();
+            if (body.length < 2 || body[body.length - 1] != 0x0a || body[body.length - 2] != 0x0d) {
+                LOGGER.log(Level.FINE, "Stashing large message");
+                if (partialBody == null) {
+                    partialBody = body;
+                } else {
+                    int index = partialBody.length;
+                    partialBody = Arrays.copyOf(partialBody, index + body.length);
+                    System.arraycopy(body, 0, partialBody, index, body.length);
+                }
+                return STATE.CONTINUE;
+            }
+            if (partialBody != null) {
+                LOGGER.log(Level.FINE, "Unstashing large message");
+                int index = partialBody.length;
+                partialBody = Arrays.copyOf(partialBody, index + body.length);
+                System.arraycopy(body, 0, partialBody, index, body.length);
+                body = partialBody;
+                partialBody = null;
+            }
+            JsonNode json;
+            try {
+                json = mapper.readTree(body);
+            } catch (JsonParseException e) {
+                LOGGER.log(Level.INFO,
+                        "Could not parse GitPubSub event: " + new String(body, StandardCharsets.UTF_8),
+                        e
+                );
+                return STATE.CONTINUE;
+            }
             if (LOGGER.isLoggable(Level.FINE)) {
                 LOGGER.log(Level.FINE, "GitPubSub event {0}",
                         mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json));
             }
+            allEvents.incrementAndGet();
             for (Iterator<Map.Entry<String, JsonNode>> it = json.fields(); it.hasNext(); ) {
                 Map.Entry<String, JsonNode> field = it.next();
                 String fieldName = field.getKey();
                 final JsonNode fieldValue = field.getValue();
                 try {
                     if ("stillalive".equals(fieldName)) {
+                        aliveEvents.incrementAndGet();
                         lastTS = fieldValue.asLong();
                     } else if ("push".equals(fieldName)) {
+                        pushEvents.incrementAndGet();
                         if ("git".equals(fieldValue.get("repository").textValue())
                                 && fieldValue.has("project")
                                 && !"tag".equals(fieldValue.get("type").textValue())
@@ -200,7 +264,12 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
                     LOGGER.log(Level.WARNING, "Uncaught exception", e);
                 }
             }
-            return recycleAt - System.nanoTime() > 0 ? STATE.CONTINUE : STATE.ABORT;
+            if (recycleAt - System.nanoTime() > 0) {
+                return STATE.CONTINUE;
+            } else {
+                LOGGER.log(Level.FINE, "Recycling...");
+                return STATE.ABORT;
+            }
         }
 
     }
