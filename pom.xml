@@ -27,7 +27,7 @@
 
   <groupId>io.github.stephenc.apache</groupId>
   <artifactId>asf-gitpubsub-jenkins</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.4-SNAPSHOT</version>
   <packaging>hpi</packaging>
 
   <name>ASF GitPubSub Jenkins Notifications</name>

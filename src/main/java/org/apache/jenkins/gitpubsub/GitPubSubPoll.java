@@ -19,6 +19,8 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ning.http.client.AsyncCompletionHandlerBase;
+import com.ning.http.client.AsyncHttpClient;
+import com.ning.http.client.AsyncHttpClientConfig;
 import com.ning.http.client.HttpResponseBodyPart;
 import com.ning.http.client.PerRequestConfig;
 import com.ning.http.client.RequestBuilder;
@@ -46,6 +48,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jenkins.plugins.asynchttpclient.AHC;
+import jenkins.plugins.asynchttpclient.AHCUtils;
 import jenkins.plugins.git.AbstractGitSCMSource;
 import jenkins.plugins.git.GitSCMSource;
 import jenkins.scm.api.SCMEvent;
@@ -54,7 +57,6 @@ import jenkins.scm.api.SCMHeadEvent;
 import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMRevision;
 import jenkins.scm.api.SCMSource;
-import org.apache.commons.lang.StringUtils;
 import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.transport.RemoteConfig;
 import org.eclipse.jgit.transport.URIish;
@@ -74,10 +76,11 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
      */
     private static long periodSeconds = Long.getLong(GitPubSubPoll.class.getName() + ".periodSeconds", 10);
     /**
-     * How long to keep the request open before closing and re-opening.
+     * How long to keep the request open before closing and re-opening or {@code -1} to try to keep the connection
+     * open permanently.
      */
     private static int requestRecycleMins =
-            Integer.getInteger(GitPubSubPoll.class.getName() + ".requestRecycleMins", 5);
+            Integer.getInteger(GitPubSubPoll.class.getName() + ".requestRecycleMins", -1);
     /**
      * Kill switch to disable notification of {@link GitSCM}.
      */
@@ -97,6 +100,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
     private final AtomicInteger aliveEvents = new AtomicInteger();
     private final AtomicInteger allEvents = new AtomicInteger();
     private long lastReport;
+    private AsyncHttpClient client;
     /**
      * The current request.
      */
@@ -128,16 +132,37 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
                 return;
             }
             LOGGER.log(Level.FINE, "GitPubSub request completed, restarting...");
+            if (client != null && !client.isClosed()) {
+                LOGGER.log(Level.FINE, "Stopping AsyncHttpClient instance");
+                client.close();
+            }
         } else {
             LOGGER.log(Level.INFO, "Starting GitPubSub request...");
         }
         RequestBuilder builder = new RequestBuilder("GET")
                 .setUrl(JsonHandler.GITPUBSUB_URL)
-                .setPerRequestConfig(new PerRequestConfig(null, (requestRecycleMins + 1) * 60 * 1000));
+                .setPerRequestConfig(new PerRequestConfig(null,
+                                                          requestRecycleMins == -1
+                                                              ? -1
+                                                              : (requestRecycleMins + 1) * 60 * 1000
+                ));
         if (lastTS != 0) {
             builder.addHeader("X-Fetch-Since", Long.toString(lastTS));
         }
-        longPollRequest = AHC.instance().executeRequest(builder.build(), new JsonHandler());
+        if (client == null || client.isClosed()) {
+            LOGGER.log(Level.FINE, "Starting AsyncHttpClient instance");
+            client = new AsyncHttpClient(
+                    new AsyncHttpClientConfig.Builder()
+                            .setAllowPoolingConnection(false)
+                            .setRequestTimeoutInMs(
+                                    requestRecycleMins == -1
+                                    ? -1
+                                    : (requestRecycleMins + 1) * 60 * 1000)
+                            .setProxyServer(AHCUtils.getProxyServer())
+                            .setHostnameVerifier(AHCUtils.getHostnameVerifier()).setSSLContext(AHCUtils.getSSLContext())
+                            .build());
+        }
+        longPollRequest = client.executeRequest(builder.build(), new JsonHandler());
     }
 
     @Override
@@ -264,7 +289,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
                     LOGGER.log(Level.WARNING, "Uncaught exception", e);
                 }
             }
-            if (recycleAt - System.nanoTime() > 0) {
+            if (requestRecycleMins == -1 || recycleAt - System.nanoTime() > 0) {
                 return STATE.CONTINUE;
             } else {
                 LOGGER.log(Level.FINE, "Recycling...");
