@@ -41,6 +41,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -301,16 +302,19 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
     private class Push extends SCMHeadEvent<JsonNode> {
         private final URIish remoteUri;
+        private String server;
 
         public Push(Type type, JsonNode payload, String origin) {
             super(type, payload, origin);
+            server = "https://"
+                    + getPayload().get("server").asText() +
+                    ".apache.org/repos/asf";
             // pre-parse the remote uri
             URIish event;
             try {
+                LOGGER.log(Level.INFO, "server="+server);
                 event = new URIish(
-                        "https://"
-                                + payload.get("server").asText() +
-                                ".apache.org/repos/asf/"
+                        server + "/"
                                 + Util.rawEncode(payload.get("project").asText())
                                 + ".git"
                 );
@@ -322,7 +326,9 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
         @Override
         public boolean isMatch(@NonNull SCMNavigator navigator) {
-            return false;
+            return navigator instanceof ASFGitSCMNavigator
+                    ? server.equals(((ASFGitSCMNavigator) navigator).getServer())
+                    : false;
         }
 
         @NonNull
