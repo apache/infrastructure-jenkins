@@ -297,7 +297,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
     }
 
-    private class Push extends SCMHeadEvent<JsonNode> {
+    private static class Push extends SCMHeadEvent<JsonNode> {
         private final URIish remoteUri;
 
         public Push(Type type, JsonNode payload, String origin) {
