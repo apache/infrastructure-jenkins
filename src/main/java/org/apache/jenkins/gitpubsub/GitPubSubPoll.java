@@ -52,12 +52,14 @@ import jenkins.plugins.asynchttpclient.AHC;
 import jenkins.plugins.asynchttpclient.AHCUtils;
 import jenkins.plugins.git.AbstractGitSCMSource;
 import jenkins.plugins.git.GitSCMSource;
+import jenkins.plugins.git.traits.IgnoreOnPushNotificationTrait;
 import jenkins.scm.api.SCMEvent;
 import jenkins.scm.api.SCMHead;
 import jenkins.scm.api.SCMHeadEvent;
 import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMRevision;
 import jenkins.scm.api.SCMSource;
+import jenkins.scm.api.trait.SCMTrait;
 import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.transport.RemoteConfig;
 import org.eclipse.jgit.transport.URIish;
@@ -342,7 +344,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
         public Map<SCMHead, SCMRevision> heads(@NonNull SCMSource source) {
             if (source instanceof GitSCMSource) {
                 GitSCMSource git = (GitSCMSource) source;
-                if (git.isIgnoreOnPushNotifications() || remoteUri == null) {
+                if (SCMTrait.find(git.getTraits(), IgnoreOnPushNotificationTrait.class) != null || remoteUri == null) {
                     return Collections.emptyMap();
                 }
                 URIish remoteUri;
