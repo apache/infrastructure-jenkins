@@ -43,6 +43,9 @@ import org.kohsuke.stapler.DataBoundSetter;
 
 public class ASFGitSCMNavigator extends SCMNavigator {
 
+    static final String RFC_2822 = "EEE, dd MMM yyyy HH:mm:ss Z";
+    static final String GIT_WIP = "https://git-wip-us.apache.org/repos/asf";
+    static final String GIT_BOX = "https://gitbox.apache.org/repos/asf";
     private final String server;
     private List<SCMTrait<?>> traits = new ArrayList<>();
 
@@ -122,6 +125,7 @@ public class ASFGitSCMNavigator extends SCMNavigator {
 
     @Extension
     public static class DescriptorImpl extends SCMNavigatorDescriptor {
+
         @Nonnull
         @Override
         public String getDisplayName() {
@@ -130,13 +134,13 @@ public class ASFGitSCMNavigator extends SCMNavigator {
 
         @Override
         public SCMNavigator newInstance(String name) {
-            return new ASFGitSCMNavigator("https://git-wip-us.apache.org/repos/asf");
+            return new ASFGitSCMNavigator(GIT_WIP);
         }
 
         public ListBoxModel doFillServerItems() {
             ListBoxModel result = new ListBoxModel();
-            result.add("Git WIP", "https://git-wip-us.apache.org/repos/asf");
-            result.add("Gitbox", "https://gitbox.apache.org/repos/asf");
+            result.add("Git WIP", GIT_WIP);
+            result.add("Gitbox", GIT_BOX);
             return result;
         }
 
