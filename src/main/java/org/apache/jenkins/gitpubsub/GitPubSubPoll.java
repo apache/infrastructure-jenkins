@@ -314,7 +314,6 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
             // pre-parse the remote uri
             URIish event;
             try {
-                LOGGER.log(Level.INFO, "server="+server);
                 event = new URIish(
                         server + "/"
                                 + Util.rawEncode(payload.get("project").asText())

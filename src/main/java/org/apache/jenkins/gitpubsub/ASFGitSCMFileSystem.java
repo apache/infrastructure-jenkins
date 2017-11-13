@@ -10,7 +10,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -31,7 +30,10 @@ import org.jsoup.select.Elements;
 
 public class ASFGitSCMFileSystem extends SCMFileSystem {
 
+    static final int TEN_SECONDS_OF_MILLIS = 10000;
     private static final Logger LOGGER = Logger.getLogger(ASFGitSCMFileSystem.class.getName());
+    private final String remote;
+    private final String refOrHash;
 
     /**
      * Constructor.
@@ -41,28 +43,65 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
      * @param rev    the revision.
      */
     public ASFGitSCMFileSystem(String remote, SCMHead head, SCMRevision rev) {
-        super(rev);
+        super(rev instanceof AbstractGitSCMSource.SCMRevisionImpl ? rev : null);
+        this.remote = remote;
+        this.refOrHash = rev instanceof AbstractGitSCMSource.SCMRevisionImpl
+                ? ((AbstractGitSCMSource.SCMRevisionImpl) rev).getHash()
+                : (head instanceof GitTagSCMHead ? Constants.R_TAGS+head.getName() : Constants.R_HEADS+head.getName());
     }
 
     @Override
     public long lastModified() throws IOException, InterruptedException {
-        return 0;
+        SCMRevision revision = getRevision();
+        String commitUrl = buildTemplateWithRemote("{+server}{?p}{;a,h}", remote)
+                .set("a", "commit")
+                .set("h", refOrHash)
+                .expand();
+        Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+        Elements elements = doc.select("table.object_header tr td span.datetime");
+        try {
+            return new SimpleDateFormat(ASFGitSCMNavigator.RFC_2822).parse(elements.get(1).text()).getTime();
+        } catch (ParseException e) {
+            throw new IOException("Unexpected date format, expected RFC 2822, got " + elements.get(1).text());
+        } catch (IndexOutOfBoundsException e) {
+            throw new IOException("Unexpected response body, expecting two timestamps only got " + elements.size());
+        }
     }
 
     @NonNull
     @Override
     public SCMFile getRoot() {
-        return null;
+        return new ASFGitSCMFile(remote, refOrHash);
     }
+
+    static UriTemplate buildTemplateWithRemote(String template, @NonNull String remote) throws IOException {
+        UriTemplate commitTemplate;
+        String server = null;
+        String p = null;
+        for (String s : new String[]{ASFGitSCMNavigator.GIT_WIP, ASFGitSCMNavigator.GIT_BOX}) {
+            if (remote.startsWith(s + "/")) {
+                server = s;
+                p = remote.substring(s.length() + 1);
+                break;
+            }
+        }
+        if (server == null) {
+            throw new IOException("Unknown remote: " + remote);
+        }
+
+        commitTemplate = UriTemplate.fromTemplate(template);
+        commitTemplate.set("server", server).set("p", p);
+        return commitTemplate;
+    }
+
 
     @Extension
     public static class TelescopeImpl extends GitSCMTelescope {
 
-        private static final int TEN_SECONDS_OF_MILLIS = 10000;
 
         @Override
         public boolean supports(@NonNull String remote) {
-            return ASFGitSCMNavigator.GIT_BOX.startsWith(remote) || ASFGitSCMNavigator.GIT_WIP.startsWith(remote);
+            return remote.startsWith(ASFGitSCMNavigator.GIT_BOX) || remote.startsWith(ASFGitSCMNavigator.GIT_WIP);
         }
 
         @Override
@@ -93,26 +132,6 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             } catch (IndexOutOfBoundsException e) {
                 throw new IOException("Unexpected response body, expecting two timestamps only got " + elements.size());
             }
-        }
-
-        private UriTemplate buildTemplateWithRemote(String template, @NonNull String remote) throws IOException {
-            UriTemplate commitTemplate;
-            String server = null;
-            String p = null;
-            for (String s : new String[]{ASFGitSCMNavigator.GIT_WIP, ASFGitSCMNavigator.GIT_BOX}) {
-                if (remote.startsWith(s + "/")) {
-                    server = s;
-                    p = remote.substring(s.length() + 1);
-                    break;
-                }
-            }
-            if (server == null) {
-                throw new IOException("Unknown remote: " + remote);
-            }
-
-            commitTemplate = UriTemplate.fromTemplate(template);
-            commitTemplate.set("server", server).set("p", p);
-            return commitTemplate;
         }
 
         @Override
