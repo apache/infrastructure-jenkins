@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -32,6 +33,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
 
     static final int TEN_SECONDS_OF_MILLIS = 10000;
     private static final Logger LOGGER = Logger.getLogger(ASFGitSCMFileSystem.class.getName());
+    static final List<String> GIT_WEB_HOSTS = new ArrayList<>(Arrays.asList(
+            ASFGitSCMNavigator.GIT_WIP, ASFGitSCMNavigator.GIT_BOX
+    ));
     private final String remote;
     private final String refOrHash;
 
@@ -47,7 +51,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
         this.remote = remote;
         this.refOrHash = rev instanceof AbstractGitSCMSource.SCMRevisionImpl
                 ? ((AbstractGitSCMSource.SCMRevisionImpl) rev).getHash()
-                : (head instanceof GitTagSCMHead ? Constants.R_TAGS+head.getName() : Constants.R_HEADS+head.getName());
+                : (head instanceof GitTagSCMHead
+                        ? Constants.R_TAGS + head.getName()
+                        : Constants.R_HEADS + head.getName());
     }
 
     @Override
@@ -78,10 +84,10 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
         UriTemplate commitTemplate;
         String server = null;
         String p = null;
-        for (String s : new String[]{ASFGitSCMNavigator.GIT_WIP, ASFGitSCMNavigator.GIT_BOX}) {
-            if (remote.startsWith(s + "/")) {
-                server = s;
-                p = remote.substring(s.length() + 1);
+        for (String prefix : GIT_WEB_HOSTS) {
+            if (remote.startsWith(prefix + "/")) {
+                server = prefix;
+                p = remote.substring(prefix.length() + 1);
                 break;
             }
         }
@@ -101,7 +107,12 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
 
         @Override
         public boolean supports(@NonNull String remote) {
-            return remote.startsWith(ASFGitSCMNavigator.GIT_BOX) || remote.startsWith(ASFGitSCMNavigator.GIT_WIP);
+            for (String prefix : GIT_WEB_HOSTS) {
+                if (remote.startsWith(prefix + "/")) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         @Override
@@ -154,9 +165,11 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                 } catch (ParseException e) {
                     throw new IOException("Unexpected date format, expected RFC 2822, got " + elements.get(1).text());
                 }
-                return new GitTagSCMRevision(new GitTagSCMHead(refOrHash.substring(Constants.R_TAGS.length()), time), revision);
-            } else if (refOrHash.startsWith(Constants.R_HEADS)){
-                return new AbstractGitSCMSource.SCMRevisionImpl(new SCMHead(refOrHash.substring(Constants.R_HEADS.length())), revision);
+                return new GitTagSCMRevision(new GitTagSCMHead(refOrHash.substring(Constants.R_TAGS.length()), time),
+                        revision);
+            } else if (refOrHash.startsWith(Constants.R_HEADS)) {
+                return new AbstractGitSCMSource.SCMRevisionImpl(
+                        new SCMHead(refOrHash.substring(Constants.R_HEADS.length())), revision);
             } else {
                 // TODO fix for hash without branch name
                 return null;
@@ -237,8 +250,8 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     .expand();
             Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
             Elements elements = doc.select("table.heads tr td.current_head a.name");
-            if (elements.size()>0) {
-                return Constants.R_HEADS+elements.get(0).text();
+            if (elements.size() > 0) {
+                return Constants.R_HEADS + elements.get(0).text();
             }
             return null;
         }
