@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/commit</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log - RSS feed" href="/repos/asf?p=maven.git;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed" href="/repos/asf?p=maven.git;a=atom" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img class="logo" alt="git" src="/static/git-logo.png" height="27" width="72" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / commit
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input name="p" type="hidden" value="maven.git" />
+<input value="search" type="hidden" name="a" />
+<input type="hidden" name="h" value="51cc76c32625be2f807dcf2ffbeb085984729b57" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/repos/asf?p=maven.git;a=search_help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=51cc76c32625be2f807dcf2ffbeb085984729b57">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=51cc76c32625be2f807dcf2ffbeb085984729b57">log</a> | commit | <a href="/repos/asf?p=maven.git;a=commitdiff;h=51cc76c32625be2f807dcf2ffbeb085984729b57">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;h=13125611c5b5623831a25e386eb923926f595f8c;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">tree</a><br/>
+(parent: <a href="/repos/asf?p=maven.git;a=commit;h=181b0215aa1199e152db9d2c08b1a01436547805">181b021</a>) | <a href="/repos/asf?p=maven.git;a=patch;h=51cc76c32625be2f807dcf2ffbeb085984729b57">patch</a><br/>
+</div>
+<div class="header">
+<a class="title" href="/repos/asf?p=maven.git;a=commitdiff;h=51cc76c32625be2f807dcf2ffbeb085984729b57">[MNG-6090] CI friendly properties break submodule builds</a>
+</div>
+<div class="title_text">
+<table class="object_header">
+<tr><td>author</td><td><a href="/repos/asf?p=maven.git;a=search;h=51cc76c32625be2f807dcf2ffbeb085984729b57;s=Karl+Heinz+Marbaise;st=author" title="Search for commits authored by Karl Heinz Marbaise" class="list">Karl Heinz Marbaise</a> <a title="Search for commits authored by khmarbaise@apache.org" href="/repos/asf?p=maven.git;a=search;h=51cc76c32625be2f807dcf2ffbeb085984729b57;s=khmarbaise@apache.org;st=author" class="list">&lt;khmarbaise@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/a7a7de61eca1a5af56823753b1b3b838?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Tue, 29 Sep 2015 09:46:48 +0000</span> (11:46 +0200)</td></tr>
+<tr><td>committer</td><td><a class="list" href="/repos/asf?p=maven.git;a=search;h=51cc76c32625be2f807dcf2ffbeb085984729b57;s=Karl+Heinz+Marbaise;st=committer" title="Search for commits committed by Karl Heinz Marbaise">Karl Heinz Marbaise</a> <a class="list" href="/repos/asf?p=maven.git;a=search;h=51cc76c32625be2f807dcf2ffbeb085984729b57;s=khmarbaise@apache.org;st=committer" title="Search for commits committed by khmarbaise@apache.org">&lt;khmarbaise@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/a7a7de61eca1a5af56823753b1b3b838?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Mon, 13 Mar 2017 21:08:51 +0000</span> (22:08 +0100)</td></tr>
+<tr><td>commit</td><td class="sha1">51cc76c32625be2f807dcf2ffbeb085984729b57</td></tr>
+<tr><td>tree</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=tree;h=13125611c5b5623831a25e386eb923926f595f8c;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">13125611c5b5623831a25e386eb923926f595f8c</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=tree;h=13125611c5b5623831a25e386eb923926f595f8c;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=maven.git;a=snapshot;h=51cc76c32625be2f807dcf2ffbeb085984729b57;sf=tgz">snapshot</a></td></tr>
+<tr><td>parent</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=commit;h=181b0215aa1199e152db9d2c08b1a01436547805">181b0215aa1199e152db9d2c08b1a01436547805</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=commit;h=181b0215aa1199e152db9d2c08b1a01436547805">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=51cc76c32625be2f807dcf2ffbeb085984729b57;hp=181b0215aa1199e152db9d2c08b1a01436547805">diff</a></td></tr>
+</table></div>
+<div class="page_body">
+[MNG-6090]&nbsp;CI&nbsp;friendly&nbsp;properties&nbsp;break&nbsp;submodule&nbsp;builds<br/>
+[MNG-6057]&nbsp;Problem&nbsp;with&nbsp;CI&nbsp;friendly&nbsp;usage&nbsp;of&nbsp;${..}&nbsp;reactor&nbsp;order&nbsp;is&nbsp;changed<br/>
+&nbsp;o&nbsp;Based&nbsp;on&nbsp;the&nbsp;missing&nbsp;replacement&nbsp;of&nbsp;the&nbsp;versions&nbsp;${revision}<br/>
+&nbsp;&nbsp;&nbsp;${changelist}&nbsp;or&nbsp;${sha1}&nbsp;within&nbsp;the&nbsp;parent&nbsp;element&nbsp;the&nbsp;order<br/>
+&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;reactor&nbsp;changes.<br/>
+[MNG-5895]&nbsp;Problem&nbsp;with&nbsp;CI&nbsp;friendly&nbsp;usage&nbsp;of&nbsp;${..}&nbsp;which&nbsp;is&nbsp;already<br/>
+defined&nbsp;via&nbsp;property&nbsp;in&nbsp;pom&nbsp;file.<br/>
+</div>
+<div class="list_head">
+</div>
+<table class="diff_tree">
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/DefaultArtifactResolver.java;h=915ee725f9dbd122af61ea6695f48903640e1ec1;hb=51cc76c32625be2f807dcf2ffbeb085984729b57" class="list">maven-compat/src/main/java/org/apache/maven/artifact/resolver/DefaultArtifactResolver.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/DefaultArtifactResolver.java;h=915ee725f9dbd122af61ea6695f48903640e1ec1;hp=fc154cb8aa63133a7760c4209898b87e4149b8e9;hb=51cc76c32625be2f807dcf2ffbeb085984729b57;hpb=181b0215aa1199e152db9d2c08b1a01436547805">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/DefaultArtifactResolver.java;h=915ee725f9dbd122af61ea6695f48903640e1ec1;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/DefaultArtifactResolver.java;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java;h=463bf1cb39f809e7a00b0a6c915ac277f473139e;hb=51cc76c32625be2f807dcf2ffbeb085984729b57" class="list">maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java;h=463bf1cb39f809e7a00b0a6c915ac277f473139e;hp=4ebb033cf98c3c128a313740cb9f161592dbdc76;hb=51cc76c32625be2f807dcf2ffbeb085984729b57;hpb=181b0215aa1199e152db9d2c08b1a01436547805">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java;h=463bf1cb39f809e7a00b0a6c915ac277f473139e;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/interpolation/AbstractStringBasedModelInterpolator.java;h=b47edbe9898b42e25e53afdfb0447ba59183f6a5;hb=51cc76c32625be2f807dcf2ffbeb085984729b57" class="list">maven-model-builder/src/main/java/org/apache/maven/model/interpolation/AbstractStringBasedModelInterpolator.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/src/main/java/org/apache/maven/model/interpolation/AbstractStringBasedModelInterpolator.java;h=b47edbe9898b42e25e53afdfb0447ba59183f6a5;hp=cee376f1134db6d78a8bd78ff9f0c7108d86e448;hb=51cc76c32625be2f807dcf2ffbeb085984729b57;hpb=181b0215aa1199e152db9d2c08b1a01436547805">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/interpolation/AbstractStringBasedModelInterpolator.java;h=b47edbe9898b42e25e53afdfb0447ba59183f6a5;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/src/main/java/org/apache/maven/model/interpolation/AbstractStringBasedModelInterpolator.java;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java;h=e790f211a6763503b9a771b990d3681b8b70b31b;hb=51cc76c32625be2f807dcf2ffbeb085984729b57" class="list">maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java;h=e790f211a6763503b9a771b990d3681b8b70b31b;hp=59b05329bf0645d5bc90e4586c58fa9f8d910800;hb=51cc76c32625be2f807dcf2ffbeb085984729b57;hpb=181b0215aa1199e152db9d2c08b1a01436547805">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java;h=e790f211a6763503b9a771b990d3681b8b70b31b;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java;hb=51cc76c32625be2f807dcf2ffbeb085984729b57">history</a></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a title="log RSS feed" class="rss_logo" href="/repos/asf?p=maven.git;a=rss">RSS</a>
+<a title="log Atom feed" class="rss_logo" href="/repos/asf?p=maven.git;a=atom">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

@@ -25,8 +25,6 @@ import jenkins.scm.api.SCMSourceObserver;
 import jenkins.scm.api.SCMSourceOwner;
 import jenkins.scm.impl.NoOpProjectObserver;
 import jenkins.scm.impl.trait.WildcardSCMSourceFilterTrait;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.jvnet.hudson.test.JenkinsRule;

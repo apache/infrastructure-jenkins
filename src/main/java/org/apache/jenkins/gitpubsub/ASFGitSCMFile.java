@@ -1,12 +1,10 @@
 package org.apache.jenkins.gitpubsub;
 
 import edu.umd.cs.findbugs.annotations.NonNull;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import jenkins.scm.api.SCMFile;
 import org.jsoup.Jsoup;
@@ -44,19 +42,21 @@ public class ASFGitSCMFile extends SCMFile {
         String treeUrl = ASFGitSCMFileSystem.buildTemplateWithRemote("{+server}{?p}{;a,hb,f}", remote)
                 .set("a", "tree")
                 .set("hb", refOrHash)
-                .set("f", getPath())
+                .set("f", isRoot() ? null : getPath())
                 .expand();
         Document doc = Jsoup.parse(new URL(treeUrl), TEN_SECONDS_OF_MILLIS);
-        Elements elements = doc.select("table.tree tr td.list a.list");
+        Elements elements = doc.select("table.tree tr td.list a");
         List<SCMFile> result = new ArrayList<>();
         for (Element element : elements) {
-            if (element.text().equals(getName())) {
-                Element mode = element.parent().previousElementSibling().previousElementSibling();
-                if (mode.text().startsWith("d")) {
-                    result.add(newChild(element.text(), true));
-                } else {
-                    result.add(newChild(element.text(), false));
-                }
+            String name = element.text();
+            if (".".equals(name) || "..".equals(name)) {
+                continue;
+            }
+            Element mode = element.parent().previousElementSibling().previousElementSibling();
+            if (mode.text().startsWith("d")) {
+                result.add(newChild(element.text(), true));
+            } else {
+                result.add(newChild(element.text(), false));
             }
         }
         return result;
@@ -78,7 +78,7 @@ public class ASFGitSCMFile extends SCMFile {
                 .set("f", lastSlash == -1 ? null : path.substring(0, lastSlash))
                 .expand();
         Document doc = Jsoup.parse(new URL(treeUrl), TEN_SECONDS_OF_MILLIS);
-        Elements elements = doc.select("table.tree tr td.list a.list");
+        Elements elements = doc.select("table.tree tr td.list a");
         for (Element element : elements) {
             if (element.text().equals(getName())) {
                 Element mode = element.parent().previousElementSibling().previousElementSibling();

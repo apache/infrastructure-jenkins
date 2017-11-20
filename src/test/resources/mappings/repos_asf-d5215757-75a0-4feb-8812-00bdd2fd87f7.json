@@ -1,0 +1,26 @@
+{
+  "id" : "d5215757-75a0-4feb-8812-00bdd2fd87f7",
+  "name" : "repos_asf",
+  "request" : {
+    "url" : "/repos/asf?p=maven.git;a=commit;h=refs%2Fheads%2FMNG-5951",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "repos_asf-d5215757-75a0-4feb-8812-00bdd2fd87f7.txt",
+    "headers" : {
+      "Date" : "Mon, 20 Nov 2017 12:47:24 GMT",
+      "Server" : "Apache/2.4.7 (Ubuntu)",
+      "Vary" : "Accept-Encoding",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers" : "X-PINGOTHER",
+      "Access-Control-Max-Age" : "1728000",
+      "Keep-Alive" : "timeout=30, max=75",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/html; charset=utf-8"
+    }
+  },
+  "uuid" : "d5215757-75a0-4feb-8812-00bdd2fd87f7",
+  "persistent" : true
+}

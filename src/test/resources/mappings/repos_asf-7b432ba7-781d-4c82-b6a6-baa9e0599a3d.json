@@ -1,0 +1,27 @@
+{
+  "id" : "7b432ba7-781d-4c82-b6a6-baa9e0599a3d",
+  "name" : "repos_asf",
+  "request" : {
+    "url" : "/repos/asf?p=maven.git;a=commit;h=a4b0b63b62533399878c9de0656f88f100a46aa0",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "repos_asf-7b432ba7-781d-4c82-b6a6-baa9e0599a3d.txt",
+    "headers" : {
+      "Date" : "Mon, 20 Nov 2017 15:25:37 GMT",
+      "Server" : "Apache/2.4.7 (Ubuntu)",
+      "Expires" : "Tue, 21 Nov 2017 15:25:37 GMT",
+      "Vary" : "Accept-Encoding",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers" : "X-PINGOTHER",
+      "Access-Control-Max-Age" : "1728000",
+      "Keep-Alive" : "timeout=30, max=54",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/html; charset=utf-8"
+    }
+  },
+  "uuid" : "7b432ba7-781d-4c82-b6a6-baa9e0599a3d",
+  "persistent" : true
+}

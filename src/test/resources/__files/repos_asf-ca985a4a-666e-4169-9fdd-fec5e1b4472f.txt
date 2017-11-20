@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/commit</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log - RSS feed" href="/repos/asf?p=maven.git;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed" href="/repos/asf?p=maven.git;a=atom" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img src="/static/git-logo.png" class="logo" alt="git" width="72" height="27" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / commit
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input value="maven.git" type="hidden" name="p" />
+<input type="hidden" name="a" value="search" />
+<input name="h" type="hidden" value="eb2db7b28664dbaac6a59a2189c70d92e455dcea" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/repos/asf?p=maven.git;a=search_help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea">log</a> | commit | <a href="/repos/asf?p=maven.git;a=commitdiff;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;h=c4d1908e7f1e998f6814146875fd5fc7198d7f43;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">tree</a><br/>
+(parent: <a href="/repos/asf?p=maven.git;a=commit;h=542a7a89156263b34d1472e9d9c1a2795afccd2d">542a7a8</a>) | <a href="/repos/asf?p=maven.git;a=patch;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea">patch</a><br/>
+</div>
+<div class="header">
+<a href="/repos/asf?p=maven.git;a=commitdiff;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea" class="title">[MNG-6196] updated slf4j to 1.7.25</a>
+</div>
+<div class="title_text">
+<table class="object_header">
+<tr><td>author</td><td><a title="Search for commits authored by Hervé Boutemy" class="list" href="/repos/asf?p=maven.git;a=search;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea;s=Herv%C3%A9+Boutemy;st=author">Hervé Boutemy</a> <a title="Search for commits authored by hboutemy@apache.org" class="list" href="/repos/asf?p=maven.git;a=search;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea;s=hboutemy@apache.org;st=author">&lt;hboutemy@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Sat, 4 Mar 2017 01:59:42 +0000</span> (<span class="atnight">02:59</span> +0100)</td></tr>
+<tr><td>committer</td><td><a title="Search for commits committed by Hervé Boutemy" class="list" href="/repos/asf?p=maven.git;a=search;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea;s=Herv%C3%A9+Boutemy;st=committer">Hervé Boutemy</a> <a href="/repos/asf?p=maven.git;a=search;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea;s=hboutemy@apache.org;st=committer" class="list" title="Search for commits committed by hboutemy@apache.org">&lt;hboutemy@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Mon, 25 Sep 2017 22:19:57 +0000</span> (<span class="atnight">00:19</span> +0200)</td></tr>
+<tr><td>commit</td><td class="sha1">eb2db7b28664dbaac6a59a2189c70d92e455dcea</td></tr>
+<tr><td>tree</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=tree;h=c4d1908e7f1e998f6814146875fd5fc7198d7f43;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">c4d1908e7f1e998f6814146875fd5fc7198d7f43</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=tree;h=c4d1908e7f1e998f6814146875fd5fc7198d7f43;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">tree</a> | <a href="/repos/asf?p=maven.git;a=snapshot;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea;sf=tgz" title="in format: tar.gz">snapshot</a></td></tr>
+<tr><td>parent</td><td class="sha1"><a href="/repos/asf?p=maven.git;a=commit;h=542a7a89156263b34d1472e9d9c1a2795afccd2d" class="list">542a7a89156263b34d1472e9d9c1a2795afccd2d</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=commit;h=542a7a89156263b34d1472e9d9c1a2795afccd2d">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=eb2db7b28664dbaac6a59a2189c70d92e455dcea;hp=542a7a89156263b34d1472e9d9c1a2795afccd2d">diff</a></td></tr>
+</table></div>
+<div class="page_body">
+[MNG-6196]&nbsp;updated&nbsp;slf4j&nbsp;to&nbsp;1.7.25<br/>
+<br/>
+[SLF4J-394]&nbsp;use&nbsp;new&nbsp;slf4j&nbsp;methods&nbsp;done&nbsp;for&nbsp;us<br/>
+[SLF4J-395]&nbsp;use&nbsp;slf4j-simple&nbsp;System.out&nbsp;cache<br/>
+</div>
+<div class="list_head">
+</div>
+<table class="diff_tree">
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=apache-maven/src/conf/logging/simplelogger.properties;h=64b331b4592c4bcd257441f134c8c6e4dd9f7e5a;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">apache-maven/src/conf/logging/simplelogger.properties</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=apache-maven/src/conf/logging/simplelogger.properties;h=64b331b4592c4bcd257441f134c8c6e4dd9f7e5a;hp=8dea717fa57b3f9d41e53055357aa1ff2ea9ede2;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea;hpb=542a7a89156263b34d1472e9d9c1a2795afccd2d">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=apache-maven/src/conf/logging/simplelogger.properties;h=64b331b4592c4bcd257441f134c8c6e4dd9f7e5a;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=apache-maven/src/conf/logging/simplelogger.properties;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-slf4j-provider/src/main/java/org/slf4j/impl/MavenSimpleLogger.java;h=3c1ca4fe0dd789d405d347d384c513cb58edc3cd;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">maven-slf4j-provider/src/main/java/org/slf4j/impl/MavenSimpleLogger.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-slf4j-provider/src/main/java/org/slf4j/impl/MavenSimpleLogger.java;h=3c1ca4fe0dd789d405d347d384c513cb58edc3cd;hp=17f1f484c32f0848704c3c78136439503db1a7f2;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea;hpb=542a7a89156263b34d1472e9d9c1a2795afccd2d">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-slf4j-provider/src/main/java/org/slf4j/impl/MavenSimpleLogger.java;h=3c1ca4fe0dd789d405d347d384c513cb58edc3cd;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-slf4j-provider/src/main/java/org/slf4j/impl/MavenSimpleLogger.java;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-slf4j-provider/src/main/script/patch-slf4j-simple.groovy;h=986562512c3693acf5bcfa97e9ae7ad6db86e2de;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">maven-slf4j-provider/src/main/script/patch-slf4j-simple.groovy</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-slf4j-provider/src/main/script/patch-slf4j-simple.groovy;h=986562512c3693acf5bcfa97e9ae7ad6db86e2de;hp=bba864662f70a2ed06aa9a4c5da50df895d7bbed;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea;hpb=542a7a89156263b34d1472e9d9c1a2795afccd2d">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-slf4j-provider/src/main/script/patch-slf4j-simple.groovy;h=986562512c3693acf5bcfa97e9ae7ad6db86e2de;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-slf4j-provider/src/main/script/patch-slf4j-simple.groovy;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=ea119e1859ebefc614cfa3edbd501cde91ddbd5b;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=pom.xml;h=ea119e1859ebefc614cfa3edbd501cde91ddbd5b;hp=4a7995686511dc19cbbb07c141058370d2ba7864;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea;hpb=542a7a89156263b34d1472e9d9c1a2795afccd2d">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=ea119e1859ebefc614cfa3edbd501cde91ddbd5b;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=pom.xml;hb=eb2db7b28664dbaac6a59a2189c70d92e455dcea">history</a></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a href="/repos/asf?p=maven.git;a=rss" class="rss_logo" title="log RSS feed">RSS</a>
+<a href="/repos/asf?p=maven.git;a=atom" title="log Atom feed" class="rss_logo">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

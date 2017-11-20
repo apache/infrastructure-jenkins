@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/commit</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log of MNG-5951 - RSS feed" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/MNG-5951" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log of MNG-5951 - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/MNG-5951;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log of MNG-5951 - Atom feed" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/MNG-5951" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log of MNG-5951 - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/MNG-5951;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img width="72" alt="git" height="27" class="logo" src="/static/git-logo.png" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / commit
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input type="hidden" name="p" value="maven.git" />
+<input name="a" value="search" type="hidden" />
+<input value="refs/heads/MNG-5951" name="h" type="hidden" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a href="/repos/asf?p=maven.git;a=search_help" title="search help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5951">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-5951">log</a> | commit | <a href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/MNG-5951">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;h=1f4bd052c9f77317313efc6eb278deee7404fc6d;hb=refs/heads/MNG-5951">tree</a><br/>
+(parent: <a href="/repos/asf?p=maven.git;a=commit;h=901b1e8e4c9df50ccc12bf8759589c7c82400aae">901b1e8</a>) | <a href="/repos/asf?p=maven.git;a=patch;h=refs/heads/MNG-5951">patch</a><br/>
+</div>
+<div class="header">
+<a class="title" href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/MNG-5951">[MNG-5951] add an option to avoid path addition to inherited URLs <span class="refs"> <span class="head" title="heads/MNG-5951"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5951">MNG-5951</a></span></span></a>
+</div>
+<div class="title_text">
+<table class="object_header">
+<tr><td>author</td><td><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;h=refs/heads/MNG-5951;s=Herv%C3%A9+Boutemy;st=author">Hervé Boutemy</a> <a href="/repos/asf?p=maven.git;a=search;h=refs/heads/MNG-5951;s=hboutemy@apache.org;st=author" class="list" title="Search for commits authored by hboutemy@apache.org">&lt;hboutemy@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Wed, 23 Dec 2015 13:49:20 +0000</span> (14:49 +0100)</td></tr>
+<tr><td>committer</td><td><a class="list" title="Search for commits committed by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;h=refs/heads/MNG-5951;s=Herv%C3%A9+Boutemy;st=committer">Hervé Boutemy</a> <a title="Search for commits committed by hboutemy@apache.org" class="list" href="/repos/asf?p=maven.git;a=search;h=refs/heads/MNG-5951;s=hboutemy@apache.org;st=committer">&lt;hboutemy@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Wed, 23 Dec 2015 13:49:20 +0000</span> (14:49 +0100)</td></tr>
+<tr><td>commit</td><td class="sha1">8d85f5d09498fe5bd46da31cda5b79bdaf886083</td></tr>
+<tr><td>tree</td><td class="sha1"><a href="/repos/asf?p=maven.git;a=tree;h=1f4bd052c9f77317313efc6eb278deee7404fc6d;hb=refs/heads/MNG-5951" class="list">1f4bd052c9f77317313efc6eb278deee7404fc6d</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=tree;h=1f4bd052c9f77317313efc6eb278deee7404fc6d;hb=refs/heads/MNG-5951">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=maven.git;a=snapshot;h=refs/heads/MNG-5951;sf=tgz">snapshot</a></td></tr>
+<tr><td>parent</td><td class="sha1"><a href="/repos/asf?p=maven.git;a=commit;h=901b1e8e4c9df50ccc12bf8759589c7c82400aae" class="list">901b1e8e4c9df50ccc12bf8759589c7c82400aae</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=commit;h=901b1e8e4c9df50ccc12bf8759589c7c82400aae">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/MNG-5951;hp=901b1e8e4c9df50ccc12bf8759589c7c82400aae">diff</a></td></tr>
+</table></div>
+<div class="page_body">
+[MNG-5951]&nbsp;add&nbsp;an&nbsp;option&nbsp;to&nbsp;avoid&nbsp;path&nbsp;addition&nbsp;to&nbsp;inherited&nbsp;URLs<br/>
+<br/>
+This&nbsp;is&nbsp;done&nbsp;as&nbsp;child.inherit.append.path&nbsp;XML&nbsp;attribute&nbsp;on&nbsp;3&nbsp;locations:<br/>
+-&nbsp;project,&nbsp;for&nbsp;project.url<br/>
+-&nbsp;project.distributionManagement.site&nbsp;for&nbsp;its&nbsp;url<br/>
+-&nbsp;project.scm,&nbsp;for&nbsp;the&nbsp;3&nbsp;scm&nbsp;urls&nbsp;in&nbsp;one&nbsp;unique&nbsp;config<br/>
+</div>
+<div class="list_head">
+</div>
+<table class="diff_tree">
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java;h=4382e680f4b65922def58344214ef6ecdd1524ae;hb=refs/heads/MNG-5951">maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java;h=4382e680f4b65922def58344214ef6ecdd1524ae;hp=58d93a77e5543b7942eba87772a94e2b6accf5d6;hb=refs/heads/MNG-5951;hpb=901b1e8e4c9df50ccc12bf8759589c7c82400aae">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java;h=4382e680f4b65922def58344214ef6ecdd1524ae;hb=refs/heads/MNG-5951">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/src/main/java/org/apache/maven/model/inheritance/DefaultInheritanceAssembler.java;hb=refs/heads/MNG-5951">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java;h=cae9d73ff0fa2dc7dc460aaaa4ceb3af1377d911;hb=refs/heads/MNG-5951">maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java;h=cae9d73ff0fa2dc7dc460aaaa4ceb3af1377d911;hp=0007af5e4788dd3e1ed47ca8e1dffcdb5a6c4a3c;hb=refs/heads/MNG-5951;hpb=901b1e8e4c9df50ccc12bf8759589c7c82400aae">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java;h=cae9d73ff0fa2dc7dc460aaaa4ceb3af1377d911;hb=refs/heads/MNG-5951">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/src/main/java/org/apache/maven/model/merge/MavenModelMerger.java;hb=refs/heads/MNG-5951">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java;h=d49e8df33d0598ca7511f73ec59adb8f5f7a27c1;hb=refs/heads/MNG-5951" class="list">maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java;h=d49e8df33d0598ca7511f73ec59adb8f5f7a27c1;hp=9d88f5fb2a41ea1e1736efa5bee63eb602758ea3;hb=refs/heads/MNG-5951;hpb=901b1e8e4c9df50ccc12bf8759589c7c82400aae">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java;h=d49e8df33d0598ca7511f73ec59adb8f5f7a27c1;hb=refs/heads/MNG-5951">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/src/test/java/org/apache/maven/model/inheritance/DefaultInheritanceAssemblerTest.java;hb=refs/heads/MNG-5951">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-child.xml;h=d7cc4d0b4f4cda55a1ef0f341e468e642b273eaa;hb=refs/heads/MNG-5951">maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-child.xml</a></td>
+<td><span class="file_status new">[new file with mode: 0644]</span></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-child.xml;h=d7cc4d0b4f4cda55a1ef0f341e468e642b273eaa;hb=refs/heads/MNG-5951">blob</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-expected.xml;h=d2a8cfe52f3b95e7bc72d0dde3f52c200095e450;hb=refs/heads/MNG-5951">maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-expected.xml</a></td>
+<td><span class="file_status new">[new file with mode: 0644]</span></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-expected.xml;h=d2a8cfe52f3b95e7bc72d0dde3f52c200095e450;hb=refs/heads/MNG-5951">blob</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-parent.xml;h=e8bc1652a4032df82cc40cbdb14e982c15625d8b;hb=refs/heads/MNG-5951" class="list">maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-parent.xml</a></td>
+<td><span class="file_status new">[new file with mode: 0644]</span></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/src/test/resources/poms/inheritance/no-append-urls-parent.xml;h=e8bc1652a4032df82cc40cbdb14e982c15625d8b;hb=refs/heads/MNG-5951">blob</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-model/src/main/mdo/maven.mdo;h=73c85a4510b6457336eb3c8aa8f105ed176bb47e;hb=refs/heads/MNG-5951" class="list">maven-model/src/main/mdo/maven.mdo</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model/src/main/mdo/maven.mdo;h=73c85a4510b6457336eb3c8aa8f105ed176bb47e;hp=3f6b6d66f8468df68a7239905192af3e53dd03e7;hb=refs/heads/MNG-5951;hpb=901b1e8e4c9df50ccc12bf8759589c7c82400aae">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model/src/main/mdo/maven.mdo;h=73c85a4510b6457336eb3c8aa8f105ed176bb47e;hb=refs/heads/MNG-5951">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model/src/main/mdo/maven.mdo;hb=refs/heads/MNG-5951">history</a></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a title="log of MNG-5951 RSS feed" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/MNG-5951" class="rss_logo">RSS</a>
+<a href="/repos/asf?p=maven.git;a=atom;h=refs/heads/MNG-5951" class="rss_logo" title="log of MNG-5951 Atom feed">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

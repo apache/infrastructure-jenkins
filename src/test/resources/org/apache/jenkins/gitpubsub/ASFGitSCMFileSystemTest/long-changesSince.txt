@@ -1,0 +1,1051 @@
+commit 3d0efa36963c217527230228a11ab44050ca1b10
+tree d7eb28efef296053d5f00a0a5130a1f87c6e1d66
+parent 138edd61fd100ec658bfa2d307c43b76940a5d7d
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-18 08:55:05 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-18 08:55:05 +0100
+
+    [maven-release-plugin] prepare for next development iteration
+
+
+commit 138edd61fd100ec658bfa2d307c43b76940a5d7d
+tree 271f4f17a9ae7ffaef796bf21a34d4014cf45c33
+parent 4b95ad9fce6dfe7eec2be88f5837e96c7fbd7292
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-18 08:54:47 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-18 08:54:47 +0100
+
+    [maven-release-plugin] prepare release maven-3.5.2
+
+
+commit 4b95ad9fce6dfe7eec2be88f5837e96c7fbd7292
+tree 4644490b31883b90810577705aeb485cc0921346
+parent cae779e4fbc6565a581f2c6adf9fb15348005603
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-17 19:18:43 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-17 19:18:43 +0100
+
+    Revert "MNG-6209 better executeMojo thread context classloader"
+
+    This reverts commit ec629f7d511eb910b4e80112a9fbe85ed8786f10.
+
+commit cae779e4fbc6565a581f2c6adf9fb15348005603
+tree 7e975814bbbcdc784daa4622efb66ee0fd74d7b3
+parent c19e9dcac3d200094c770521b9b1b10df76f26c4
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-17 19:17:17 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-10-17 19:17:17 +0100
+
+    Revert "[MNG-6275] Maven Embedder compatible fix"
+
+    This reverts commit 27a2bda3f4a8f5385c4cab360ed7365d3d3d3c09.
+
+commit c19e9dcac3d200094c770521b9b1b10df76f26c4
+tree 41e51a72d8b8e0401af31900d2e83cffd26c6b8c
+parent 4f530c4f006b8d22da90d968a1d32797280804b9
+author Hervé Boutemy <hboutemy@apache.org> 2017-09-25 22:52:48 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-10-15 10:16:00 +0200
+
+    [MNG-6242] detect Cygwin/Mingw pseudo terminal for Jansi
+
+
+commit 4f530c4f006b8d22da90d968a1d32797280804b9
+tree 2752dbc2d4173275dd35b1c7eae02b03763b2b94
+parent eb2db7b28664dbaac6a59a2189c70d92e455dcea
+author Hervé Boutemy <hboutemy@apache.org> 2017-05-21 19:02:46 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-09-26 00:19:57 +0200
+
+    [MNG-6196] removed remaining Monkey patching, not really necessary
+
+    done after Emmanuel Bourg #118 PR idea
+commit eb2db7b28664dbaac6a59a2189c70d92e455dcea
+tree c4d1908e7f1e998f6814146875fd5fc7198d7f43
+parent 542a7a89156263b34d1472e9d9c1a2795afccd2d
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-04 02:59:42 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-09-26 00:19:57 +0200
+
+    [MNG-6196] updated slf4j to 1.7.25
+
+    [SLF4J-394] use new slf4j methods done for us
+    [SLF4J-395] use slf4j-simple System.out cache
+commit 542a7a89156263b34d1472e9d9c1a2795afccd2d
+tree 39460fdb6c56bf0fd9c99278e86e8534ff28dc25
+parent 312eb53502b78355ab21e27610e7ef253990f574
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-11 10:25:11 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-11 10:25:11 +0100
+
+    [MNG-6275] Defang the tests when their core assumption is invalid.
+
+    - The tests assume that the JRE has a ScriptEngineFactory
+    - Not all JREs have a ScriptEngineFactory (I'm looking at Azul's Zulu
+    Open JDK 7 builds)
+    - Ideally we'd skip these tests using Assume.assumeThat(...) but
+    PlexusTestCase doesn't support
+     AssumptionViolatedException for marking tests as skipped.
+
+    Issue identified during testing of the 3.5.1 release candidate
+
+commit 312eb53502b78355ab21e27610e7ef253990f574
+tree f9c0727e27c2cdcc0a005c8cd6e67125e605dc26
+parent 094e4e31a5af55bb17be87675da41d9aeca062f3
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-10 12:51:43 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-10 12:51:43 +0100
+
+    [maven-release-plugin] prepare for next development iteration
+
+
+commit 094e4e31a5af55bb17be87675da41d9aeca062f3
+tree dca30758f4ac5189fff76fa072dee84b1bed891d
+parent 27a2bda3f4a8f5385c4cab360ed7365d3d3d3c09
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-10 12:51:26 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-10 12:51:26 +0100
+
+    [maven-release-plugin] prepare release maven-3.5.1
+
+
+commit 27a2bda3f4a8f5385c4cab360ed7365d3d3d3c09
+tree 3de26bae12ffd56000f3fbab20fdd4fc74876a2b
+parent c9a288d8b1090fa957d6caccc12f0bf13bb5e267
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-08-24 11:33:01 +0200
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-09-09 11:56:27 +0100
+
+    [MNG-6275] Maven Embedder compatible fix
+
+    - Need to use PARENT_CLASSLOADER so that when used by embedder we get a 
+    consistent view of the available classes
+
+    - Restores test case from f047ea143766fd22ae42040e6805bef287f3cc3e
+
+commit c9a288d8b1090fa957d6caccc12f0bf13bb5e267
+tree ced479d9192e8b93f75ab031475e72a909aa4cf1
+parent 170c1ed82cbe124da1736da64af20d660dc3162e
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-08-03 20:12:25 +0200
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-08-31 10:21:35 +0100
+
+    [MNG-6216] ArrayIndexOutOfBoundsException when parsing POM  o Upgraded
+    to new release of plexus-utils which contains    the fix for #22 in
+    plexus-utils.
+
+
+commit 170c1ed82cbe124da1736da64af20d660dc3162e
+tree 502670eb355dc6e1cc6e5f1fbe42f7149b499068
+parent e44c39c2eb5afda9efe60b9dd0ffc32c62501c5f
+author rfscholte <rfscholte@apache.org> 2017-08-30 11:12:20 +0200
+committer rfscholte <rfscholte@apache.org> 2017-08-30 11:12:20 +0200
+
+    Revert "Squashed commit of the following:"
+
+    This reverts commit f047ea143766fd22ae42040e6805bef287f3cc3e.
+
+commit e44c39c2eb5afda9efe60b9dd0ffc32c62501c5f
+tree 41001df6e7530eb358ee4d2c90379a086fa70c95
+parent f047ea143766fd22ae42040e6805bef287f3cc3e
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-08-29 21:47:50 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-08-29 21:47:50 +0100
+
+    Update Jenkinsfile to use JENKINS-43507 syntax for resolveScm
+
+
+commit f047ea143766fd22ae42040e6805bef287f3cc3e
+tree bf8618fc2e45c9985f82406cc33b1d102daead5c
+parent 785bad693c60ad60d7b307af8fab9e9234ff57bd
+author rfscholte <rfscholte@apache.org> 2017-08-24 11:33:01 +0200
+committer rfscholte <rfscholte@apache.org> 2017-08-24 11:33:01 +0200
+
+    Squashed commit of the following:
+
+    commit c829bdcfc275b207e23fc568b3c16d98195675be Author: rfscholte
+    <rfscholte@apache.org> Date:   Thu Aug 24 10:54:08 2017 +0200
+
+        [MNG-6275] ServiceLoaderFactory can't find implementations via
+    ClassRealm
+
+commit 785bad693c60ad60d7b307af8fab9e9234ff57bd
+tree d2560ffc4e1cffd5aa456cdaf11925fffa5f6f39
+parent f1ed6592b1c701834d1377fade6cdb382a63bbf4
+author rfscholte <rfscholte@apache.org> 2017-08-15 21:48:57 +0200
+committer rfscholte <rfscholte@apache.org> 2017-08-15 21:48:57 +0200
+
+    [MNG-6220] Add CLI options to control color output Introduce
+    -Dstyle.color=[always|never|auto]
+
+
+commit f1ed6592b1c701834d1377fade6cdb382a63bbf4
+tree 755141aebd9867ab4b799f3deb177085f074f722
+parent 842db371f0fcaf4e930b99395fb6a8bb442684d6
+author Mario Krizmanic <mario.krizmanic@gmail.com> 2017-08-15 21:46:29 +0200
+committer rfscholte <rfscholte@apache.org> 2017-08-15 21:46:29 +0200
+
+    [MNG-6127] Fix plugin execution configuration interference
+
+    Signed-off-by: rfscholte <rfscholte@apache.org>
+
+commit 842db371f0fcaf4e930b99395fb6a8bb442684d6
+tree 5d112ff58b9f5a0af75fa9200f230dca58163bc6
+parent 4f2a2dba89251d9045fe9944783509a397491da3
+author rfscholte <rfscholte@apache.org> 2017-08-15 21:42:42 +0200
+committer rfscholte <rfscholte@apache.org> 2017-08-15 21:42:42 +0200
+
+    [MNG-6148] Can't package and assemble with JDK9/Jigsaw
+
+
+commit 4f2a2dba89251d9045fe9944783509a397491da3
+tree 9a96d44ee746e64dcb1e7bafffe6fd7d7fd07ac7
+parent 8f8c45c990193b04c1770997d446951c5185b164
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-02-19 21:17:31 +0100
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-08-02 19:31:49 +0200
+
+    [MNG-6174] Clean Up Maven Model
+
+
+commit 8f8c45c990193b04c1770997d446951c5185b164
+tree bf1d0014f9da5c88d637ab4fe9fbe749243754ec
+parent b1002575177abd1108fe50f457cceb9c7c3cf7d8
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-04-04 22:46:11 +0200
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-08-01 22:01:36 +0200
+
+    [MNG-6123] detect self references in POM and fail fast  o Added unit
+    test and self referencing pom
+
+
+commit b1002575177abd1108fe50f457cceb9c7c3cf7d8
+tree 8b83dfb6337d099cce84d9eb144f99c3b82df3c0
+parent e520324c8d45e2465cf8aeafb4d57cef30250136
+author Michael Osipov <michaelo@apache.org> 2016-07-15 23:26:56 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-07-12 20:10:47 +0200
+
+    [MNG-5457] Show repository id when downloading or uploading from/to a
+    remote repository
+
+
+commit e520324c8d45e2465cf8aeafb4d57cef30250136
+tree 7a2ae5df828ce2ffa3ebfee75ddf0af7c030298f
+parent a1fe42199565f76007a97f47cd4a848fd9b63482
+author Michael Osipov <michaelo@apache.org> 2017-07-12 19:50:09 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-07-12 19:50:09 +0200
+
+    [MNG-6258] Upgrade to Maven Resolver 1.1.0
+
+
+commit a1fe42199565f76007a97f47cd4a848fd9b63482
+tree 583d7db722287761c5aa9da89e2a3924a8413b9d
+parent 12d6471337c7ad067b7762d44050a079829ea26c
+author Guillaume Boué <gboue@apache.org> 2017-06-09 23:25:31 +0200
+committer Guillaume Boué <gboue@apache.org> 2017-06-14 19:55:41 +0200
+
+    [MNG-6240] Duplicate components in plugin extension realm when plugin
+    depends on maven-aether-resolver
+
+    Maven Core needs to export the maven-aether-provider artifact so that
+    its components do not get added twice in plugin realm. This happens if
+    the build uses an extension plugin depending on maven-aether-provider,
+    before it was renamed to maven-resolver-provider
+
+commit 12d6471337c7ad067b7762d44050a079829ea26c
+tree 3c03c2ea4e24fe9acd2dd5638e992b3420a5522c
+parent 707cff6ffdecbfb0e0356c70e3a7b490535e7ce4
+author dejan2609 <dejan2609@gmail.com> 2017-05-20 15:42:43 +0200
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-06-11 13:55:07 +0200
+
+    [MNG-6207] Create WARNINGs in case of using system scope  o display
+    deprecation build warning for dependencies with scope 'system'
+    declaration  o Note about tests: existing 'systemPath' related tests are
+    reused/expanded    (rationale: scope 'system' and 'systemPath' are
+    mutually dependent)
+
+    Signed-off-by: Karl Heinz Marbaise <khmarbaise@apache.org>
+
+commit 707cff6ffdecbfb0e0356c70e3a7b490535e7ce4
+tree bbf21be5140227b8b34f0c10b733acdd9fa74070
+parent eb6b212b567c287734a2dbbef3c113fe650f1def
+author Hervé Boutemy <hboutemy@apache.org> 2017-06-10 08:04:43 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-06-10 08:04:43 +0200
+
+    [MNG-6186] fixed path to jansi native libs in distribution
+
+
+commit eb6b212b567c287734a2dbbef3c113fe650f1def
+tree d6b73f69df21f81e246e1f8819b7caf1fa08b965
+parent a7dddcb87626fec256f1b8ccbe957f94cdf401e4
+author dejan2609 <dejan2609@gmail.com> 2017-05-20 16:57:55 +0200
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-06-04 20:23:02 +0200
+
+    [MNG-6206] display deprecation build warning in case when dependencies
+    use metaversions (LATEST or RELEASE)
+
+    Signed-off-by: Karl Heinz Marbaise <khmarbaise@apache.org>
+
+commit a7dddcb87626fec256f1b8ccbe957f94cdf401e4
+tree f2d5ab4666eb0a8d486b5af4fcdc132d4ff26b2a
+parent 66fc74d6296ea0a33f8a9712dc5ed5eb3affd529
+author Dan Tran <dantran@apache.org> 2016-09-11 21:07:39 -0700
+committer Michael Osipov <michaelo@apache.org> 2017-05-25 20:05:35 +0200
+
+    [MNG-6084] Support JSR 250 annotations
+
+
+commit 66fc74d6296ea0a33f8a9712dc5ed5eb3affd529
+tree 19b4dcdab3c06533d353007eaea8090f923f6298
+parent 44634982a103a696d18619346756b1adaf3dbfd9
+author Igor Fedorenko <ifedorenko@apache.org> 2017-03-28 08:41:38 -0400
+committer Igor Fedorenko <ifedorenko@apache.org> 2017-05-24 15:33:04 -0400
+
+    MNG-6233 don't mix plexus and jsr330 annotations in aether-provider
+
+    Signed-off-by: Igor Fedorenko <ifedorenko@apache.org>
+
+commit 44634982a103a696d18619346756b1adaf3dbfd9
+tree 817290e5e217cab8e5b343fd1490b9e5c079a8db
+parent ecef59f1cb822e48c63215fa7dd0c8f4fd54d6af
+author Hervé Boutemy <hboutemy@apache.org> 2017-05-21 19:14:54 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-05-21 19:14:54 +0200
+
+    improved modello and animal sniffer's execution ids
+
+
+commit ecef59f1cb822e48c63215fa7dd0c8f4fd54d6af
+tree 1ef26667d5430adc69a6cbef3b4fa741c409802d
+parent f4ede96fd06c8d3e1e2b2fb679baec058cce30e1
+author Michael Osipov <michaelo@apache.org> 2017-05-16 15:27:22 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-05-16 15:27:22 +0200
+
+    [MNG-6167] Clean up dependency mess (reported by dependency:analyze)
+
+    Clean up compile and runtime dependencies. Test dependencies have not
+    been touched because their seem to be false positives due to DI.
+
+commit f4ede96fd06c8d3e1e2b2fb679baec058cce30e1
+tree fcff03db4c92fd2bd29709f924e99f5949abd7c4
+parent fd988e78e95a53c3a39ec944869ba62b0c7fc0f0
+author Christian Schulte <schulte@apache.org> 2016-02-11 08:45:19 +0100
+committer Michael Osipov <michaelo@apache.org> 2017-05-10 10:36:19 +0200
+
+    [MNG-5935] Optional true getting lost in managed dependencies when
+    transitive
+
+    Updated to correctly map the optional flag of Maven model dependencies
+    to Aether dependencies. Prior to this change all managed dependencies
+    implicitly had the optional flag set to 'false' leading to Aether
+    managing that flag to
+    'false' on all managed dependencies when transitive.
+
+commit fd988e78e95a53c3a39ec944869ba62b0c7fc0f0
+tree c1faad0273817638bfbb6d8c5d5480504dd00a0c
+parent 6182a2083fdb9964ccb5250fb85223e38485bf04
+author Michael Osipov <michaelo@apache.org> 2017-05-09 22:15:21 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-05-09 22:15:21 +0200
+
+    [MNG-6228] Optionality not displayed in dependency tree when run in
+    debug mode
+
+    Log message in DefaultProjectDependenciesResolver has been extended with
+    "(optional)" if dependency is marked as optional (direct or transitive).
+
+commit 6182a2083fdb9964ccb5250fb85223e38485bf04
+tree 4a0349eb0ad24ae16121a1fdb559a05e41d98425
+parent 2a79d1e71edc0ddd0c0ba1612ce520f43961eef2
+author Hervé Boutemy <hboutemy@apache.org> 2017-05-06 18:28:04 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-05-09 21:08:13 +0200
+
+    [MNG-6186] use enhanced HawtJNI library loading (remove previous hack)
+
+
+commit 2a79d1e71edc0ddd0c0ba1612ce520f43961eef2
+tree ff7cae3a848f0aa806b9c6090fb7b0bc17a2000f
+parent 2d4401557c3c870409e8b1c65d2dcc9a68281cae
+author Hervé Boutemy <hboutemy@apache.org> 2017-05-06 18:25:36 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-05-09 21:08:04 +0200
+
+    [MNG-6205] upgraded JAnsi to 1.16 for console encoding fix
+
+    also fixes MNG-6218 MinGW bash detection fixed by JAnsi 1.14
+commit 2d4401557c3c870409e8b1c65d2dcc9a68281cae
+tree eee938dda3a1559f080b30b012541fd94902239f
+parent be223808939d75152d7157db33d45f230114555e
+author Hervé Boutemy <hboutemy@apache.org> 2017-05-06 18:15:42 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-05-09 21:07:41 +0200
+
+    [MNG-6223] support -f path/to/dir when detecting .mvn
+
+
+commit be223808939d75152d7157db33d45f230114555e
+tree 48296562d3f26c2c2762d995d8c975bc8ecec6ae
+parent f7d4bce23324cd4a318486d8715a128cf7436c3a
+author Anton Tanasenko <atg.sleepless@gmail.com> 2016-05-18 18:40:28 +0300
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-05-05 22:08:16 +0200
+
+    Add a ProjectArtifactsCache similar to PluginArtifactsCache
+
+    Signed-off-by: Jason van Zyl <jason@vanzyl.ca>
+
+    closes #82
+
+commit f7d4bce23324cd4a318486d8715a128cf7436c3a
+tree 4193444982d34f3cdba46b0ea62080182731d45c
+parent 3938817fd3e0ad62efe335307406e70bff876834
+author Michael Osipov <michaelo@apache.org> 2017-04-21 22:57:53 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-04-21 22:57:53 +0200
+
+    [MNG-6149] MetadataResolutionResult#getGraph() never resolves request
+    type 'test'
+
+
+commit 3938817fd3e0ad62efe335307406e70bff876834
+tree 55f2674ebc0e29d0840117bd5585511927704b2c
+parent c2c6259de6f1262d9b31509b8c30844a386a4f29
+author Michael Osipov <michaelo@apache.org> 2017-04-21 22:50:11 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-04-21 22:50:11 +0200
+
+    Doc improvement in simplelogger.properties
+
+
+commit c2c6259de6f1262d9b31509b8c30844a386a4f29
+tree 85400774889c66b6282fb857ca127e6a50b97f3c
+parent ec629f7d511eb910b4e80112a9fbe85ed8786f10
+author Igor Fedorenko <ifedorenko@apache.org> 2017-04-13 12:58:29 -0700
+committer Igor Fedorenko <ifedorenko@apache.org> 2017-04-14 10:38:45 -0700
+
+    MNG-6210 allow maven custom guice scopes in .mvn/extensions
+
+    Signed-off-by: Igor Fedorenko <ifedorenko@apache.org>
+
+commit ec629f7d511eb910b4e80112a9fbe85ed8786f10
+tree 3c3a6c68a24cbd11c9cad4bee256088f5c3732c1
+parent 567af0d964cf823b275300aa4671b84a28da5baa
+author Igor Fedorenko <ifedorenko@apache.org> 2017-04-11 07:59:34 -0700
+committer Igor Fedorenko <ifedorenko@apache.org> 2017-04-13 14:12:23 -0700
+
+    MNG-6209 better executeMojo thread context classloader
+
+    Signed-off-by: Igor Fedorenko <ifedorenko@apache.org>
+
+commit 567af0d964cf823b275300aa4671b84a28da5baa
+tree 2301cdef921111a0e4ac61ed387f655515be8de8
+parent 6a93bbea23e362c9cea7d710a37556258c2dbd47
+author Hervé Boutemy <hboutemy@apache.org> 2017-04-12 03:59:44 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-04-12 03:59:44 +0200
+
+    use "java -jar" command
+
+
+commit 6a93bbea23e362c9cea7d710a37556258c2dbd47
+tree 58ed47258f2c77b357e97a4731df03277426d996
+parent 08f3c76a09601d85503c35743458d977a92e492d 10a18cfee7a981a41c1f571ef3c60138d40e839e
+author Lubomir Varga <lubomir.varga@nike.sk> 2017-04-11 16:00:42 +0200
+committer Michael Osipov <michaelo@apache.org> 2017-04-11 16:02:21 +0200
+
+    Improve Javadoc of ComparableVersion#main()
+
+    This closes #108
+
+commit 08f3c76a09601d85503c35743458d977a92e492d
+tree bde84c95109029028d776705649580ac1b61daf6
+parent 70eabfe0f2bc5fe85b666ca511ec35574b23d32f
+author Hervé Boutemy <hboutemy@apache.org> 2017-04-08 08:50:55 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-04-08 08:50:55 +0200
+
+    improved description of styled message API
+
+
+commit 70eabfe0f2bc5fe85b666ca511ec35574b23d32f
+tree ccad1a3ce3372f05badd1d9535eea64d27c92b53
+parent 4c6d3a3462783507921d1a0100e3fa22ef8a98e4
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-07 09:11:26 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-07 09:11:30 +0100
+
+    Update the DOAP to include the 3.5.0 release
+
+
+commit 4c6d3a3462783507921d1a0100e3fa22ef8a98e4
+tree 21e77ddd11df75aea53eb7a69645478b321c64be
+parent a4b0b63b62533399878c9de0656f88f100a46aa0
+author Stefan Eicher <stefan.eicher@gmail.com> 2017-04-05 20:52:01 +0200
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-04-05 23:51:26 +0200
+
+    Minor cleanup in MavenCli.java
+
+    There is some unnecessary code in the MavenCli.java from line #1465 to
+    #1474. The functionality has been moved to line #1215.
+
+    Signed-off-by: Karl Heinz Marbaise <khmarbaise@apache.org>
+
+commit a4b0b63b62533399878c9de0656f88f100a46aa0
+tree b0ba346c2fe1cc5851f1288c480fb79d7549e177
+parent ff8f5e7444045639af65f6095c62210b5713f426
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-03 20:35:47 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-03 20:35:47 +0100
+
+    [maven-release-plugin] prepare for next development iteration
+
+
+commit ff8f5e7444045639af65f6095c62210b5713f426
+tree 24bccc64c17a624d932ea44ec908112d8de95a9d
+parent 87cf1eeb7d2506e192da77f7d5b286fae2b20314
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-03 20:35:30 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-03 20:35:30 +0100
+
+    [maven-release-plugin] prepare release maven-3.5.0
+
+
+commit 87cf1eeb7d2506e192da77f7d5b286fae2b20314
+tree 3f0b1dfdb9a33c39db1eb0b73550573503d966ec
+parent 96543b7c6ea52ad7ba3bcd559c38b159f8aa4c0d
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-27 21:07:01 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-01 11:29:09 +0100
+
+    [MNG-6198] Use the directory specified by -f for searching with 'mvn'
+
+
+commit 96543b7c6ea52ad7ba3bcd559c38b159f8aa4c0d
+tree 1e8be6653142a9402479975cd83c2c490f03f918
+parent 00c82b7e234c6ed33f76ba48a236130c5511ab3a
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-26 22:41:24 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-04-01 11:29:09 +0100
+
+    [MNG-6195] Tidy up quoting and command substitution
+
+
+commit 00c82b7e234c6ed33f76ba48a236130c5511ab3a
+tree 85a53d439c8786efe282d08b6918a83dc4a00493
+parent 0baa42345283f4fea3938a8ccd7c8e12b34203b1
+author rfscholte <rfscholte@apache.org> 2017-03-29 19:50:15 +0200
+committer rfscholte <rfscholte@apache.org> 2017-03-29 19:50:15 +0200
+
+    Squashed commit of the following:
+
+    commit 049228ce76927a6740500e1b750f0e8f201f2478 Author: rfscholte
+    <rfscholte@apache.org> Date:   Mon Mar 27 20:22:46 2017 +0200
+
+        [MNG-6185] Replace doclettag explanation with annotations in
+    AbstractMojo javadoc
+
+        Fix by Checkstyle reported issues
+
+    commit 63796a649e6e3b25a58fb567d354ca1849f48819 Author: rfscholte
+    <rfscholte@apache.org> Date:   Sat Mar 25 23:15:00 2017 +0100
+
+        [MNG-6185] Replace doclettag explanation with annotations in
+    AbstractMojo javadoc
+
+commit 0baa42345283f4fea3938a8ccd7c8e12b34203b1
+tree 2371ae472459988536f9442a6ca9a21e2ea6c5e9
+parent 94c3b600ec3290cda98a66c108ff021b7c4c482e
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-26 10:27:59 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-28 08:05:56 +0200
+
+    use new "Maven 3 (latest)" and "JDK 1.x (latest)" Ubuntu+win aliases
+
+
+commit 94c3b600ec3290cda98a66c108ff021b7c4c482e
+tree 6a28f339a10ad4b8aae163ae171324e4fef8861f
+parent ad514f5cb55d16ca116c5c529ad48dd32d5bac61
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-24 03:28:59 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-28 08:04:16 +0200
+
+    switch to embedded core ITs run for faster result
+
+
+commit ad514f5cb55d16ca116c5c529ad48dd32d5bac61
+tree eddce2219e26343c53efca5c09cd7c0d6417fa65
+parent 16805f50ea1715c42ad59312f3e64ab70af3acfe
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-24 03:28:26 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-28 08:04:07 +0200
+
+    added CORE_IT_PROFILES parameter
+
+
+commit 16805f50ea1715c42ad59312f3e64ab70af3acfe
+tree d45145d5a43f1a29a18b1e0b6f7d294a80cc04b7
+parent 33c8d8efe9410e134080bd979a7df82de80bcf74
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-24 03:25:17 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-28 08:03:44 +0200
+
+    trying to make Jenkinsfile easier to understand
+
+
+commit 33c8d8efe9410e134080bd979a7df82de80bcf74
+tree bc908492ae62519036bba76f40d61f374fc73d0a
+parent 8400984ac5201ae6bf06bfa88ade8a8468c76634
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-27 16:22:29 +0100
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-27 16:22:29 +0100
+
+    INFRA have been changing JDK labels again
+
+
+commit 8400984ac5201ae6bf06bfa88ade8a8468c76634
+tree 75a4e81ff1c5c336917694f630b2328e3dc4e2d3
+parent 0931bb2cc7630cc79adb98407db13315b4a709ee
+author Christian Schulte <schulte@apache.org> 2017-03-25 20:40:05 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-25 20:53:06 +0100
+
+    [MNG-6112] Central repository in the 4.0.0 super POM should declare
+    update policy 'never'.
+
+    This reverts commit 13adc1bc2b6d9fc3a62ec2389996726c2edce4d8 *not
+    changing anything* just because someone did not react in time when this
+    issue had been lying around on a branch. If we would set pace for the
+    industrie, everyone would still be using 5.25" floppy disks and 8 bit
+    hardware and we would tell them that upgrading to be able to use new
+    software would be too risky and they better keep theire broken assembly
+    routines until the machine goes up in smoke.
+
+commit 0931bb2cc7630cc79adb98407db13315b4a709ee
+tree b494a499b7131b11fc84f9c2e5be088f5cd48ef3
+parent f0535a40e2dba47f00c5469941d3edad2a8effef
+author Christian Schulte <schulte@apache.org> 2017-03-24 22:04:37 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-24 22:04:37 +0100
+
+    [MNG-6168] Fix unclosed streams
+
+
+commit f0535a40e2dba47f00c5469941d3edad2a8effef
+tree fa92a4d5b6cb95bac189f15f6696ba80ec2c38e9
+parent 27ab7503a7196a40b5ed1007181c82cdcf11e03c
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-23 05:11:12 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-23 05:11:12 +0100
+
+    [MNG-6192] upgraded m-assembly-p to get ordered entries in zip
+
+
+commit 27ab7503a7196a40b5ed1007181c82cdcf11e03c
+tree e5ba52a8665087f28b3c33206486b4db5378577b
+parent 13adc1bc2b6d9fc3a62ec2389996726c2edce4d8
+author Christian Schulte <schulte@apache.org> 2017-03-21 04:06:02 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-21 19:16:44 +0100
+
+    [MNG-6190] maven-resolver-provider's DefaultArtifactDescriptorReader has
+    mismatched constructor and initService methods
+
+
+commit 13adc1bc2b6d9fc3a62ec2389996726c2edce4d8
+tree 800d635c3edfad43af57b893be113793e6c06076
+parent d54e6f91a8652cdda61a20f051f97f11d4c3c982
+author Christian Schulte <schulte@apache.org> 2017-03-21 00:30:28 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-21 00:30:28 +0100
+
+    [MNG-6112] Central repository in the 4.0.0 super POM should declare
+    update policy 'never'.
+
+
+commit d54e6f91a8652cdda61a20f051f97f11d4c3c982
+tree de435992b8d624f256d043f6af54c0e7d54e48ce
+parent fd29ddebf980b895ca3a1665aec49b3c7d17eeaf
+author Christian Schulte <schulte@apache.org> 2017-03-21 00:21:43 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-21 00:21:43 +0100
+
+    s/@since 3.5.0-alpha-2/@since 3.5.0/g
+
+
+commit fd29ddebf980b895ca3a1665aec49b3c7d17eeaf
+tree 7d1532eb0ebe0a2ee41e96792cead25987d52d81
+parent 214540c2ae5431645bb927d6dc5498ebafc27359
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-20 16:55:53 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-20 16:55:53 +0000
+
+    [maven-release-plugin] prepare for next development iteration
+
+
+commit 214540c2ae5431645bb927d6dc5498ebafc27359
+tree fd80b44063edd27a3d2bc7f2c3fc02de4b695b42
+parent 68e38e5086d0978c61391b7cdc4514fdf96e64d7
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-20 16:55:36 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-20 16:55:36 +0000
+
+    [maven-release-plugin] prepare release maven-3.5.0-beta-1
+
+
+commit 68e38e5086d0978c61391b7cdc4514fdf96e64d7
+tree 7d1532eb0ebe0a2ee41e96792cead25987d52d81
+parent 16382802611939a8876fe553208e8b0f4da606a6
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-19 21:54:31 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-19 21:55:46 +0000
+
+    Make it possible to run unit tests from an IDE
+
+
+commit 16382802611939a8876fe553208e8b0f4da606a6
+tree 1fd54564739130349e8df2051731189f12c152f8
+parent abca6ab6e2508860fb30d6e51b668c6c513e3d9e
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-19 17:04:04 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-19 21:51:53 +0100
+
+    [MNG-6189] warn if maven-site-plugin reportPlugins is configured
+
+
+commit abca6ab6e2508860fb30d6e51b668c6c513e3d9e
+tree 515d89814da44785bc0414bf6948aaf1690a692f
+parent fea81d8a2710350c3517f0046e820893abd6cc77 f1ccecdd893eea0a320634a49bc6e56b776fb213
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-19 17:18:53 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-19 17:18:53 +0000
+
+    Merge remote-tracking branch 'origin/MNG-6182'
+
+
+commit fea81d8a2710350c3517f0046e820893abd6cc77
+tree c7c6884aa9bee66552d8db83a2739531fbc87f0f
+parent a4157428d756e2189cddaddf0690ff070bb74d52
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-19 14:44:33 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-19 14:44:33 +0100
+
+    fixed site generation: downgraded parent pom, upgraded m-assembly-p
+
+
+commit a4157428d756e2189cddaddf0690ff070bb74d52
+tree 278431a4a1a54e67eb357a87f3e75e02a4b10f28
+parent 55eeb325cd0ddb2a093196f4804e232d45bcc54a
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-19 10:38:18 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-19 10:38:18 +0100
+
+    updated parent pom: fixes issue with m-assembly-p bug
+
+
+commit f1ccecdd893eea0a320634a49bc6e56b776fb213
+tree 6ff1d4f7cd279267bdc22891d0099e5c2e6209c4
+parent 55eeb325cd0ddb2a093196f4804e232d45bcc54a
+author Christian Schulte <schulte@apache.org> 2017-03-19 03:46:29 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-19 04:01:34 +0100
+
+    [MNG-6182] ModelResolver interface enhancements.
+
+    o Added unit tests for the 'ModelResolver' interface.
+
+commit 55eeb325cd0ddb2a093196f4804e232d45bcc54a
+tree a8f3975e74e0c91b05635e8744adaee73ef07713
+parent b12905ce02ec0e58b475bbc1d920a6801224c02f
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-18 12:32:06 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-18 12:34:45 +0000
+
+    [MNG-6176] Upgrade findbugs to 3.0.4 so that the site can be built with
+    Java 7 and 8
+
+
+commit b12905ce02ec0e58b475bbc1d920a6801224c02f
+tree 9a7d8a3dc9bfa0e700a57265eb344f08da75ba80
+parent 52eecc406fdf37c1aec46ea31ab00978ed290a57
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-18 12:04:38 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-03-18 12:34:45 +0000
+
+    [MNG-6176] Fix javadoc *errors* in maven-compat
+
+
+commit 52eecc406fdf37c1aec46ea31ab00978ed290a57
+tree 7e8036d92a7a4517689a219bf03ae57e3528b841
+parent f661fc298e80208911838f5acce9840ea1a97e3f
+author rfscholte <rfscholte@apache.org> 2017-03-13 23:27:35 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-18 12:59:51 +0100
+
+    MNG-6078: commons-cli 1.4 released
+
+
+commit f661fc298e80208911838f5acce9840ea1a97e3f
+tree 8fe0de05c3da75949b86cf8024623a3cc7c92c56
+parent 0e7e3eeb597b92f1394b24e33d5933e995ee8104
+author rfscholte <rfscholte@apache.org> 2017-03-08 21:38:08 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-18 12:59:51 +0100
+
+    [MNG-6078] Confirm commons-cli 1.4-SNAPSHOT before official release
+
+
+commit 0e7e3eeb597b92f1394b24e33d5933e995ee8104
+tree e4763823c2e3e3fa09c8fe1fefb21f92dddcca6b
+parent da03d6b03192399237750c15f96fa021977dd83b
+author rfscholte <rfscholte@apache.org> 2017-03-18 12:35:18 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-18 12:55:05 +0100
+
+    [MNG-6176] Javadoc errors prevent release with Java 8
+
+    Upgrade to modello-1.9.1 Fix javadoc errors in tests
+
+commit da03d6b03192399237750c15f96fa021977dd83b
+tree f2078540708f5c0950ebf66c417b30caec45b649
+parent 51cc76c32625be2f807dcf2ffbeb085984729b57
+author Christian Schulte <schulte@apache.org> 2017-03-14 19:20:47 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-14 19:20:47 +0100
+
+    [MNG-6183] Dependency management debug message corrections.
+
+
+commit 51cc76c32625be2f807dcf2ffbeb085984729b57
+tree 13125611c5b5623831a25e386eb923926f595f8c
+parent 181b0215aa1199e152db9d2c08b1a01436547805
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2015-09-29 11:46:48 +0200
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-13 22:08:51 +0100
+
+    [MNG-6090] CI friendly properties break submodule builds [MNG-6057]
+    Problem with CI friendly usage of ${..} reactor order is changed  o
+    Based on the missing replacement of the versions ${revision}   
+    ${changelist} or ${sha1} within the parent element the order    of the
+    reactor changes. [MNG-5895] Problem with CI friendly usage of ${..}
+    which is already defined via property in pom file.
+
+
+commit 10a18cfee7a981a41c1f571ef3c60138d40e839e
+tree 4cfd92930b0c3580b03404521ec59636f6f93a81
+parent 181b0215aa1199e152db9d2c08b1a01436547805
+author LuboVarga <lubomir.varga@nike.sk> 2017-03-13 13:23:04 +0100
+committer GitHub <noreply@github.com> 2017-03-13 13:23:04 +0100
+
+    Added some javadoc
+
+    Added javadoc help for making easier to compare two versions in command
+    line.
+commit 181b0215aa1199e152db9d2c08b1a01436547805
+tree c05b5779b56a33a736e72ff0fdf9d7cd19e338a6
+parent 809ba34055c70eab31876aad03c577e925fa2e6e
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-05 00:39:31 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-12 12:12:16 +0100
+
+    [MNG-6115] prevent JAnsi from writing temp native files to lib/ext
+
+
+commit 809ba34055c70eab31876aad03c577e925fa2e6e
+tree 6ceb16cb18962369ffdcdf0d026ac82b9aadc869
+parent ab2e24fe3612b4f12c66e698e398fcb2b908f1aa
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-06 08:24:33 +0100
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-11 20:53:18 +0100
+
+    Code improvement.
+
+
+commit ab2e24fe3612b4f12c66e698e398fcb2b908f1aa
+tree 48a189e3b6db856704d5c7e72710f76f08789c3a
+parent 24b9ef48f6045c3cca7297f4b7b94d3ee71b3718
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-11 18:40:24 +0100
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-11 18:40:24 +0100
+
+    Fixed checkstyle reported error.
+
+
+commit 24b9ef48f6045c3cca7297f4b7b94d3ee71b3718
+tree 400f5f52c0dd7308f9d1ec7dff9069a385aca089
+parent 7cdff43aba436408c79d2b4afc169b9c6909235a
+author Hervé Boutemy <hboutemy@apache.org> 2017-03-11 18:19:02 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-03-11 18:19:02 +0100
+
+    fixed typos
+
+
+commit 7cdff43aba436408c79d2b4afc169b9c6909235a
+tree c775671eed85b801cf327026e1f592dd682878f1
+parent 587317b0095fc5d51041fed9e5b4786246a29a7b
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-02-12 12:59:25 +0100
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-11 12:00:24 +0100
+
+    [MNG-6170] NPE in cases using Multithreaded -T X versions:set
+    -DnewVersion=1.0-SNAPSHOT  o In some cases the code will return a null
+    which should    not be scheduled.
+
+
+commit 587317b0095fc5d51041fed9e5b4786246a29a7b
+tree 8a12ae1ee6dfa91f11f307a7dbe00fdae93c1204
+parent 8f025faab8fe0a3a6dbf3b76742fe365f4352e64
+author rfscholte <rfscholte@apache.org> 2017-03-10 16:17:28 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-10 16:17:28 +0100
+
+    [MNG-6176] Javadoc errors prevent release with Java 8 Upgrade modello to
+    1.9.0 Fix invalid Javadoc
+
+
+commit 8f025faab8fe0a3a6dbf3b76742fe365f4352e64
+tree 9fcbf6b532a8d834fcff7b5e0c6b9e14e5441ff6
+parent 34afec69c866f731f3f9d9b3606bbc31b51d64e7
+author rfscholte <rfscholte@apache.org> 2017-03-05 17:25:43 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-10 10:48:41 +0100
+
+    [MNG-6180] groupId has plain color when goal fails
+
+
+commit 34afec69c866f731f3f9d9b3606bbc31b51d64e7
+tree 12851a8c5f33746b26b4a7ee3bc77ea8a74f6d92
+parent ab800b0cfae4e3ca9453304e3b9727ba4a4b712b
+author Christian Schulte <schulte@apache.org> 2016-01-27 03:46:11 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-08 19:37:31 +0100
+
+    [MNG-6183] Dependency management debug message enhancements.
+
+    o Updated to add debug log messages about optional flag management.
+
+commit ab800b0cfae4e3ca9453304e3b9727ba4a4b712b
+tree 5101bcd8628baf72b9b8109a52e980edf42f78fb
+parent 114ef6c5a2802e8758e466af92b70f51fd7a2929
+author Christian Schulte <schulte@apache.org> 2016-01-30 19:17:34 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-08 18:24:18 +0100
+
+    [MNG-6182] ModelResolver interface enhancements.
+
+
+commit 114ef6c5a2802e8758e466af92b70f51fd7a2929
+tree ecd56a3cda5b73da7c3097d5ed3b7a8a62adab57
+parent 862c84a52b9ae9b88bc9a6cfa256852532d02a9a
+author Christoph Böhme <christoph@b3e.net> 2017-02-20 07:32:17 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-06 17:35:24 +0100
+
+    [MNG-6173] MavenSession.getAllProjects() should return all projects in
+    the reactor
+
+    This commit removes the initialization of the MavenSession object from
+    the DefaultGraphBuilder. The GraphBuilder implementation should only
+    build the graph and should not touch the MavenSession object passed into
+    it.
+
+    To allow complete initialization of the MavenSession the
+    ProjectDependencyGraph interface got enhanced so that GraphBuilder
+    implementations can communicate all collected projects in addition to
+    the processed list of projects.
+
+    This closes #105
+
+commit 862c84a52b9ae9b88bc9a6cfa256852532d02a9a
+tree 11ff551f478609bb7764c71a728404143775efdb
+parent 748551d0274cc2eebfb2f976536d18277e564584 e0da20a1f801aeda0cd74495834c637c3a207478
+author rfscholte <rfscholte@apache.org> 2017-03-05 17:32:00 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-05 17:32:00 +0100
+
+    Merge branch 'MNG-6181'
+
+
+commit e0da20a1f801aeda0cd74495834c637c3a207478
+tree 50d0caeb5d10f603ff08ae6958f0fc7e6d9421df
+parent 0b9a30f350f159a190e87c78e520ba7a7ae0642b
+author rfscholte <rfscholte@apache.org> 2017-03-05 15:30:27 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-05 15:30:27 +0100
+
+    [MNG-6181] HttpClient produces a lot of noise at debug loglevel
+
+    Turn off httpclient logging by default, which restores logging from
+    previous Maven versions
+
+commit 748551d0274cc2eebfb2f976536d18277e564584
+tree 14583e2d01818f77c23c08a23f326de6c75c9d1d
+parent 529e8a62049d009a800cbf0b37ca348abaf9022d
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2017-02-24 22:49:21 +0100
+committer Karl Heinz Marbaise <khmarbaise@apache.org> 2017-03-01 20:05:45 +0100
+
+    [MNG-6179] Remove WARNING about prerequisites usage
+
+
+commit 529e8a62049d009a800cbf0b37ca348abaf9022d
+tree 6c5fcf048f8ac5933ba2eac1d246357ceb0b877c
+parent e6528827571b0ebe06675ef47c8157d1522116a5 0b9a30f350f159a190e87c78e520ba7a7ae0642b
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-28 22:04:39 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-28 22:04:39 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+
+commit 0b9a30f350f159a190e87c78e520ba7a7ae0642b
+tree 6c5fcf048f8ac5933ba2eac1d246357ceb0b877c
+parent 0db5e32cf59851086e895f1f541853b61df38121
+author Christian Schulte <schulte@apache.org> 2017-02-23 03:14:21 +0100
+committer Christian Schulte <schulte@apache.org> 2017-02-24 00:55:29 +0100
+
+    [MNG-6177] The --file command line option of the Windows and Unix
+    launchers does not work for directory names like "Spaces & Special Char"
+
+
+commit 0db5e32cf59851086e895f1f541853b61df38121
+tree 1e52efe006ad64dc870c13e0911783de6382e921
+parent dc9c4db4494b62e2231bb67b39678decf6329852
+author Hervé Boutemy <hboutemy@apache.org> 2017-02-23 19:07:58 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-02-23 19:07:58 +0100
+
+    fixed documentation errors
+
+
+commit e6528827571b0ebe06675ef47c8157d1522116a5
+tree 9d1f56e26309be811e45e60ef66de352be9928a5
+parent 8e6bbc4d4aa7cdc837625a05358c98ca15f72698
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 14:56:31 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 14:56:31 +0000
+
+    [maven-release-plugin] prepare for next development iteration
+
+
+commit 8e6bbc4d4aa7cdc837625a05358c98ca15f72698
+tree cc91225573580bd07d8dce1aa53b7410c45561bb
+parent dc9c4db4494b62e2231bb67b39678decf6329852
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 14:56:21 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 14:56:21 +0000
+
+    [maven-release-plugin] prepare release maven-3.5.0-alpha-1
+
+
+commit dc9c4db4494b62e2231bb67b39678decf6329852
+tree 9d1f56e26309be811e45e60ef66de352be9928a5
+parent 5885e70e24a69914da892eb343906658d5463bfa
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-21 10:10:21 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 12:44:34 +0000
+
+    [MNG-6078] Perform a proper merge of the two sources of command line
+    arguments
+
+    - Needed to extend Commons CLI's CommandLine just to perform the merged
+
+commit 5885e70e24a69914da892eb343906658d5463bfa
+tree 28f4368568f9eb1b705ee228ebf7ff1590fc02ab
+parent 5cce371c8aee5d957d9b24e46cddc939a15aff40
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-21 00:11:27 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 12:44:34 +0000
+
+    [MNG-6078] Undo the order reversal hack
+
+    - ca4303031357a7decaee8de770b71fb2c2fedd28 used a hack to reverse the
+    order of arguments
+    - The side effect of the hack is that the first named system property
+    value on the CLI would win
+    - The side-effect is causing a lot of integration test builds to fail
+    and will likely have other unintended consequences
+    - Correct fix is to put system properties at the end.
+    - If this change passes the integration tests then it will need to be
+    augmented to correctly round-trip the CLI options
+     as there is the potential that somebody may legitimately be passing an
+    arg parameter a value that starts with -D
+     for example 'mvn -ep -Dsecretpassword' or 'mvn -l -D.log' but given
+    that this requires a parse and unparse
+     to handle the escaping, I want to get evidence that the integration
+    tests pass first
+
+commit 5cce371c8aee5d957d9b24e46cddc939a15aff40
+tree 5a2808a627b9100b5b9a363c0e9f69699b5cb524
+parent e6217a455547e5b3bcac310be18daf2a333cd5d1
+author Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-21 17:33:54 +0000
+committer Stephen Connolly <stephen.alan.connolly@gmail.com> 2017-02-23 12:41:52 +0000
+
+    Switch to resolveScm so that we get auto linking of matching integration
+    test branches
+
+    - Also use short paths when integration testing on windows and clean up 
+    afterwards to ensure disk space does not overflow
+
+commit e6217a455547e5b3bcac310be18daf2a333cd5d1
+tree cf9c00aa14f87c1e508bd6168ab40a1731cab261
+parent 985b5985f336d30b6b2110dae49dd2a5f5d5750b
+author August Shi <awshi2@illinois.edu> 2016-05-25 14:12:52 -0500
+committer Hervé Boutemy <hboutemy@apache.org> 2017-02-18 18:29:19 +0100
+
+    Fixing misspellings in test names
+
+
+commit 985b5985f336d30b6b2110dae49dd2a5f5d5750b
+tree b9c47d92269e22bfbc38a3d3c13b626207b97cc7
+parent 1407a10485e826795db23c114c4c37cf951a2e27
+author Hervé Boutemy <hboutemy@apache.org> 2016-04-10 20:15:57 +0200
+committer Hervé Boutemy <hboutemy@apache.org> 2017-02-18 18:13:06 +0100
+
+    fixed link
+
+
+commit 1407a10485e826795db23c114c4c37cf951a2e27
+tree 20e60fec3bb024e8b10e945505202e1ddc49873f
+parent 60a7f5da494216168e4cc2c88c357b1cbdd43ad2
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2015-12-11 19:43:17 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-02-18 18:09:04 +0100
+
+    Updated doap_Maven.rdf file
+
+
+commit 60a7f5da494216168e4cc2c88c357b1cbdd43ad2
+tree 31527ca377c589fd14c80bf6a52fb061b001d086
+parent 3982c195e91e3ea0f73ce9e61c6ddc57137726e9
+author Karl Heinz Marbaise <khmarbaise@apache.org> 2015-12-04 20:59:04 +0100
+committer Hervé Boutemy <hboutemy@apache.org> 2017-02-18 18:08:45 +0100
+
+    Fixed links in pom which pointed to shut down codehaus jira.
+
+

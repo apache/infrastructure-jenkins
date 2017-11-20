@@ -1,0 +1,27 @@
+{
+  "id" : "58686528-422c-4403-bf65-f0027325cd6d",
+  "name" : "repos_asf",
+  "request" : {
+    "url" : "/repos/asf?p=maven.git;a=blob_plain;f=.gitignore;hb=refs%2Fheads%2Fmaster",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "target/\n.project\n.classpath\n.settings/\n.svn/\nbin/\n# Intellij\n*.ipr\n*.iml\n.idea\nout/\n.DS_Store\n/bootstrap\n/dependencies.xml\n.java-version\n",
+    "headers" : {
+      "Date" : "Mon, 20 Nov 2017 16:21:48 GMT",
+      "Server" : "Apache/2.4.7 (Ubuntu)",
+      "Content-disposition" : "inline; filename=\".gitignore\"",
+      "Vary" : "Accept-Encoding",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers" : "X-PINGOTHER",
+      "Access-Control-Max-Age" : "1728000",
+      "Keep-Alive" : "timeout=30, max=100",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/plain; charset=ISO-8859-1"
+    }
+  },
+  "uuid" : "58686528-422c-4403-bf65-f0027325cd6d",
+  "persistent" : true
+}
