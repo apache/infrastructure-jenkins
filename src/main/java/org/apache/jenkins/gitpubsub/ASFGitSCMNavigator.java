@@ -229,9 +229,21 @@ public class ASFGitSCMNavigator extends SCMNavigator {
             return Messages.ASFGitSCMNavigator_displayName();
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public String getIconClassName() {
             return "icon-git-apache-org-folder";
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @NonNull
+        @Override
+        public String getDescription() {
+            return Messages.ASFGitSCMNavigator_description();
         }
 
         /**
