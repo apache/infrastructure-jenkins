@@ -58,6 +58,8 @@ import jenkins.scm.impl.form.NamedArrayList;
 import jenkins.scm.impl.trait.Discovery;
 import jenkins.scm.impl.trait.Selection;
 import org.apache.commons.lang.StringUtils;
+import org.jenkins.ui.icon.Icon;
+import org.jenkins.ui.icon.IconSet;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 
@@ -227,6 +229,11 @@ public class ASFGitSCMNavigator extends SCMNavigator {
             return Messages.ASFGitSCMNavigator_displayName();
         }
 
+        @Override
+        public String getIconClassName() {
+            return "icon-git-apache-org-folder";
+        }
+
         /**
          * {@inheritDoc}
          */
@@ -308,4 +315,22 @@ public class ASFGitSCMNavigator extends SCMNavigator {
 
     }
 
+    static {
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-sm",
+                        "plugin/asf-gitpubsub-jenkins/images/16x16/asf-git-folder.png",
+                        Icon.ICON_SMALL_STYLE));
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-md",
+                        "plugin/asf-gitpubsub-jenkins/images/24x24/asf-git-folder.png",
+                        Icon.ICON_MEDIUM_STYLE));
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-lg",
+                        "plugin/asf-gitpubsub-jenkins/images/32x32/asf-git-folder.png",
+                        Icon.ICON_LARGE_STYLE));
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-xlg",
+                        "plugin/asf-gitpubsub-jenkins/images/48x48/asf-git-folder.png",
+                        Icon.ICON_XLARGE_STYLE));
+    }
 }
