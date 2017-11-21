@@ -13,23 +13,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
-  <f:entry title="${%Avatar URL}" field="avatarUrl">
-    <f:textbox/>
-  </f:entry>
-  <f:advanced>
-    <f:entry title="${%Avatar Description}" field="avatarDescription">
-      <f:textarea/>
-    </f:entry>
-    <f:entry title="${%Project URL}" field="objectUrl">
-      <f:textbox/>
-    </f:entry>
-    <f:entry title="${%Project Name}" field="objectDisplayName">
-      <f:textbox/>
-    </f:entry>
-    <f:entry title="${%Project Description}" field="objectDescription">
-      <f:textarea/>
-    </f:entry>
-  </f:advanced>
-</j:jelly>
+<div>
+    If you specify a HTML image URL, then the image will be used as an avatar for this collection of Git repositories.
+    Leave blank to use the default icon.
+</div>
