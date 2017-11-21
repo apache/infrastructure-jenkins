@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/heads</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log - RSS feed" href="/repos/asf?p=maven.git;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed" href="/repos/asf?p=maven.git;a=atom" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img width="72" height="27" alt="git" src="/static/git-logo.png" class="logo" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / heads
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input name="p" value="maven.git" type="hidden" />
+<input name="a" value="search" type="hidden" />
+<input name="h" value="HEAD" type="hidden" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/repos/asf?p=maven.git;a=search_help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log">log</a> | <a href="/repos/asf?p=maven.git;a=commit;h=f5f76c70e1828a7e6c6267fc4bc53abc35c19ce7">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f5f76c70e1828a7e6c6267fc4bc53abc35c19ce7">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;hb=f5f76c70e1828a7e6c6267fc4bc53abc35c19ce7">tree</a><br/>
+<a href="/repos/asf?p=maven.git;a=tags">tags</a> | heads<br/>
+</div>
+<div class="header">
+<a href="/repos/asf?p=maven.git;a=summary" class="title">maven.git</a>
+</div>
+<table class="heads">
+<tr class="dark">
+<td><i>2 days ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6296" class="list name">MNG-6296</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6296">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6296">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6296;hb=refs/heads/MNG-6296">tree</a></td>
+</tr><tr class="light">
+<td><i>5 days ago</i></td>
+<td class="current_head"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/master" class="list name">master</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/master">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/master">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/master;hb=refs/heads/master">tree</a></td>
+</tr><tr class="dark">
+<td><i>2 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6069" class="list name">MNG-6069</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6069">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6069">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6069;hb=refs/heads/MNG-6069">tree</a></td>
+</tr><tr class="light">
+<td><i>4 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6255" class="list name">MNG-6255</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6255">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6255">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6255;hb=refs/heads/MNG-6255">tree</a></td>
+</tr><tr class="dark">
+<td><i>5 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6164" class="list name">MNG-6164</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6164">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6164">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6164;hb=refs/heads/MNG-6164">tree</a></td>
+</tr><tr class="light">
+<td><i>6 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6130" class="list name">MNG-6130</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6130">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6130">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6130;hb=refs/heads/MNG-6130">tree</a></td>
+</tr><tr class="dark">
+<td><i>6 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/not-updated-MJAR-MCOMPILER" class="list name">MNG-6169_2/not-updated-MJAR-MCOMPILER</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/not-updated-MJAR-MCOMPILER">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6169_2/not-updated-MJAR-MCOMPILER">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6169_2/not-updated-MJAR-MCOMPILER;hb=refs/heads/MNG-6169_2/not-updated-MJAR-MCOMPILER">tree</a></td>
+</tr><tr class="light">
+<td><i>6 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/updated-MJAR" class="list name">MNG-6169_2/updated-MJAR</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/updated-MJAR">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6169_2/updated-MJAR">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6169_2/updated-MJAR;hb=refs/heads/MNG-6169_2/updated-MJAR">tree</a></td>
+</tr><tr class="dark">
+<td><i>6 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/all-updated">MNG-6169_2/all-updated</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/all-updated">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6169_2/all-updated">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6169_2/all-updated;hb=refs/heads/MNG-6169_2/all-updated">tree</a></td>
+</tr><tr class="light">
+<td><i>6 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5567" class="list name">MNG-5567</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5567">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-5567">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-5567;hb=refs/heads/MNG-5567">tree</a></td>
+</tr><tr class="dark">
+<td><i>6 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5227">MNG-5227</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5227">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-5227">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-5227;hb=refs/heads/MNG-5227">tree</a></td>
+</tr><tr class="light">
+<td><i>7 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/updated-MCOMPILER">MNG-6169_2/updated-MCOMPILER</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6169_2/updated-MCOMPILER">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6169_2/updated-MCOMPILER">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6169_2/updated-MCOMPILER;hb=refs/heads/MNG-6169_2/updated-MCOMPILER">tree</a></td>
+</tr><tr class="dark">
+<td><i>9 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5868" class="list name">MNG-5868</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5868">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-5868">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-5868;hb=refs/heads/MNG-5868">tree</a></td>
+</tr><tr class="light">
+<td><i>10 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/pre-reset-master" class="list name">pre-reset-master</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/pre-reset-master">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/pre-reset-master">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/pre-reset-master;hb=refs/heads/pre-reset-master">tree</a></td>
+</tr><tr class="dark">
+<td><i>13 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6093">MNG-6093</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6093">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6093">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6093;hb=refs/heads/MNG-6093">tree</a></td>
+</tr><tr class="light">
+<td><i>13 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6056-feature-toggle">MNG-6056-feature-toggle</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6056-feature-toggle">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6056-feature-toggle">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6056-feature-toggle;hb=refs/heads/MNG-6056-feature-toggle">tree</a></td>
+</tr><tr class="dark">
+<td><i>13 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6012-Missing-Profile-At-End" class="list name">MNG-6012-Missing-Profile-At-End</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-6012-Missing-Profile-At-End">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-6012-Missing-Profile-At-End">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-6012-Missing-Profile-At-End;hb=refs/heads/MNG-6012-Missing-Profile-At-End">tree</a></td>
+</tr><tr class="light">
+<td><i>15 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/jigsaw" class="list name">jigsaw</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/jigsaw">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/jigsaw">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/jigsaw;hb=refs/heads/jigsaw">tree</a></td>
+</tr><tr class="dark">
+<td><i>16 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.x-next" class="list name">maven-3.x-next</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.x-next">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/maven-3.x-next">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/maven-3.x-next;hb=refs/heads/maven-3.x-next">tree</a></td>
+</tr><tr class="light">
+<td><i>17 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-gossip">slf4j-gossip</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-gossip">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/slf4j-gossip">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/slf4j-gossip;hb=refs/heads/slf4j-gossip">tree</a></td>
+</tr><tr class="dark">
+<td><i>17 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-gossip-2" class="list name">slf4j-gossip-2</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-gossip-2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/slf4j-gossip-2">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/slf4j-gossip-2;hb=refs/heads/slf4j-gossip-2">tree</a></td>
+</tr><tr class="light">
+<td><i>22 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-logback">slf4j-logback</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-logback">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/slf4j-logback">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/slf4j-logback;hb=refs/heads/slf4j-logback">tree</a></td>
+</tr><tr class="dark">
+<td><i>22 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-log4j2.5" class="list name">slf4j-log4j2.5</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/slf4j-log4j2.5">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/slf4j-log4j2.5">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/slf4j-log4j2.5;hb=refs/heads/slf4j-log4j2.5">tree</a></td>
+</tr><tr class="light">
+<td><i>22 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5951">MNG-5951</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5951">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-5951">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-5951;hb=refs/heads/MNG-5951">tree</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.2.6" class="list name">maven-3.2.6</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.2.6">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/maven-3.2.6">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/maven-3.2.6;hb=refs/heads/maven-3.2.6">tree</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5649" class="list name">MNG-5649</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/MNG-5649">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/MNG-5649">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/MNG-5649;hb=refs/heads/MNG-5649">tree</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/configurator">configurator</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/configurator">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/configurator">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/configurator;hb=refs/heads/configurator">tree</a></td>
+</tr><tr class="light">
+<td><i>3 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.1.x">maven-3.1.x</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.1.x">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/maven-3.1.x">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/maven-3.1.x;hb=refs/heads/maven-3.1.x">tree</a></td>
+</tr><tr class="dark">
+<td><i>4 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-2.2.x" class="list name">maven-2.2.x</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-2.2.x">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/maven-2.2.x">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/maven-2.2.x;hb=refs/heads/maven-2.2.x">tree</a></td>
+</tr><tr class="light">
+<td><i>4 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.0.x" class="list name">maven-3.0.x</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.0.x">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/maven-3.0.x">log</a> | <a href="/repos/asf?p=maven.git;a=tree;h=refs/heads/maven-3.0.x;hb=refs/heads/maven-3.0.x">tree</a></td>
+</tr></table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a href="/repos/asf?p=maven.git;a=rss" title="log RSS feed" class="rss_logo generic">RSS</a>
+<a href="/repos/asf?p=maven.git;a=atom" class="rss_logo generic" title="log Atom feed">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

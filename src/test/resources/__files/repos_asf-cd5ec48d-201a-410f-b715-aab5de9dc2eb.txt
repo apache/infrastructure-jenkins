@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/commit</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log of maven-3.1.x - RSS feed" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/maven-3.1.x" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log of maven-3.1.x - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/maven-3.1.x;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log of maven-3.1.x - Atom feed" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/maven-3.1.x" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log of maven-3.1.x - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/maven-3.1.x;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img height="27" alt="git" class="logo" width="72" src="/static/git-logo.png" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / commit
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input name="p" type="hidden" value="maven.git" />
+<input value="search" type="hidden" name="a" />
+<input name="h" type="hidden" value="refs/heads/maven-3.1.x" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a href="/repos/asf?p=maven.git;a=search_help" title="search help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.1.x">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/maven-3.1.x">log</a> | commit | <a href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/maven-3.1.x">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;h=f231a34f30ab4b29c466895e20873983bda02647;hb=refs/heads/maven-3.1.x">tree</a><br/>
+(parent: <a href="/repos/asf?p=maven.git;a=commit;h=0728685237757ffbf44136acec0402957f723d9a">0728685</a>) | <a href="/repos/asf?p=maven.git;a=patch;h=refs/heads/maven-3.1.x">patch</a><br/>
+</div>
+<div class="header">
+<a href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/maven-3.1.x" class="title">Create branch maven-3.1.x from tag 3.1.1 for maintenance and dev reference. <span class="refs"> <span class="head" title="heads/maven-3.1.x"><a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/maven-3.1.x">maven-3.1.x</a></span></span></a>
+</div>
+<div class="title_text">
+<table class="object_header">
+<tr><td>author</td><td><a class="list" href="/repos/asf?p=maven.git;a=search;h=refs/heads/maven-3.1.x;s=Michael+Osipov;st=author" title="Search for commits authored by Michael Osipov">Michael Osipov</a> <a class="list" href="/repos/asf?p=maven.git;a=search;h=refs/heads/maven-3.1.x;s=michaelo@apache.org;st=author" title="Search for commits authored by michaelo@apache.org">&lt;michaelo@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/f6caee604fc0ee8ffb030dcac691c9e3?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Sun, 16 Feb 2014 16:11:47 +0000</span> (17:11 +0100)</td></tr>
+<tr><td>committer</td><td><a class="list" href="/repos/asf?p=maven.git;a=search;h=refs/heads/maven-3.1.x;s=Michael+Osipov;st=committer" title="Search for commits committed by Michael Osipov">Michael Osipov</a> <a class="list" href="/repos/asf?p=maven.git;a=search;h=refs/heads/maven-3.1.x;s=michaelo@apache.org;st=committer" title="Search for commits committed by michaelo@apache.org">&lt;michaelo@apache.org&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/f6caee604fc0ee8ffb030dcac691c9e3?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Sun, 16 Feb 2014 16:11:47 +0000</span> (17:11 +0100)</td></tr>
+<tr><td>commit</td><td class="sha1">b5ff7e1521ced4fb7c48c7074f92d49400309357</td></tr>
+<tr><td>tree</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=tree;h=f231a34f30ab4b29c466895e20873983bda02647;hb=refs/heads/maven-3.1.x">f231a34f30ab4b29c466895e20873983bda02647</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=tree;h=f231a34f30ab4b29c466895e20873983bda02647;hb=refs/heads/maven-3.1.x">tree</a> | <a href="/repos/asf?p=maven.git;a=snapshot;h=refs/heads/maven-3.1.x;sf=tgz" title="in format: tar.gz">snapshot</a></td></tr>
+<tr><td>parent</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=commit;h=0728685237757ffbf44136acec0402957f723d9a">0728685237757ffbf44136acec0402957f723d9a</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=commit;h=0728685237757ffbf44136acec0402957f723d9a">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/maven-3.1.x;hp=0728685237757ffbf44136acec0402957f723d9a">diff</a></td></tr>
+</table></div>
+<div class="page_body">
+Create&nbsp;branch&nbsp;maven-3.1.x&nbsp;from&nbsp;tag&nbsp;3.1.1&nbsp;for&nbsp;maintenance&nbsp;and&nbsp;dev&nbsp;reference.<br/>
+</div>
+<div class="list_head">
+13 files changed:
+</div>
+<table class="diff_tree">
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=apache-maven/pom.xml;h=15d7dc0ddda4c16fd6c937e0daf1ceaae68490cb;hb=refs/heads/maven-3.1.x" class="list">apache-maven/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=apache-maven/pom.xml;h=15d7dc0ddda4c16fd6c937e0daf1ceaae68490cb;hp=4a536430076f294f3390af50c0c7e4dadfa95745;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=apache-maven/pom.xml;h=15d7dc0ddda4c16fd6c937e0daf1ceaae68490cb;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=apache-maven/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-aether-provider/pom.xml;h=c84091ffe3afd4629ee82423b65639992393053b;hb=refs/heads/maven-3.1.x" class="list">maven-aether-provider/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-aether-provider/pom.xml;h=c84091ffe3afd4629ee82423b65639992393053b;hp=a5c460a8e7fbb88014bf170c5b8b14c870f3b3c7;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-aether-provider/pom.xml;h=c84091ffe3afd4629ee82423b65639992393053b;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-aether-provider/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-artifact/pom.xml;h=7a6dedaff1ea24cdd0631ebc9adc419d67bd2f85;hb=refs/heads/maven-3.1.x">maven-artifact/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-artifact/pom.xml;h=7a6dedaff1ea24cdd0631ebc9adc419d67bd2f85;hp=673540c62affb9fa7c0db7938d70762ce7b3c0ae;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-artifact/pom.xml;h=7a6dedaff1ea24cdd0631ebc9adc419d67bd2f85;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-artifact/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/pom.xml;h=cc588820e64bbfc85d3ed81fbd283264c2b85867;hb=refs/heads/maven-3.1.x" class="list">maven-compat/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/pom.xml;h=cc588820e64bbfc85d3ed81fbd283264c2b85867;hp=dbb41558f4fd5506eaf9bc8618aefaa819b11bcb;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/pom.xml;h=cc588820e64bbfc85d3ed81fbd283264c2b85867;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-core/pom.xml;h=b8c23bccb57202d9ac1a0093c0ae0c4c368a0194;hb=refs/heads/maven-3.1.x" class="list">maven-core/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-core/pom.xml;h=b8c23bccb57202d9ac1a0093c0ae0c4c368a0194;hp=713ffccb82f2c89676883b1be07f0060783cb1c1;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-core/pom.xml;h=b8c23bccb57202d9ac1a0093c0ae0c4c368a0194;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-core/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-embedder/pom.xml;h=8d596809bdd08843040141538ce82aa683e97a95;hb=refs/heads/maven-3.1.x">maven-embedder/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-embedder/pom.xml;h=8d596809bdd08843040141538ce82aa683e97a95;hp=01f61796a12458c956247f6eb06895dd28c5a427;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-embedder/pom.xml;h=8d596809bdd08843040141538ce82aa683e97a95;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-embedder/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/pom.xml;h=e9385e404c6738d04e5095b16c05d5bea2500bb4;hb=refs/heads/maven-3.1.x">maven-model-builder/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model-builder/pom.xml;h=e9385e404c6738d04e5095b16c05d5bea2500bb4;hp=9150460dc7352939c9277989eb7f42c66ef015e8;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model-builder/pom.xml;h=e9385e404c6738d04e5095b16c05d5bea2500bb4;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-model/pom.xml;h=95ae55f5e343143716c9beec2952a049cd33e0f8;hb=refs/heads/maven-3.1.x">maven-model/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-model/pom.xml;h=95ae55f5e343143716c9beec2952a049cd33e0f8;hp=7fd718f7bc95b64dcc548ef4c991b13805ed803b;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-model/pom.xml;h=95ae55f5e343143716c9beec2952a049cd33e0f8;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-plugin-api/pom.xml;h=7899de8bbeb20fe75fa2afc3ef81ffd780465a38;hb=refs/heads/maven-3.1.x" class="list">maven-plugin-api/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-plugin-api/pom.xml;h=7899de8bbeb20fe75fa2afc3ef81ffd780465a38;hp=d899721bace40ded0723b01badc32a4e957ba96c;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-plugin-api/pom.xml;h=7899de8bbeb20fe75fa2afc3ef81ffd780465a38;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-plugin-api/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-repository-metadata/pom.xml;h=6dcc3bf3421560fa8d258712dacfc8e3648f9db4;hb=refs/heads/maven-3.1.x" class="list">maven-repository-metadata/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-repository-metadata/pom.xml;h=6dcc3bf3421560fa8d258712dacfc8e3648f9db4;hp=e19d045463a7683054d302a23f161ff78c0e938b;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-repository-metadata/pom.xml;h=6dcc3bf3421560fa8d258712dacfc8e3648f9db4;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-repository-metadata/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-settings-builder/pom.xml;h=9000c0a2fc2a6d24c3f7fddc557a74099b8dded5;hb=refs/heads/maven-3.1.x">maven-settings-builder/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-settings-builder/pom.xml;h=9000c0a2fc2a6d24c3f7fddc557a74099b8dded5;hp=595e816a40308c371d92709f3950ffe90aabeb0f;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-settings-builder/pom.xml;h=9000c0a2fc2a6d24c3f7fddc557a74099b8dded5;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-settings-builder/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-settings/pom.xml;h=25c33be88e99ca6b7bad0b3a7b48fbe65b5e1950;hb=refs/heads/maven-3.1.x">maven-settings/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-settings/pom.xml;h=25c33be88e99ca6b7bad0b3a7b48fbe65b5e1950;hp=b49b5332edba0babf684ae3ffb2e67f1e9ab8e15;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-settings/pom.xml;h=25c33be88e99ca6b7bad0b3a7b48fbe65b5e1950;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-settings/pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=ab360e398666d25c7ca6cd65d5d39d513303864a;hb=refs/heads/maven-3.1.x">pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=pom.xml;h=ab360e398666d25c7ca6cd65d5d39d513303864a;hp=922976fc9a14bf8a3693f326fab0a3b2c83b822e;hb=refs/heads/maven-3.1.x;hpb=0728685237757ffbf44136acec0402957f723d9a">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=ab360e398666d25c7ca6cd65d5d39d513303864a;hb=refs/heads/maven-3.1.x">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=pom.xml;hb=refs/heads/maven-3.1.x">history</a></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a title="log of maven-3.1.x RSS feed" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/maven-3.1.x" class="rss_logo">RSS</a>
+<a title="log of maven-3.1.x Atom feed" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/maven-3.1.x" class="rss_logo">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

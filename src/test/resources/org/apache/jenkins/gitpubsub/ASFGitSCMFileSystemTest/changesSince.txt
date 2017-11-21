@@ -1,0 +1,41 @@
+commit 114ef6c5a2802e8758e466af92b70f51fd7a2929
+tree ecd56a3cda5b73da7c3097d5ed3b7a8a62adab57
+parent 862c84a52b9ae9b88bc9a6cfa256852532d02a9a
+author Christoph Böhme <christoph@b3e.net> 2017-02-20 07:32:17 +0100
+committer Christian Schulte <schulte@apache.org> 2017-03-06 17:35:24 +0100
+
+    [MNG-6173] MavenSession.getAllProjects() should return all projects in
+    the reactor
+
+    This commit removes the initialization of the MavenSession object from
+    the DefaultGraphBuilder. The GraphBuilder implementation should only
+    build the graph and should not touch the MavenSession object passed into
+    it.
+
+    To allow complete initialization of the MavenSession the
+    ProjectDependencyGraph interface got enhanced so that GraphBuilder
+    implementations can communicate all collected projects in addition to
+    the processed list of projects.
+
+    This closes #105
+
+commit 862c84a52b9ae9b88bc9a6cfa256852532d02a9a
+tree 11ff551f478609bb7764c71a728404143775efdb
+parent 748551d0274cc2eebfb2f976536d18277e564584 e0da20a1f801aeda0cd74495834c637c3a207478
+author rfscholte <rfscholte@apache.org> 2017-03-05 17:32:00 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-05 17:32:00 +0100
+
+    Merge branch 'MNG-6181'
+
+
+commit e0da20a1f801aeda0cd74495834c637c3a207478
+tree 50d0caeb5d10f603ff08ae6958f0fc7e6d9421df
+parent 0b9a30f350f159a190e87c78e520ba7a7ae0642b
+author rfscholte <rfscholte@apache.org> 2017-03-05 15:30:27 +0100
+committer rfscholte <rfscholte@apache.org> 2017-03-05 15:30:27 +0100
+
+    [MNG-6181] HttpClient produces a lot of noise at debug loglevel
+
+    Turn off httpclient logging by default, which restores logging from
+    previous Maven versions
+

@@ -1,0 +1,25 @@
+{
+  "id" : "f281d18a-f045-467d-b5be-482e3988c8d0",
+  "name" : "repos_asf",
+  "request" : {
+    "url" : "/repos/asf?p=maven.git;a=tag;h=refs%2Ftags%2Flightweight-tag",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "body" : "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\">\n<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->\n<!-- git core binaries version 1.9.1 -->\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n<meta name=\"generator\" content=\"gitweb/1.9.1 git/1.9.1\"/>\n<meta name=\"robots\" content=\"index, nofollow\"/>\n<title>ASF Git Repos - maven.git/tag</title>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/gitweb.css\"/>\n<link rel=\"shortcut icon\" href=\"/static/git-favicon.png\" type=\"image/png\" />\n</head>\n<body>\n<div class=\"page_header\">\n<a href=\"http://git-scm.com/\" title=\"git homepage\"><img width=\"72\" class=\"logo\" height=\"27\" alt=\"git\" src=\"/static/git-logo.png\" /></a><a href=\"/repos/asf\">projects</a> / <a href=\"/repos/asf?p=maven.git;a=summary\">maven.git</a> / tag\n</div>\n<form method=\"get\" action=\"/repos/asf\" enctype=\"application/x-www-form-urlencoded\"><div class=\"search\">\n<input value=\"maven.git\" type=\"hidden\" name=\"p\" />\n<input name=\"a\" type=\"hidden\" value=\"search\" />\n<input name=\"h\" type=\"hidden\" value=\"refs/tags/lightweight-tag\" />\n<select name=\"st\" >\n<option selected=\"selected\" value=\"commit\">commit</option>\n<option value=\"grep\">grep</option>\n<option value=\"author\">author</option>\n<option value=\"committer\">committer</option>\n<option value=\"pickaxe\">pickaxe</option>\n</select> <a title=\"search help\" href=\"/repos/asf?p=maven.git;a=search_help\">?</a> search:\n<input type=\"text\" name=\"s\"  />\n<span title=\"Extended regular expression\"><label><input type=\"checkbox\" name=\"sr\" value=\"1\" />re</label></span></div>\n</form>\n<div class=\"page_body\">\n<br /><br />\n404 - Unknown tag object\n<br />\n</div>\n<div class=\"page_footer\">\n<div class=\"page_footer_text\">Apache Maven</div>\n<a href=\"/repos/asf?p=maven.git;a=rss\" title=\"log RSS feed\" class=\"rss_logo generic\">RSS</a>\n<a title=\"log Atom feed\" href=\"/repos/asf?p=maven.git;a=atom\" class=\"rss_logo generic\">Atom</a>\n</div>\n<script type=\"text/javascript\" src=\"/static/gitweb.js\"></script>\n<script type=\"text/javascript\">\nwindow.onload = function () {\n\tvar tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };\n\tonloadTZSetup('local', tz_cookie, 'datetime');\n};\n</script>\n</body>\n</html>",
+    "headers" : {
+      "Date" : "Mon, 20 Nov 2017 12:47:26 GMT",
+      "Server" : "Apache/2.4.7 (Ubuntu)",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers" : "X-PINGOTHER",
+      "Access-Control-Max-Age" : "1728000",
+      "Keep-Alive" : "timeout=30, max=67",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/html; charset=utf-8"
+    }
+  },
+  "uuid" : "f281d18a-f045-467d-b5be-482e3988c8d0",
+  "persistent" : true
+}

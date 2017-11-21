@@ -41,6 +41,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -51,12 +52,14 @@ import jenkins.plugins.asynchttpclient.AHC;
 import jenkins.plugins.asynchttpclient.AHCUtils;
 import jenkins.plugins.git.AbstractGitSCMSource;
 import jenkins.plugins.git.GitSCMSource;
+import jenkins.plugins.git.traits.IgnoreOnPushNotificationTrait;
 import jenkins.scm.api.SCMEvent;
 import jenkins.scm.api.SCMHead;
 import jenkins.scm.api.SCMHeadEvent;
 import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMRevision;
 import jenkins.scm.api.SCMSource;
+import jenkins.scm.api.trait.SCMTrait;
 import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.transport.RemoteConfig;
 import org.eclipse.jgit.transport.URIish;
@@ -301,16 +304,18 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
     private class Push extends SCMHeadEvent<JsonNode> {
         private final URIish remoteUri;
+        private String server;
 
         public Push(Type type, JsonNode payload, String origin) {
             super(type, payload, origin);
+            server = "https://"
+                    + getPayload().get("server").asText() +
+                    ".apache.org/repos/asf";
             // pre-parse the remote uri
             URIish event;
             try {
                 event = new URIish(
-                        "https://"
-                                + payload.get("server").asText() +
-                                ".apache.org/repos/asf/"
+                        server + "/"
                                 + Util.rawEncode(payload.get("project").asText())
                                 + ".git"
                 );
@@ -322,7 +327,9 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
         @Override
         public boolean isMatch(@NonNull SCMNavigator navigator) {
-            return false;
+            return navigator instanceof ASFGitSCMNavigator
+                    ? server.equals(((ASFGitSCMNavigator) navigator).getServer())
+                    : false;
         }
 
         @NonNull
@@ -336,7 +343,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
         public Map<SCMHead, SCMRevision> heads(@NonNull SCMSource source) {
             if (source instanceof GitSCMSource) {
                 GitSCMSource git = (GitSCMSource) source;
-                if (git.isIgnoreOnPushNotifications() || remoteUri == null) {
+                if (SCMTrait.find(git.getTraits(), IgnoreOnPushNotificationTrait.class) != null || remoteUri == null) {
                     return Collections.emptyMap();
                 }
                 URIish remoteUri;

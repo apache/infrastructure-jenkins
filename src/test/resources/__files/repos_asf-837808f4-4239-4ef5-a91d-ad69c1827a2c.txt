@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/tags</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log - RSS feed" href="/repos/asf?p=maven.git;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed" href="/repos/asf?p=maven.git;a=atom" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img class="logo" src="/static/git-logo.png" alt="git" width="72" height="27" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / tags
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input type="hidden" value="maven.git" name="p" />
+<input value="search" type="hidden" name="a" />
+<input value="HEAD" type="hidden" name="h" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a href="/repos/asf?p=maven.git;a=search_help" title="search help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log">log</a> | <a href="/repos/asf?p=maven.git;a=commit;h=f5f76c70e1828a7e6c6267fc4bc53abc35c19ce7">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f5f76c70e1828a7e6c6267fc4bc53abc35c19ce7">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;hb=f5f76c70e1828a7e6c6267fc4bc53abc35c19ce7">tree</a><br/>
+tags | <a href="/repos/asf?p=maven.git;a=heads">heads</a><br/>
+</div>
+<div class="header">
+<a class="title" href="/repos/asf?p=maven.git;a=summary">maven.git</a>
+</div>
+<table class="tags">
+<tr class="dark">
+<td><i>68 min ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=5919b7450d2e01f079e930d92df7910af39d489a" class="list name">annotated-tag</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=61a8c2048bec05c0748b143e3bfd54f97d1a1423">Temporary</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=61a8c2048bec05c0748b143e3bfd54f97d1a1423">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=5919b7450d2e01f079e930d92df7910af39d489a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/annotated-tag">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/annotated-tag">log</a></td>
+</tr><tr class="light">
+<td><i>3 weeks ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=5919b7450d2e01f079e930d92df7910af39d489a">lightweight-tag</a></td>
+<td></td>
+<td class="selflink">&nbsp;</td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=5919b7450d2e01f079e930d92df7910af39d489a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/lightweight-tag">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/lightweight-tag">log</a></td>
+</tr><tr class="dark">
+<td><i>4 weeks ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=138edd61fd100ec658bfa2d307c43b76940a5d7d" class="list name">maven-3.5.2</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=9b07dd65d66abb3e1eeb1c8c520603ae9ee5bf20" title="[maven-release-plugin] copy for tag maven-3.5.2" class="list subject">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=9b07dd65d66abb3e1eeb1c8c520603ae9ee5bf20">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=138edd61fd100ec658bfa2d307c43b76940a5d7d">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.5.2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.5.2">log</a></td>
+</tr><tr class="light">
+<td><i>2 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=094e4e31a5af55bb17be87675da41d9aeca062f3">maven-3.5.1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=eae7a5fd7976a27965a20679bbfcbfc98ccc68bc" class="list subject" title="[maven-release-plugin] copy for tag maven-3.5.1">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=eae7a5fd7976a27965a20679bbfcbfc98ccc68bc">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=094e4e31a5af55bb17be87675da41d9aeca062f3">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.5.1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.5.1">log</a></td>
+</tr><tr class="dark">
+<td><i>7 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=ff8f5e7444045639af65f6095c62210b5713f426" class="list name">maven-3.5.0</a></td>
+<td><a class="list subject" title="[maven-release-plugin] copy for tag maven-3.5.0" href="/repos/asf?p=maven.git;a=tag;h=f9e3a66ee7fb75c7999c3de934c6b0ac6b4b26bd">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=f9e3a66ee7fb75c7999c3de934c6b0ac6b4b26bd">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=ff8f5e7444045639af65f6095c62210b5713f426">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.5.0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.5.0">log</a></td>
+</tr><tr class="light">
+<td><i>8 months ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=214540c2ae5431645bb927d6dc5498ebafc27359" class="list name">maven-3.5.0-beta-1</a></td>
+<td><a class="list subject" title="[maven-release-plugin] copy for tag maven-3.5.0-beta-1" href="/repos/asf?p=maven.git;a=tag;h=64d156f1b0ea259e52e435a6c317f99b041b2f94">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=64d156f1b0ea259e52e435a6c317f99b041b2f94">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=214540c2ae5431645bb927d6dc5498ebafc27359">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.5.0-beta-1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.5.0-beta-1">log</a></td>
+</tr><tr class="dark">
+<td><i>8 months ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=8e6bbc4d4aa7cdc837625a05358c98ca15f72698">maven-3.5.0-alpha-1</a></td>
+<td><a title="[maven-release-plugin] copy for tag maven-3.5.0-alpha-1" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=bfdb46dc3a110ee91d97123b906ed0bff5cdfc72">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=bfdb46dc3a110ee91d97123b906ed0bff5cdfc72">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=8e6bbc4d4aa7cdc837625a05358c98ca15f72698">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.5.0-alpha-1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.5.0-alpha-1">log</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=bb52d8502b132ec0a5a3f4c09453c07478323dc5">maven-3.3.9</a></td>
+<td><a title="[maven-release-plugin] copy for tag maven-3.3.9" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=f76d788834b1ec2a611680a1f3c505ef3c433f32">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=f76d788834b1ec2a611680a1f3c505ef3c433f32">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=bb52d8502b132ec0a5a3f4c09453c07478323dc5">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.9">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.9">log</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=cdd15915eb4b74ccab621e51aff9ada4f455a627">maven-3.3.8</a></td>
+<td><a title="[maven-release-plugin] copy for tag maven-3.3.8" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=f18252cfb79837f5e317fe092c2f971da0946653">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=f18252cfb79837f5e317fe092c2f971da0946653">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=cdd15915eb4b74ccab621e51aff9ada4f455a627">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.8">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.8">log</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=d48a49b3539e66e073e35cc6a5137a94d16465f2">maven-3.3.7</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=b671a7c2153fc0994b826bb5b0f5fe5393fcd236" title="[maven-release-plugin] copy for tag maven-3.3.7" class="list subject">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=b671a7c2153fc0994b826bb5b0f5fe5393fcd236">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=d48a49b3539e66e073e35cc6a5137a94d16465f2">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.7">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.7">log</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=72e1aad6861c2052a65753553d92ecc2a6849ce5">maven-3.3.6</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=78caec40133102ce9258bd45ddc64f91cf91c0eb" title="[maven-release-plugin] copy for tag maven-3.3.6" class="list subject">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=78caec40133102ce9258bd45ddc64f91cf91c0eb">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=72e1aad6861c2052a65753553d92ecc2a6849ce5">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.6">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.6">log</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=2226900a49396ae834b749ff22c126aed89dbf5a" class="list name">maven-3.3.5</a></td>
+<td><a title="[maven-release-plugin] copy for tag maven-3.3.5" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=8b0e64fb41045ff308db04e6325c335c83526c2e">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=8b0e64fb41045ff308db04e6325c335c83526c2e">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=2226900a49396ae834b749ff22c126aed89dbf5a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.5">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.5">log</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=df509db95a565e09ee25edd63b5574f58ba3b077" class="list name">maven-3.3.4</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=bf905538f94989623ae3c4a60978f7b0762c34b0" title="[maven-release-plugin] copy for tag maven-3.3.4" class="list subject">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=bf905538f94989623ae3c4a60978f7b0762c34b0">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=df509db95a565e09ee25edd63b5574f58ba3b077">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.4">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.4">log</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=7994120775791599e205a5524ec3e0dfe41d4a06" class="list name">maven-3.3.3</a></td>
+<td><a class="list subject" title="[maven-release-plugin] copy for tag maven-3.3.3" href="/repos/asf?p=maven.git;a=tag;h=4099b082207a7301c97944e71924baaad7d0beda">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=4099b082207a7301c97944e71924baaad7d0beda">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=7994120775791599e205a5524ec3e0dfe41d4a06">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.3">log</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=743903acab9308dc4956b44be17a182abd17a8c0" class="list name">maven-3.3.2</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=8f9a924458d3150f79aec934b81e6c9e9c6ac593" title="[maven-release-plugin] copy for tag maven-3.3.2" class="list subject">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=8f9a924458d3150f79aec934b81e6c9e9c6ac593">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=743903acab9308dc4956b44be17a182abd17a8c0">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.2">log</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=cab6659f9874fa96462afef40fcf6bc033d58c1c" class="list name">maven-3.3.1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=42e928d3608d8e10c23633172a0ad5cf7978b35f" class="list subject" title="[maven-release-plugin] copy for tag maven-3.3.1">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=42e928d3608d8e10c23633172a0ad5cf7978b35f">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=cab6659f9874fa96462afef40fcf6bc033d58c1c">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.1">log</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=b37a7d17765a2bc8dfab63b4e739e7198172fe43">maven-3.3.0</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=26a59bf75b70d69c47737dd54583680255bba158" title="[maven-release-plugin] copy for tag maven-3.3.0" class="list subject">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=26a59bf75b70d69c47737dd54583680255bba158">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=b37a7d17765a2bc8dfab63b4e739e7198172fe43">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.3.0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.3.0">log</a></td>
+</tr><tr class="light">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=12a6b3acb947671f09b81f49094c53f426d8cea1" class="list name">maven-3.2.5</a></td>
+<td><a title="[maven-release-plugin] copy for tag maven-3.2.5" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=58817618ea25c0bffb39dbd647c35f05f1338b77">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=58817618ea25c0bffb39dbd647c35f05f1338b77">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=12a6b3acb947671f09b81f49094c53f426d8cea1">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.2.5">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.2.5">log</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=ed0e6acb016d0863e6421932820cf269b618dc3f" class="list name">maven-3.2.4</a></td>
+<td><a title="[maven-release-plugin] copy for tag maven-3.2.4" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=916ab0088789545caaa9059c0d2965d402af77fe">[maven-release-plugin] copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=916ab0088789545caaa9059c0d2965d402af77fe">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=ed0e6acb016d0863e6421932820cf269b618dc3f">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.2.4">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.2.4">log</a></td>
+</tr><tr class="light">
+<td><i>3 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=33f8c3e1027c3ddde99d3cdebad2656a31e8fdf4" class="list name">maven-3.2.3</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=cc6d048460ad523a6a4747bb9f0da05079dd97e8" title="[maven-release-plugin]  copy for tag maven-3.2.3" class="list subject">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=cc6d048460ad523a6a4747bb9f0da05079dd97e8">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=33f8c3e1027c3ddde99d3cdebad2656a31e8fdf4">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.2.3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.2.3">log</a></td>
+</tr><tr class="dark">
+<td><i>3 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=45f7c06d68e745d05611f7fd14efb6594181933e">maven-3.2.2</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=054661f5a25e0af63b9e718c6e15df9ec107eb06" class="list subject" title="[maven-release-plugin]  copy for tag maven-3.2.2">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=054661f5a25e0af63b9e718c6e15df9ec107eb06">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=45f7c06d68e745d05611f7fd14efb6594181933e">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.2.2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.2.2">log</a></td>
+</tr><tr class="light">
+<td><i>3 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=ba82384065010d0875b1393b9f33f6473fff3ca3" class="list name">workspace-v0</a></td>
+<td></td>
+<td class="selflink">&nbsp;</td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=ba82384065010d0875b1393b9f33f6473fff3ca3">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/workspace-v0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/workspace-v0">log</a></td>
+</tr><tr class="dark">
+<td><i>3 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9" class="list name">maven-3.2.1</a></td>
+<td><a class="list subject" title="[maven-release-plugin]  copy for tag maven-3.2.1" href="/repos/asf?p=maven.git;a=tag;h=d2f4e9992020b177b4907c2821da21467ee16325">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=d2f4e9992020b177b4907c2821da21467ee16325">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.2.1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.2.1">log</a></td>
+</tr><tr class="light">
+<td><i>3 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=9f109b60472979a5865e9d93b72db5c0e2c37232" class="list name">maven-3.2.0</a></td>
+<td><a class="list subject" title="[maven-release-plugin]  copy for tag maven-3.2.0" href="/repos/asf?p=maven.git;a=tag;h=da6da5bc82ea27a67bd173d556fa32d08da46164">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=da6da5bc82ea27a67bd173d556fa32d08da46164">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=9f109b60472979a5865e9d93b72db5c0e2c37232">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.2.0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.2.0">log</a></td>
+</tr><tr class="dark">
+<td><i>4 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=0728685237757ffbf44136acec0402957f723d9a" class="list name">maven-3.1.1</a></td>
+<td><a class="list subject" title="[maven-release-plugin]  copy for tag maven-3.1.1" href="/repos/asf?p=maven.git;a=tag;h=8836ab7d6f7d8f2a7c0ce065b703209835b044af">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=8836ab7d6f7d8f2a7c0ce065b703209835b044af">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=0728685237757ffbf44136acec0402957f723d9a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.1.1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.1.1">log</a></td>
+</tr><tr class="light">
+<td><i>4 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=893ca28a1da9d5f51ac03827af98bb730128f9f2">maven-3.1.0</a></td>
+<td><a title="[maven-release-plugin]  copy for tag maven-3.1.0" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=3a1f442a4de408d82694a9e9ce5569a58d55b862">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=3a1f442a4de408d82694a9e9ce5569a58d55b862">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=893ca28a1da9d5f51ac03827af98bb730128f9f2">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.1.0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.1.0">log</a></td>
+</tr><tr class="dark">
+<td><i>4 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=c726cdd3a9ad5c3a419e1171f8c1925e336ead18">maven-3.1.0-alpha-1</a></td>
+<td><a title="[maven-release-plugin]  copy for tag maven-3.1.0-alpha-1" class="list subject" href="/repos/asf?p=maven.git;a=tag;h=52c07992ac21478b0dd6ecd67a65227a4ece0c0d">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=52c07992ac21478b0dd6ecd67a65227a4ece0c0d">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=c726cdd3a9ad5c3a419e1171f8c1925e336ead18">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.1.0-alpha-1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.1.0-alpha-1">log</a></td>
+</tr><tr class="light">
+<td><i>4 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=01de14724cdef164cd33c7c8c2fe155faf9602da" class="list name">maven-3.0.5</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=f66b48d5f3cd75b6d87ba4f4d112fec103533002" title="[maven-release-plugin]  copy for tag maven-3.0.5" class="list subject">[maven-release-plugin]  copy for... </a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=f66b48d5f3cd75b6d87ba4f4d112fec103533002">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=01de14724cdef164cd33c7c8c2fe155faf9602da">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.5">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.5">log</a></td>
+</tr><tr class="dark">
+<td><i>5 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=3ad2b6794a8293a8ca6c1590708fb5d3fc795c49" class="list name">maven-3.0.4</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=369ae960bef115cbc95ce05577db907c2dcc721c" class="list subject">maven-3.0.4</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=369ae960bef115cbc95ce05577db907c2dcc721c">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=3ad2b6794a8293a8ca6c1590708fb5d3fc795c49">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.4">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.4">log</a></td>
+</tr><tr class="light">
+<td><i>5 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=f82d61cd9e0db224be28a46139875c1660b39b0a" class="list name">maven-3.0.4-RC5</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=1babd3ef462fa05840aceb392ee0c485f4179a3c">maven-3.0.4-RC5</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=1babd3ef462fa05840aceb392ee0c485f4179a3c">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=f82d61cd9e0db224be28a46139875c1660b39b0a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.4-RC5">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.4-RC5">log</a></td>
+</tr><tr class="dark">
+<td><i>5 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=4d5c00b321b53759d797055b5efdbfdbf1587848" class="list name">maven-3.0.4-RC4</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=ff0850de4ddefc302b9fa88c18e3ff7c34f652ba">maven-3.0.4-RC4</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=ff0850de4ddefc302b9fa88c18e3ff7c34f652ba">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=4d5c00b321b53759d797055b5efdbfdbf1587848">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.4-RC4">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.4-RC4">log</a></td>
+</tr><tr class="light">
+<td><i>5 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=45fe87af17af494e5e01e2381b55d52b34ef8c26">maven-3.0.4-RC3</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=6a103a19d9093a804a1c07abadff07e4a0821173" class="list subject">maven-3.0.4-RC3</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=6a103a19d9093a804a1c07abadff07e4a0821173">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=45fe87af17af494e5e01e2381b55d52b34ef8c26">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.4-RC3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.4-RC3">log</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=05e19b6bc21ea11b998e2d6baee2fecbe6bddc24" class="list name">maven-3.0.3</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=6941113969ffabaeede210944e2c16ee7623c0d1">maven-3.0.3</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=6941113969ffabaeede210944e2c16ee7623c0d1">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=05e19b6bc21ea11b998e2d6baee2fecbe6bddc24">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.3">log</a></td>
+</tr><tr class="light">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=44b49f6c8b50b588ba680044607edbc940838af7" class="list name">maven-3.0.3-RC1</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=20587c4c9a00d9f09c9a2259aeac421f1faea9d3">maven-3.0.3-RC1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=20587c4c9a00d9f09c9a2259aeac421f1faea9d3">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=44b49f6c8b50b588ba680044607edbc940838af7">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.3-RC1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.3-RC1">log</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=70ed9a16cfc5a82999361006c4c370d9b47733b3" class="list name">maven-3.0.2</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=0f2a69af7271d4b3f979c4646e15adeea5254d5a">maven-3.0.2</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=0f2a69af7271d4b3f979c4646e15adeea5254d5a">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=70ed9a16cfc5a82999361006c4c370d9b47733b3">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.2">log</a></td>
+</tr><tr class="light">
+<td><i>6 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=cb1ef14afbcd894c24b4a7c8127652b3a221c56a">maven-3.0.2-RC1</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=e88a689cd3c777b6ebcc34eb6e923673f6fe56ef">maven-3.0.2-RC1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=e88a689cd3c777b6ebcc34eb6e923673f6fe56ef">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=cb1ef14afbcd894c24b4a7c8127652b3a221c56a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.2-RC1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.2-RC1">log</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=79af12ffffc777406aba8c3c1252097fc6e2d002">maven-3.0.1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=42b4f4ab1d7fef511ddb53d83d4aba67ab0ff463" class="list subject">maven-3.0.1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=42b4f4ab1d7fef511ddb53d83d4aba67ab0ff463">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=79af12ffffc777406aba8c3c1252097fc6e2d002">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.1">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=4a0aa6b5233b1be7e93eaf66fb0ea1079ab30eb2" class="list name">maven-3.0.1-RC1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=da76eee9c4958dcb0c7dcbecc6fab97d4cbb9254" class="list subject">maven-3.0.1-RC1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=da76eee9c4958dcb0c7dcbecc6fab97d4cbb9254">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=4a0aa6b5233b1be7e93eaf66fb0ea1079ab30eb2">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0.1-RC1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0.1-RC1">log</a></td>
+</tr><tr class="dark">
+<td><i>7 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=629fd749e59a679809c86eb26d554520e4de3a78">maven-3.0</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=1970bee9fefc870438c04a38dbefa94c5dfd5ea4">maven-3.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=1970bee9fefc870438c04a38dbefa94c5dfd5ea4">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=629fd749e59a679809c86eb26d554520e4de3a78">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=a578be710a40302640d66867eef6c6d7194acd9f" class="list name">maven-3.0-RC3</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=a3bd12b2e1e18b63b6cfb5a41aa8b7f89cbc0839">maven-3.0-RC3</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=a3bd12b2e1e18b63b6cfb5a41aa8b7f89cbc0839">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=a578be710a40302640d66867eef6c6d7194acd9f">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-RC3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-RC3">log</a></td>
+</tr><tr class="dark">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=ef2117f75b842ebf90c56cfed25d1dd16de48aee" class="list name">maven-3.0-RC2</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=ae6f046e47dad2ffd869a3f67a8ff84a0418464a" class="list subject">maven-3.0-RC2</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=ae6f046e47dad2ffd869a3f67a8ff84a0418464a">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=ef2117f75b842ebf90c56cfed25d1dd16de48aee">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-RC2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-RC2">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=8183b1b5e07833403c534ed3b2ee80cf4fe2c3de" class="list name">maven-3.0-RC1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=beece8fb7f122270268a6c0de8277c0d61f3272a" class="list subject">maven-3.0-RC1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=beece8fb7f122270268a6c0de8277c0d61f3272a">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=8183b1b5e07833403c534ed3b2ee80cf4fe2c3de">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-RC1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-RC1">log</a></td>
+</tr><tr class="dark">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=b1ac77748ade8cef837b91148e4ab38e8d5bd341" class="list name">maven-3.0-beta-3</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=e5e976edc49ae4cc4b41aae57c78e16fa35c1dd3">maven-3.0-beta-3</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=e5e976edc49ae4cc4b41aae57c78e16fa35c1dd3">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=b1ac77748ade8cef837b91148e4ab38e8d5bd341">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-beta-3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-beta-3">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=02a0d3d4dee6686212eee5dfcb2589b23a827d29">maven-3.0-beta-2</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=0ab4596451703f20451e3429301b4f777db98747" class="list subject">maven-3.0-beta-2</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=0ab4596451703f20451e3429301b4f777db98747">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=02a0d3d4dee6686212eee5dfcb2589b23a827d29">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-beta-2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-beta-2">log</a></td>
+</tr><tr class="dark">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=1f1b6254994034391d59f1035e83d832cf4fe657" class="list name">maven-3.0-beta-1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=db86a2c5f7b59aecc6c674504c795e5df06c00f0" class="list subject">maven-3.0-beta-1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=db86a2c5f7b59aecc6c674504c795e5df06c00f0">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=1f1b6254994034391d59f1035e83d832cf4fe657">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-beta-1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-beta-1">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=f5c6c8b9adced6fddaeb911d1adbf2f1b5146c55" class="list name">maven-3.0-alpha-7</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=478baa0b84de9eac7f732ec976d6a7528ab7ab99" class="list subject">maven-3.0-alpha-7</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=478baa0b84de9eac7f732ec976d6a7528ab7ab99">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=f5c6c8b9adced6fddaeb911d1adbf2f1b5146c55">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-alpha-7">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-alpha-7">log</a></td>
+</tr><tr class="dark">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=5ca65fc422c5a54a7b6f08d00c16e4d6c5acb9e1" class="list name">maven-3.0-alpha-6</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=a1f0174af6b68d44345b42e8de19984da7511fcb">maven-3.0-alpha-6</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=a1f0174af6b68d44345b42e8de19984da7511fcb">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=5ca65fc422c5a54a7b6f08d00c16e4d6c5acb9e1">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-alpha-6">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-alpha-6">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=c5c9c2338437dc006ba02270f83bc75ed9ecf386">maven-3.0-alpha-5</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=cdb03cd4252b965c748383475cc28a70730cbd78" class="list subject">maven-3.0-alpha-5</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=cdb03cd4252b965c748383475cc28a70730cbd78">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=c5c9c2338437dc006ba02270f83bc75ed9ecf386">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-alpha-5">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-alpha-5">log</a></td>
+</tr><tr class="dark">
+<td><i>8 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=a776e30ce82ada770349f481954be82c50a8279a">maven-3.0-alpha-4</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=c684d98c6a9a60ee4d9e543f6d59f5fe8de01177" class="list subject">maven-3.0-alpha-4</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=c684d98c6a9a60ee4d9e543f6d59f5fe8de01177">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=a776e30ce82ada770349f481954be82c50a8279a">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-alpha-4">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-alpha-4">log</a></td>
+</tr><tr class="light">
+<td><i>8 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=c6e42b2b421e64662090fb1e21914ec1d43c26d6" class="list name">maven-3.0-alpha-3</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=624d957eb3b3617fbaaaa196e4272b7126a3c54a" class="list subject">maven-3.0-alpha-3</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=624d957eb3b3617fbaaaa196e4272b7126a3c54a">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=c6e42b2b421e64662090fb1e21914ec1d43c26d6">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-3.0-alpha-3">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-3.0-alpha-3">log</a></td>
+</tr><tr class="dark">
+<td><i>8 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=847203c6346f4b8d5ae27285f11eda8818af283f">maven-2.2.1</a></td>
+<td><a class="list subject" href="/repos/asf?p=maven.git;a=tag;h=425d6e3a57072bdbcd04ab5d21b58ad9bc657bb3">maven-2.2.1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=425d6e3a57072bdbcd04ab5d21b58ad9bc657bb3">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=847203c6346f4b8d5ae27285f11eda8818af283f">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-2.2.1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-2.2.1">log</a></td>
+</tr><tr class="light">
+<td><i>8 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=maven.git;a=commit;h=4e500550af27e1a6617716032e9814e21029d7fc">maven-2.2.1-RC2</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=cb54231c28eb5a0e1fc3e59de2e85c53c89e6258" class="list subject">maven-2.2.1-RC2</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=cb54231c28eb5a0e1fc3e59de2e85c53c89e6258">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=4e500550af27e1a6617716032e9814e21029d7fc">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-2.2.1-RC2">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-2.2.1-RC2">log</a></td>
+</tr><tr class="dark">
+<td><i>8 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=fc6ae1fb0c374d95fb63d7223df9a33f32999871" class="list name">maven-2.2.1-RC1</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=3a8671089320ab39796a6d9212d5dc064d678d1c" class="list subject">maven-2.2.1-RC1</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=3a8671089320ab39796a6d9212d5dc064d678d1c">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=fc6ae1fb0c374d95fb63d7223df9a33f32999871">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-2.2.1-RC1">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-2.2.1-RC1">log</a></td>
+</tr><tr class="light">
+<td><i>8 years ago</i></td>
+<td><a href="/repos/asf?p=maven.git;a=commit;h=93f619bf1042dc9121efbb9ee03ca260535953c2" class="list name">maven-2.2.0</a></td>
+<td><a href="/repos/asf?p=maven.git;a=tag;h=c7fd69b8a25b2f3b43a889c7d0a14a9795790ca6" class="list subject">maven-2.2.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=maven.git;a=tag;h=c7fd69b8a25b2f3b43a889c7d0a14a9795790ca6">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=maven.git;a=commit;h=93f619bf1042dc9121efbb9ee03ca260535953c2">commit</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/tags/maven-2.2.0">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/tags/maven-2.2.0">log</a></td>
+</tr></table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a class="rss_logo generic" title="log RSS feed" href="/repos/asf?p=maven.git;a=rss">RSS</a>
+<a href="/repos/asf?p=maven.git;a=atom" class="rss_logo generic" title="log Atom feed">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

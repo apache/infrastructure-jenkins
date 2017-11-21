@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/tree</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log of master - RSS feed" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/master" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log of master - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;h=refs/heads/master;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log of master - Atom feed" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/master" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log of master - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/master;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img alt="git" width="72" height="27" src="/static/git-logo.png" class="logo" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / tree
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input value="maven.git" type="hidden" name="p" />
+<input value="search" type="hidden" name="a" />
+<input value="refs/heads/master" type="hidden" name="h" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/repos/asf?p=maven.git;a=search_help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=refs/heads/master">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=refs/heads/master">log</a> | <a href="/repos/asf?p=maven.git;a=commit;h=refs/heads/master">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=refs/heads/master">commitdiff</a> | tree<br/>
+<a title="in format: tar.gz" href="/repos/asf?p=maven.git;a=snapshot;h=refs/heads/master;sf=tgz">snapshot</a><br/>
+</div>
+<div class="header">
+<a href="/repos/asf?p=maven.git;a=commit;h=refs/heads/master" class="title">[MNG-6302] display progress at end of &quot;Building&quot; line</a>
+</div>
+<div class="page_body">
+<table class="tree">
+<tr class="dark">
+<td class="mode">-rw-r--r--</td>
+<td class="size">164</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=blob;f=.gitattributes;h=3bb3b5ea8a4db9916e7ca139dffe824ba3e939d8;hb=refs/heads/master" class="list">.gitattributes</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=.gitattributes;h=3bb3b5ea8a4db9916e7ca139dffe824ba3e939d8;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=.gitattributes;h=3bb3b5ea8a4db9916e7ca139dffe824ba3e939d8;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=.gitattributes;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="light">
+<td class="mode">-rw-r--r--</td>
+<td class="size">137</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=blob;f=.gitignore;h=f79c9285cd4ca44049fa51af32c99006d6d75fa6;hb=refs/heads/master" class="list">.gitignore</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=.gitignore;h=f79c9285cd4ca44049fa51af32c99006d6d75fa6;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=.gitignore;h=f79c9285cd4ca44049fa51af32c99006d6d75fa6;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=.gitignore;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">-rw-r--r--</td>
+<td class="size">8305</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hb=refs/heads/master" class="list">Jenkinsfile</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=Jenkinsfile;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="light">
+<td class="mode">-rw-r--r--</td>
+<td class="size">11358</td>
+<td class="list"><a class="list" href="/repos/asf?p=maven.git;a=blob;f=LICENSE;h=d645695673349e3947e8e5ae42332d0ac3164cd7;hb=refs/heads/master">LICENSE</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=LICENSE;h=d645695673349e3947e8e5ae42332d0ac3164cd7;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=LICENSE;h=d645695673349e3947e8e5ae42332d0ac3164cd7;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=LICENSE;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">-rw-r--r--</td>
+<td class="size">166</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=blob;f=NOTICE;h=9485054bd14ab08d5aa9d0f0dcce23198bfa9529;hb=refs/heads/master" class="list">NOTICE</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=NOTICE;h=9485054bd14ab08d5aa9d0f0dcce23198bfa9529;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=NOTICE;h=9485054bd14ab08d5aa9d0f0dcce23198bfa9529;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=NOTICE;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="light">
+<td class="mode">-rw-r--r--</td>
+<td class="size">810</td>
+<td class="list"><a class="list" href="/repos/asf?p=maven.git;a=blob;f=README.md;h=33a4be48ceab6e5f713b329f009c09a47df5664e;hb=refs/heads/master">README.md</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=README.md;h=33a4be48ceab6e5f713b329f009c09a47df5664e;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=README.md;h=33a4be48ceab6e5f713b329f009c09a47df5664e;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=README.md;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=apache-maven;h=afcfc526f8ff7f5f8e80f70fe3e717c84fb30d5b;hb=refs/heads/master">apache-maven</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=apache-maven;h=afcfc526f8ff7f5f8e80f70fe3e717c84fb30d5b;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=apache-maven;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">-rw-r--r--</td>
+<td class="size">867</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=blob;f=deploySite.sh;h=f6c265d7591f9f2863f5aaba220621d763385b1f;hb=refs/heads/master" class="list">deploySite.sh</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=deploySite.sh;h=f6c265d7591f9f2863f5aaba220621d763385b1f;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=deploySite.sh;h=f6c265d7591f9f2863f5aaba220621d763385b1f;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=deploySite.sh;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">-rw-r--r--</td>
+<td class="size">14047</td>
+<td class="list"><a class="list" href="/repos/asf?p=maven.git;a=blob;f=doap_Maven.rdf;h=79a9141530bcf4886adb1f9cfe049b4703c5fbf0;hb=refs/heads/master">doap_Maven.rdf</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=doap_Maven.rdf;h=79a9141530bcf4886adb1f9cfe049b4703c5fbf0;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=doap_Maven.rdf;h=79a9141530bcf4886adb1f9cfe049b4703c5fbf0;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=doap_Maven.rdf;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-artifact;h=92dc1fb70cf550771e994da39a41fbe5c6ac652e;hb=refs/heads/master">maven-artifact</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-artifact;h=92dc1fb70cf550771e994da39a41fbe5c6ac652e;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-artifact;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-builder-support;h=00954b55aff1058276ef92915438ace169b2297d;hb=refs/heads/master">maven-builder-support</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-builder-support;h=00954b55aff1058276ef92915438ace169b2297d;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-builder-support;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-compat;h=09c860855182d7d787b0dccb77f78be7caed436f;hb=refs/heads/master">maven-compat</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-compat;h=09c860855182d7d787b0dccb77f78be7caed436f;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-core;h=c4c231dbfbd20671973d0604e37c803d63532d2b;hb=refs/heads/master">maven-core</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-core;h=c4c231dbfbd20671973d0604e37c803d63532d2b;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-core;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-embedder;h=3859af3e0610d5ba792ed8422cf3cda8fdfd86b4;hb=refs/heads/master">maven-embedder</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-embedder;h=3859af3e0610d5ba792ed8422cf3cda8fdfd86b4;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-embedder;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-model-builder;h=f397176e5a25859d7f774e02a7fc70f4a608b59c;hb=refs/heads/master">maven-model-builder</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-model-builder;h=f397176e5a25859d7f774e02a7fc70f4a608b59c;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model-builder;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-model;h=131d7f3167e3229f8fec2e4fed3acb43df61354e;hb=refs/heads/master">maven-model</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-model;h=131d7f3167e3229f8fec2e4fed3acb43df61354e;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-model;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-plugin-api;h=ce5029fcde7b14d8fd7b232c7cce129fb30cbeee;hb=refs/heads/master">maven-plugin-api</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-plugin-api;h=ce5029fcde7b14d8fd7b232c7cce129fb30cbeee;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-plugin-api;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-repository-metadata;h=17f26bfb9178b6c24f9afda5a04c900dbf234f5c;hb=refs/heads/master">maven-repository-metadata</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-repository-metadata;h=17f26bfb9178b6c24f9afda5a04c900dbf234f5c;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-repository-metadata;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-resolver-provider;h=5d4398046184ece04509e7bceb6a709e068ebbb2;hb=refs/heads/master">maven-resolver-provider</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-resolver-provider;h=5d4398046184ece04509e7bceb6a709e068ebbb2;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-resolver-provider;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-settings-builder;h=2b0fdfaad82c6c99f8688898ea8d602b172d81b8;hb=refs/heads/master">maven-settings-builder</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-settings-builder;h=2b0fdfaad82c6c99f8688898ea8d602b172d81b8;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-settings-builder;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-settings;h=bd1a43f8ede4aab0d7b64edb075a08ca34a34014;hb=refs/heads/master">maven-settings</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-settings;h=bd1a43f8ede4aab0d7b64edb075a08ca34a34014;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-settings;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=maven-slf4j-provider;h=22b9e30f3220f34b0f2452f83dc4b414e34d6dc2;hb=refs/heads/master">maven-slf4j-provider</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=maven-slf4j-provider;h=22b9e30f3220f34b0f2452f83dc4b414e34d6dc2;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-slf4j-provider;hb=refs/heads/master">history</a></td>
+</tr>
+<tr class="dark">
+<td class="mode">-rw-r--r--</td>
+<td class="size">25430</td>
+<td class="list"><a class="list" href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=a572e4b90b2d60923eef4f609637dfaca7d4b210;hb=refs/heads/master">pom.xml</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=a572e4b90b2d60923eef4f609637dfaca7d4b210;hb=refs/heads/master">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=pom.xml;h=a572e4b90b2d60923eef4f609637dfaca7d4b210;hb=refs/heads/master">history</a> | <a href="/repos/asf?p=maven.git;a=blob_plain;f=pom.xml;hb=refs/heads/master">raw</a></td>
+</tr>
+<tr class="light">
+<td class="mode">drwxr-xr-x</td>
+<td class="size">-</td>
+<td class="list"><a href="/repos/asf?p=maven.git;a=tree;f=src;h=1f1f2758985d0e293279a6e0f7da0397c63c0b5b;hb=refs/heads/master">src</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;h=1f1f2758985d0e293279a6e0f7da0397c63c0b5b;hb=refs/heads/master">tree</a> | <a href="/repos/asf?p=maven.git;a=history;f=src;hb=refs/heads/master">history</a></td>
+</tr>
+</table>
+</div><div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a href="/repos/asf?p=maven.git;a=rss;h=refs/heads/master" class="rss_logo" title="log of master RSS feed">RSS</a>
+<a title="log of master Atom feed" href="/repos/asf?p=maven.git;a=atom;h=refs/heads/master" class="rss_logo">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

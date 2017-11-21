@@ -1,0 +1,27 @@
+{
+  "id" : "27fac80c-9b4b-4e6f-a834-8e05c7e24482",
+  "name" : "repos_asf",
+  "request" : {
+    "url" : "/repos/asf?a=project_index",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "repos_asf-27fac80c-9b4b-4e6f-a834-8e05c7e24482.txt",
+    "headers" : {
+      "Date" : "Mon, 20 Nov 2017 10:58:23 GMT",
+      "Server" : "Apache/2.4.7 (Ubuntu)",
+      "Content-disposition" : "inline; filename=\"index.aux\"",
+      "Vary" : "Accept-Encoding",
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers" : "X-PINGOTHER",
+      "Access-Control-Max-Age" : "1728000",
+      "Keep-Alive" : "timeout=30, max=100",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/plain; charset=utf-8"
+    }
+  },
+  "uuid" : "27fac80c-9b4b-4e6f-a834-8e05c7e24482",
+  "persistent" : true
+}
