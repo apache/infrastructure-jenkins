@@ -110,7 +110,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
     private Future<?> longPollRequest;
 
     public GitPubSubPoll() {
-        super("ASG GitPubSub poll");
+        super("ASF GitPubSub poll");
     }
 
     @Override
