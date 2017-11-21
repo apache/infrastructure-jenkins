@@ -15,7 +15,6 @@
  */
 package org.apache.jenkins.gitpubsub;
 
-import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import hudson.plugins.git.GitChangeLogParser;
 import hudson.plugins.git.GitChangeSet;
@@ -181,12 +180,6 @@ public class ASFGitSCMFileSystemTest {
 
     @Test
     public void given__multi_page_commit_range__when__changesSince__then__changes_returned() throws Exception {
-        wire.startRecording(WireMock.recordSpec()
-                .forTarget("https://git-wip-us.apache.org/")
-                .ignoreRepeatRequests()
-                .chooseBodyMatchTypeAutomatically()
-                .build()
-        );
         SCMHead head = new SCMHead("master");
         ASFGitSCMFileSystem fs = new ASFGitSCMFileSystem(serverRootUrl + "/maven.git", head, new AbstractGitSCMSource
                 .SCMRevisionImpl(head, "3d0efa36963c217527230228a11ab44050ca1b10"));
@@ -199,7 +192,6 @@ public class ASFGitSCMFileSystemTest {
         List<GitChangeSet> expected = parser.parse(new ByteArrayInputStream(IOUtils.toByteArray(
                 getClass().getResource(getClass().getSimpleName() + "/long-changesSince.txt"))));
         assertThat(actual, is(expected));
-        wire.stopRecording();
     }
 
 }

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/commit</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - log - RSS feed" href="/repos/asf?p=maven.git;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed" href="/repos/asf?p=maven.git;a=atom" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - log - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img src="/static/git-logo.png" width="72" class="logo" alt="git" height="27" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / commit
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input value="maven.git" type="hidden" name="p" />
+<input value="search" type="hidden" name="a" />
+<input name="h" type="hidden" value="b12905ce02ec0e58b475bbc1d920a6801224c02f" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/repos/asf?p=maven.git;a=search_help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog;h=b12905ce02ec0e58b475bbc1d920a6801224c02f">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log;h=b12905ce02ec0e58b475bbc1d920a6801224c02f">log</a> | commit | <a href="/repos/asf?p=maven.git;a=commitdiff;h=b12905ce02ec0e58b475bbc1d920a6801224c02f">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree;h=9a7d8a3dc9bfa0e700a57265eb344f08da75ba80;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">tree</a><br/>
+(parent: <a href="/repos/asf?p=maven.git;a=commit;h=52eecc406fdf37c1aec46ea31ab00978ed290a57">52eecc4</a>) | <a href="/repos/asf?p=maven.git;a=patch;h=b12905ce02ec0e58b475bbc1d920a6801224c02f">patch</a><br/>
+</div>
+<div class="header">
+<a class="title" href="/repos/asf?p=maven.git;a=commitdiff;h=b12905ce02ec0e58b475bbc1d920a6801224c02f">[MNG-6176] Fix javadoc *errors* in maven-compat</a>
+</div>
+<div class="title_text">
+<table class="object_header">
+<tr><td>author</td><td><a title="Search for commits authored by Stephen Connolly" class="list" href="/repos/asf?p=maven.git;a=search;h=b12905ce02ec0e58b475bbc1d920a6801224c02f;s=Stephen+Connolly;st=author">Stephen Connolly</a> <a href="/repos/asf?p=maven.git;a=search;h=b12905ce02ec0e58b475bbc1d920a6801224c02f;s=stephen.alan.connolly@gmail.com;st=author" class="list" title="Search for commits authored by stephen.alan.connolly@gmail.com">&lt;stephen.alan.connolly@gmail.com&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Sat, 18 Mar 2017 12:04:38 +0000</span> (12:04 +0000)</td></tr>
+<tr><td>committer</td><td><a href="/repos/asf?p=maven.git;a=search;h=b12905ce02ec0e58b475bbc1d920a6801224c02f;s=Stephen+Connolly;st=committer" class="list" title="Search for commits committed by Stephen Connolly">Stephen Connolly</a> <a class="list" title="Search for commits committed by stephen.alan.connolly@gmail.com" href="/repos/asf?p=maven.git;a=search;h=b12905ce02ec0e58b475bbc1d920a6801224c02f;s=stephen.alan.connolly@gmail.com;st=committer">&lt;stephen.alan.connolly@gmail.com&gt;</a></td><td rowspan="2"><img width="32" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=32" alt="" /></td></tr>
+<tr><td></td><td><span class="datetime">Sat, 18 Mar 2017 12:34:45 +0000</span> (12:34 +0000)</td></tr>
+<tr><td>commit</td><td class="sha1">b12905ce02ec0e58b475bbc1d920a6801224c02f</td></tr>
+<tr><td>tree</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=tree;h=9a7d8a3dc9bfa0e700a57265eb344f08da75ba80;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">9a7d8a3dc9bfa0e700a57265eb344f08da75ba80</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=tree;h=9a7d8a3dc9bfa0e700a57265eb344f08da75ba80;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=maven.git;a=snapshot;h=b12905ce02ec0e58b475bbc1d920a6801224c02f;sf=tgz">snapshot</a></td></tr>
+<tr><td>parent</td><td class="sha1"><a class="list" href="/repos/asf?p=maven.git;a=commit;h=52eecc406fdf37c1aec46ea31ab00978ed290a57">52eecc406fdf37c1aec46ea31ab00978ed290a57</a></td><td class="link"><a href="/repos/asf?p=maven.git;a=commit;h=52eecc406fdf37c1aec46ea31ab00978ed290a57">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=b12905ce02ec0e58b475bbc1d920a6801224c02f;hp=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a></td></tr>
+</table></div>
+<div class="page_body">
+[MNG-6176]&nbsp;Fix&nbsp;javadoc&nbsp;*errors*&nbsp;in&nbsp;maven-compat<br/>
+</div>
+<div class="list_head">
+17 files changed:
+</div>
+<table class="diff_tree">
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/pom.xml;h=bfd2b474b0594aa323b85e0293bea17140c36363;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/pom.xml;h=bfd2b474b0594aa323b85e0293bea17140c36363;hp=7af138d2d32c2be1962d3348989fc610f738313c;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/pom.xml;h=bfd2b474b0594aa323b85e0293bea17140c36363;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/pom.xml;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/artifact/ArtifactScopeEnum.java;h=83edd2b7064e66afacec5f48c26e2a73365ecf8b;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/main/java/org/apache/maven/artifact/ArtifactScopeEnum.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/artifact/ArtifactScopeEnum.java;h=83edd2b7064e66afacec5f48c26e2a73365ecf8b;hp=4460a07c3ee0b8aa59c35a3715c05e1d5d88a841;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/artifact/ArtifactScopeEnum.java;h=83edd2b7064e66afacec5f48c26e2a73365ecf8b;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/artifact/ArtifactScopeEnum.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/ResolutionListenerForDepMgmt.java;h=6cf06b16f95569ca31dec7b9f18e91c02d69b7d1;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/main/java/org/apache/maven/artifact/resolver/ResolutionListenerForDepMgmt.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/ResolutionListenerForDepMgmt.java;h=6cf06b16f95569ca31dec7b9f18e91c02d69b7d1;hp=6ca4fe72217308ebe5a004d1964c05239125d384;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/ResolutionListenerForDepMgmt.java;h=6cf06b16f95569ca31dec7b9f18e91c02d69b7d1;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/artifact/resolver/ResolutionListenerForDepMgmt.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java;h=fb99593c90dda5a9ab4738644cf78135aae4cdd3;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java;h=fb99593c90dda5a9ab4738644cf78135aae4cdd3;hp=faf224bd6b58b1575b706de8779835487294778a;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java;h=fb99593c90dda5a9ab4738644cf78135aae4cdd3;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/project/ModelUtils.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/AbstractStringBasedModelInterpolator.java;h=913e2dd8491c193fb5405e62359c791e64f18316;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/src/main/java/org/apache/maven/project/interpolation/AbstractStringBasedModelInterpolator.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/AbstractStringBasedModelInterpolator.java;h=913e2dd8491c193fb5405e62359c791e64f18316;hp=b3e94fcaba00700ca2745f44c22bba515f5dc6ac;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/AbstractStringBasedModelInterpolator.java;h=913e2dd8491c193fb5405e62359c791e64f18316;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/AbstractStringBasedModelInterpolator.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolationException.java;h=ea60f1629961af6461b36617eedcf706f76f7500;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolationException.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolationException.java;h=ea60f1629961af6461b36617eedcf706f76f7500;hp=5b02880b381ae039a8efc5e6798ea24aa2a02df4;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolationException.java;h=ea60f1629961af6461b36617eedcf706f76f7500;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolationException.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolator.java;h=036e7f04811bf00a17808994b289d630f15d31f8;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolator.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolator.java;h=036e7f04811bf00a17808994b289d630f15d31f8;hp=e1556eaf745b1dc063f629b8df5ca0723627dd1e;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolator.java;h=036e7f04811bf00a17808994b289d630f15d31f8;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/project/interpolation/ModelInterpolator.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/repository/MetadataResolutionResult.java;h=28fb723e064fab53deae118acd8e138a09e987f0;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/main/java/org/apache/maven/repository/MetadataResolutionResult.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/repository/MetadataResolutionResult.java;h=28fb723e064fab53deae118acd8e138a09e987f0;hp=0071ea44e5d40c380ce6febd361862ee5422f2ab;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/repository/MetadataResolutionResult.java;h=28fb723e064fab53deae118acd8e138a09e987f0;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/repository/MetadataResolutionResult.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/repository/metadata/MetadataGraph.java;h=1ae008addb4856bbeee74cd762eaeb82af63c2e9;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/src/main/java/org/apache/maven/repository/metadata/MetadataGraph.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/main/java/org/apache/maven/repository/metadata/MetadataGraph.java;h=1ae008addb4856bbeee74cd762eaeb82af63c2e9;hp=532cd3c8fc92090da8de478523a920f35fff5624;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/main/java/org/apache/maven/repository/metadata/MetadataGraph.java;h=1ae008addb4856bbeee74cd762eaeb82af63c2e9;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/main/java/org/apache/maven/repository/metadata/MetadataGraph.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java;h=402ae74b916f86e705dc0d7df0b55cebac653fce;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java;h=402ae74b916f86e705dc0d7df0b55cebac653fce;hp=b2750b9d928d99bef23f652d6476f77afcfdce98;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java;h=402ae74b916f86e705dc0d7df0b55cebac653fce;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/project/ModelUtilsTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java;h=aa492e4d67c7bc37f32b69f62e4ea2617d1689af;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java;h=aa492e4d67c7bc37f32b69f62e4ea2617d1689af;hp=0dc4ccff52ec26e40b4bc6b1372a4cd4e4278b11;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java;h=aa492e4d67c7bc37f32b69f62e4ea2617d1689af;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/project/inheritance/t09/ProjectInheritanceTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java;h=17dfcfcc7bf2e28703b588442cd378b02618ae45;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java;h=17dfcfcc7bf2e28703b588442cd378b02618ae45;hp=96af590c7a8c7dc754ad632928697b13bf8a9a93;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java;h=17dfcfcc7bf2e28703b588442cd378b02618ae45;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/repository/LegacyRepositorySystemTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java;h=363c7a248138f75c8dd133b96b826f1fd17b75c9;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java;h=363c7a248138f75c8dd133b96b826f1fd17b75c9;hp=5ca3a47cc727667c92e07718c6a5e16da2ed35d6;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java;h=363c7a248138f75c8dd133b96b826f1fd17b75c9;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/FarthestConflictResolverTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NearestConflictResolverTest.java;h=23683d56df871e6ff02f615fb10ef454aa01d33f;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NearestConflictResolverTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NearestConflictResolverTest.java;h=23683d56df871e6ff02f615fb10ef454aa01d33f;hp=69d93d2fb0c0e3b33a6f45d21ce0b2c6abc37075;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NearestConflictResolverTest.java;h=23683d56df871e6ff02f615fb10ef454aa01d33f;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NearestConflictResolverTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a class="list" href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NewestConflictResolverTest.java;h=4cfffc67e1597ba1057048552c10762173729f54;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NewestConflictResolverTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NewestConflictResolverTest.java;h=4cfffc67e1597ba1057048552c10762173729f54;hp=c98f1e191868884f1162917f958f13cdebf12aca;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NewestConflictResolverTest.java;h=4cfffc67e1597ba1057048552c10762173729f54;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/NewestConflictResolverTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="light">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/OldestConflictResolverTest.java;h=8744de2b05db87ef8eb8c5f8d5e35d080d999e8d;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/OldestConflictResolverTest.java</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/OldestConflictResolverTest.java;h=8744de2b05db87ef8eb8c5f8d5e35d080d999e8d;hp=cef78f9b64b958c0397b6688524e9379b86642e4;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/OldestConflictResolverTest.java;h=8744de2b05db87ef8eb8c5f8d5e35d080d999e8d;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=maven-compat/src/test/java/org/apache/maven/repository/legacy/resolver/conflict/OldestConflictResolverTest.java;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+<tr class="dark">
+<td><a href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=8a64baeef9ddb215f7d66780eb2c62d71f397f1a;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f" class="list">pom.xml</a></td>
+<td></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blobdiff;f=pom.xml;h=8a64baeef9ddb215f7d66780eb2c62d71f397f1a;hp=4ce8a79deb92b77f5dd18bdeec05ab599921fbb9;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f;hpb=52eecc406fdf37c1aec46ea31ab00978ed290a57">diff</a> | <a href="/repos/asf?p=maven.git;a=blob;f=pom.xml;h=8a64baeef9ddb215f7d66780eb2c62d71f397f1a;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">blob</a> | <a href="/repos/asf?p=maven.git;a=history;f=pom.xml;hb=b12905ce02ec0e58b475bbc1d920a6801224c02f">history</a></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a class="rss_logo" title="log RSS feed" href="/repos/asf?p=maven.git;a=rss">RSS</a>
+<a class="rss_logo" title="log Atom feed" href="/repos/asf?p=maven.git;a=atom">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>
