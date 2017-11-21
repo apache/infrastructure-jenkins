@@ -20,7 +20,11 @@ import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMSourceObserver;
 import jenkins.scm.api.trait.SCMNavigatorContext;
 
-public class ASFGitSCMNavigatorContext extends SCMNavigatorContext<ASFGitSCMNavigatorContext, ASFGitSCMNavigatorRequest>{
+/**
+ * The {@link SCMNavigatorContext} for {@link ASFGitSCMNavigator}.
+ */
+public class ASFGitSCMNavigatorContext
+        extends SCMNavigatorContext<ASFGitSCMNavigatorContext, ASFGitSCMNavigatorRequest> {
     private String avatarUrl;
     private String avatarDescription;
     private String objectDisplayName;

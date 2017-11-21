@@ -35,16 +35,35 @@ import org.jsoup.select.Elements;
 import static org.apache.jenkins.gitpubsub.ASFGitSCMFileSystem.TEN_SECONDS_OF_MILLIS;
 import static org.apache.jenkins.gitpubsub.ASFGitSCMNavigator.RFC_2822;
 
+/**
+ * A {@link SCMFile} that is backed by a GitWeb server hosted on {@code apache.org}.
+ */
 public class ASFGitSCMFile extends SCMFile {
 
+    /**
+     * The Git URL from which the project and gitweb server can be derived.
+     */
     private final String remote;
+    /**
+     * The ref or hash that the file is being accessed for.
+     */
     private final String refOrHash;
 
+    /**
+     * Root constructor.
+     * @param remote The Git URL from which the project and gitweb server can be derived.
+     * @param refOrHash The ref or hash that the file is being accessed for.
+     */
     ASFGitSCMFile(String remote, String refOrHash) {
         this.remote = remote;
         this.refOrHash = refOrHash;
     }
 
+    /**
+     * Child constructor.
+     * @param parent the parent file.
+     * @param name the name of the child.
+     */
     ASFGitSCMFile(@NonNull ASFGitSCMFile parent, String name) {
         super(parent, name);
         this.remote = parent.remote;

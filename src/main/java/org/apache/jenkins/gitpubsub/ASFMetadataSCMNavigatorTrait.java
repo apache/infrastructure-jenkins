@@ -24,6 +24,9 @@ import jenkins.scm.api.trait.SCMNavigatorTraitDescriptor;
 import org.apache.commons.lang.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 
+/**
+ * A {@link SCMNavigatorTrait} that defines the avatar and object metadata for a {@link ASFGitSCMNavigator}.
+ */
 public class ASFMetadataSCMNavigatorTrait extends SCMNavigatorTrait {
     private final String avatarUrl;
     private final String avatarDescription;

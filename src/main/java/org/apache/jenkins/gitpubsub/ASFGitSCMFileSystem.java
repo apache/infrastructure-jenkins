@@ -20,6 +20,7 @@ import com.damnhandy.uri.template.UriTemplate;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.plugins.git.GitSCM;
+import hudson.plugins.git.UserRemoteConfig;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
@@ -37,6 +38,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import jenkins.plugins.git.AbstractGitSCMSource;
+import jenkins.plugins.git.GitSCMSource;
 import jenkins.plugins.git.GitSCMTelescope;
 import jenkins.plugins.git.GitTagSCMHead;
 import jenkins.plugins.git.GitTagSCMRevision;
@@ -57,15 +59,36 @@ import org.jsoup.select.Elements;
 
 import static org.apache.jenkins.gitpubsub.ASFGitSCMNavigator.RFC_2822;
 
+/**
+ * A {@link SCMFileSystem} that can browse a git repository exposed by a gitweb server on {@code apache.org}.
+ */
 public class ASFGitSCMFileSystem extends SCMFileSystem {
 
+    /**
+     * Extracts the SHA1 from the {@code h=} portion of a gitweb URL.
+     */
     static final Pattern URL_EXTRACT_H = Pattern.compile(".*[;?]h=([a-fA-F0-9]{40})([;?].*)?");
+    /**
+     * The default timeout for remote operations.
+     */
     static final int TEN_SECONDS_OF_MILLIS = 10000;
+    /**
+     * Our logger.
+     */
     private static final Logger LOGGER = Logger.getLogger(ASFGitSCMFileSystem.class.getName());
+    /**
+     * The GitWeb servers maintained by Apache. (This is a mutable list to support testing)
+     */
     static final List<String> GIT_WEB_HOSTS = new ArrayList<>(Arrays.asList(
             ASFGitSCMNavigator.GIT_WIP, ASFGitSCMNavigator.GIT_BOX
     ));
+    /**
+     * The Git URL from which the project and gitweb server can be derived.
+     */
     private final String remote;
+    /**
+     * The ref or hash that the file is being accessed for.
+     */
     private final String refOrHash;
 
     /**
@@ -264,8 +287,15 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
         return count > 0;
     }
 
+    /**
+     * Builds a {@link UriTemplate} from the supplied template and the {@link GitSCMSource#getRemote()}.
+     * @param template the template, must include {@code {+server}} for the server and {@code {?p}} for the project.
+     * @param remote the {@link GitSCMSource#getRemote()}.
+     * @return the template.
+     * @throws IOException if the remote is unknown.
+     */
     static UriTemplate buildTemplateWithRemote(String template, @NonNull String remote) throws IOException {
-        UriTemplate commitTemplate;
+        UriTemplate result;
         String server = null;
         String p = null;
         for (String prefix : GIT_WEB_HOSTS) {
@@ -279,12 +309,14 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             throw new IOException("Unknown remote: " + remote);
         }
 
-        commitTemplate = UriTemplate.fromTemplate(template);
-        commitTemplate.set("server", server).set("p", p);
-        return commitTemplate;
+        result = UriTemplate.fromTemplate(template);
+        result.set("server", server).set("p", p);
+        return result;
     }
 
-
+    /**
+     * A {@link GitSCMTelescope} for GitWeb services on {@code apache.org}.
+     */
     @Extension
     public static class TelescopeImpl extends GitSCMTelescope {
 

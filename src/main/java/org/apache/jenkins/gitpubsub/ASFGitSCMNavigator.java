@@ -15,6 +15,7 @@
  */
 package org.apache.jenkins.gitpubsub;
 
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.ExtensionList;
@@ -60,30 +61,70 @@ import org.apache.commons.lang.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 
+/**
+ * A {@link SCMNavigator} that navigates {@code apache.org} hosted git repositories.
+ */
 public class ASFGitSCMNavigator extends SCMNavigator {
 
+    /**
+     * The date format used by GitWeb.
+     */
     static final String RFC_2822 = "EEE, dd MMM yyyy HH:mm:ss Z";
+    /**
+     * The first Git hosting for Apache.
+     */
     static final String GIT_WIP = "https://git-wip-us.apache.org/repos/asf";
+    /**
+     * The second Git hosting for Apache.
+     */
     static final String GIT_BOX = "https://gitbox.apache.org/repos/asf";
+    /**
+     * The server that we are navigating.
+     */
+    @NonNull
     private final String server;
+    /**
+     * The traits to apply.
+     */
     private List<SCMTrait<?>> traits = new ArrayList<>();
 
+    /**
+     * Constructor.
+     *
+     * @param server the server to navigate.
+     */
     @DataBoundConstructor
-    public ASFGitSCMNavigator(String server) {
+    public ASFGitSCMNavigator(@NonNull String server) {
         this.server = server;
     }
 
+    /**
+     * Gets the server to navigate.
+     *
+     * @return the server to navigate.
+     */
+    @NonNull
     public String getServer() {
         return server;
     }
 
+    /**
+     * Gets the traits.
+     *
+     * @return the traits.
+     */
     @NonNull
     public List<SCMTrait<?>> getTraits() {
         return Collections.unmodifiableList(traits);
     }
 
+    /**
+     * Sets the traits.
+     *
+     * @param traits the traits.
+     */
     @DataBoundSetter
-    public void setTraits(List<SCMTrait<?>> traits) {
+    public void setTraits(@CheckForNull List<? extends SCMTrait<?>> traits) {
         this.traits = new ArrayList<>(Util.fixNull(traits));
     }
 
@@ -124,7 +165,7 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                     @Override
                     public SCMSource create(@NonNull String projectName) throws IOException, InterruptedException {
                         return new ASFGitSCMSourceBuilder(getId() + "::" + projectName,
-                                server , projectName
+                                server, projectName
                         )
                                 .withTraits(traits)
                                 .build();
@@ -171,6 +212,9 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         return result;
     }
 
+    /**
+     * Our descriptor.
+     */
     @Extension
     public static class DescriptorImpl extends SCMNavigatorDescriptor {
 
@@ -183,11 +227,21 @@ public class ASFGitSCMNavigator extends SCMNavigator {
             return Messages.ASFGitSCMNavigator_displayName();
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public SCMNavigator newInstance(String name) {
-            return new ASFGitSCMNavigator(GIT_WIP);
+            ASFGitSCMNavigator result = new ASFGitSCMNavigator(GIT_BOX);
+            result.setTraits(getTraitsDefaults());
+            return result;
         }
 
+        /**
+         * Populates the drop-down for {@link ASFGitSCMNavigator#getServer()}
+         *
+         * @return the drop-down entries.
+         */
         public ListBoxModel doFillServerItems() {
             ListBoxModel result = new ListBoxModel();
             result.add(Messages.ASFGitSCMNavigator_gitWip(), GIT_WIP);
@@ -195,6 +249,11 @@ public class ASFGitSCMNavigator extends SCMNavigator {
             return result;
         }
 
+        /**
+         * Populates the available trait descriptors.
+         *
+         * @return the available trait descriptors.
+         */
         @SuppressWarnings("unused") // jelly
         public List<NamedArrayList<? extends SCMTraitDescriptor<?>>> getTraitsDescriptorLists() {
             GitSCMSource.DescriptorImpl sourceDescriptor =
@@ -223,14 +282,19 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                         }
                     },
                     true, result);
-            NamedArrayList.select(all, Messages.ASFGitSCMNavigator_withinRepositories(), NamedArrayList
-                            .anyOf(NamedArrayList.withAnnotation(Discovery.class),
-                                    NamedArrayList.withAnnotation(Selection.class)),
+            NamedArrayList.select(all, Messages.ASFGitSCMNavigator_withinRepositories(),
+                    NamedArrayList.anyOf(NamedArrayList.withAnnotation(Discovery.class),
+                            NamedArrayList.withAnnotation(Selection.class)),
                     true, result);
             NamedArrayList.select(all, Messages.ASFGitSCMNavigator_additionalBehaviours(), null, true, result);
             return result;
         }
 
+        /**
+         * Populate the default traits for new instances.
+         *
+         * @return the default traits.
+         */
         public List<SCMTrait<? extends SCMTrait<?>>> getTraitsDefaults() {
             GitSCMSource.DescriptorImpl descriptor =
                     ExtensionList.lookup(Descriptor.class).get(GitSCMSource.DescriptorImpl.class);
