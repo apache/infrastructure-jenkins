@@ -41,11 +41,13 @@ import jenkins.plugins.git.GitSCMBuilder;
 import jenkins.plugins.git.GitSCMSource;
 import jenkins.plugins.git.GitSCMSourceContext;
 import jenkins.plugins.git.traits.GitBrowserSCMSourceTrait;
+import jenkins.scm.api.SCMHeadEvent;
 import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMNavigatorDescriptor;
 import jenkins.scm.api.SCMNavigatorEvent;
 import jenkins.scm.api.SCMNavigatorOwner;
 import jenkins.scm.api.SCMSource;
+import jenkins.scm.api.SCMSourceEvent;
 import jenkins.scm.api.SCMSourceObserver;
 import jenkins.scm.api.metadata.ObjectMetadataAction;
 import jenkins.scm.api.trait.SCMNavigatorRequest;
@@ -143,6 +145,24 @@ public class ASFGitSCMNavigator extends SCMNavigator {
      * {@inheritDoc}
      */
     @Override
+    public void visitSources(@NonNull SCMSourceObserver observer, @NonNull SCMSourceEvent<?> event)
+            throws IOException, InterruptedException {
+        visitSource(event.getSourceName(), observer);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void visitSources(@NonNull SCMSourceObserver observer, @NonNull SCMHeadEvent<?> event)
+            throws IOException, InterruptedException {
+        visitSource(event.getSourceName(), observer);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void visitSources(@NonNull final SCMSourceObserver observer) throws IOException, InterruptedException {
         try (ASFGitSCMNavigatorRequest request = new ASFGitSCMNavigatorContext()
                 .withTraits(traits)
@@ -188,6 +208,46 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                 }
             }
             observer.getListener().getLogger().format("%n  %d repositories were processed%n", count);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void visitSource(@NonNull String sourceName, @NonNull SCMSourceObserver observer)
+            throws IOException, InterruptedException {
+        try (ASFGitSCMNavigatorRequest request = new ASFGitSCMNavigatorContext()
+                .withTraits(traits)
+                .newRequest(this, observer)) {
+            observer.getListener().getLogger().format("%n    Checking repository %s%n",
+                    HyperlinkNote
+                            .encodeTo(server + "?p=" + URLEncoder.encode(sourceName, "UTF-8") + ".git;a=summary",
+                                    sourceName));
+            if (request.process(sourceName, new SCMNavigatorRequest.SourceLambda() {
+                @NonNull
+                @Override
+                public SCMSource create(@NonNull String projectName) throws IOException, InterruptedException {
+                    return new ASFGitSCMSourceBuilder(getId() + "::" + projectName,
+                            server, projectName
+                    )
+                            .withTraits(traits)
+                            .build();
+                }
+            }, null, new SCMNavigatorRequest.Witness() {
+                @Override
+                public void record(@NonNull String projectName, boolean isMatch) {
+                    if (isMatch) {
+                        observer.getListener().getLogger().format("      Proposing %s%n", projectName);
+                    } else {
+                        observer.getListener().getLogger().format("      Ignoring %s%n", projectName);
+                    }
+                }
+            })) {
+                observer.getListener().getLogger().format("%n  1 repository was processed (query complete)%n");
+                return;
+            }
+            observer.getListener().getLogger().format("%n  1 repository was processed%n");
         }
     }
 
@@ -244,6 +304,14 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         @Override
         public String getDescription() {
             return Messages.ASFGitSCMNavigator_description();
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public String getPronoun() {
+            return Messages.ASFGitSCMNavigator_displayName();
         }
 
         /**
