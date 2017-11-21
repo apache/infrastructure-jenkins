@@ -22,7 +22,6 @@ import com.ning.http.client.AsyncCompletionHandlerBase;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.AsyncHttpClientConfig;
 import com.ning.http.client.HttpResponseBodyPart;
-import com.ning.http.client.PerRequestConfig;
 import com.ning.http.client.RequestBuilder;
 import com.ning.http.client.Response;
 import edu.umd.cs.findbugs.annotations.NonNull;
@@ -110,7 +109,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
     private Future<?> longPollRequest;
 
     public GitPubSubPoll() {
-        super("ASG GitPubSub poll");
+        super("ASF GitPubSub poll");
     }
 
     @Override
@@ -144,11 +143,10 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
         }
         RequestBuilder builder = new RequestBuilder("GET")
                 .setUrl(JsonHandler.GITPUBSUB_URL)
-                .setPerRequestConfig(new PerRequestConfig(null,
-                                                          requestRecycleMins == -1
-                                                              ? -1
-                                                              : (requestRecycleMins + 1) * 60 * 1000
-                ));
+                .setRequestTimeout(requestRecycleMins == -1
+                        ? -1
+                        : (requestRecycleMins + 1) * 60 * 1000
+                );
         if (lastTS != 0) {
             builder.addHeader("X-Fetch-Since", Long.toString(lastTS));
         }
@@ -156,8 +154,8 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
             LOGGER.log(Level.FINE, "Starting AsyncHttpClient instance");
             client = new AsyncHttpClient(
                     new AsyncHttpClientConfig.Builder()
-                            .setAllowPoolingConnection(false)
-                            .setRequestTimeoutInMs(
+                            .setAllowPoolingConnections(false)
+                            .setRequestTimeout(
                                     requestRecycleMins == -1
                                     ? -1
                                     : (requestRecycleMins + 1) * 60 * 1000)
@@ -302,7 +300,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
     }
 
-    private class Push extends SCMHeadEvent<JsonNode> {
+    private static class Push extends SCMHeadEvent<JsonNode> {
         private final URIish remoteUri;
         private String server;
 
