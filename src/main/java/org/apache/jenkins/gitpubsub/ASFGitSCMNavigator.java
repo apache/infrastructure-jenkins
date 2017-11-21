@@ -5,7 +5,9 @@ import hudson.Extension;
 import hudson.ExtensionList;
 import hudson.Util;
 import hudson.console.HyperlinkNote;
+import hudson.model.Action;
 import hudson.model.Descriptor;
+import hudson.model.TaskListener;
 import hudson.util.ListBoxModel;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,15 +21,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nonnull;
-import jenkins.model.Jenkins;
 import jenkins.plugins.git.GitSCMBuilder;
 import jenkins.plugins.git.GitSCMSource;
 import jenkins.plugins.git.GitSCMSourceContext;
 import jenkins.plugins.git.traits.GitBrowserSCMSourceTrait;
 import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMNavigatorDescriptor;
+import jenkins.scm.api.SCMNavigatorEvent;
+import jenkins.scm.api.SCMNavigatorOwner;
 import jenkins.scm.api.SCMSource;
 import jenkins.scm.api.SCMSourceObserver;
+import jenkins.scm.api.metadata.ObjectMetadataAction;
 import jenkins.scm.api.trait.SCMNavigatorRequest;
 import jenkins.scm.api.trait.SCMNavigatorTrait;
 import jenkins.scm.api.trait.SCMNavigatorTraitDescriptor;
@@ -123,6 +127,26 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         }
     }
 
+    @NonNull
+    @Override
+    protected List<Action> retrieveActions(@NonNull SCMNavigatorOwner owner, SCMNavigatorEvent event,
+                                           @NonNull TaskListener listener) throws IOException, InterruptedException {
+        List<Action> result = new ArrayList<>(super.retrieveActions(owner, event, listener));
+        ASFGitSCMNavigatorContext context = new ASFGitSCMNavigatorContext().withTraits(traits);
+        String avatarUrl = context.avatarUrl();
+        if (avatarUrl != null) {
+            String avatarDescription = context.avatarDescription();
+            result.add(new ASFAvatarMetadataAction(avatarUrl, avatarDescription));
+        }
+        String objectUrl = context.objectUrl();
+        String objectDescription = context.objectDescription();
+        String objectDisplayName = context.objectDisplayName();
+        if (objectUrl != null || objectDescription != null || objectDisplayName != null) {
+            result.add(new ObjectMetadataAction(objectDisplayName, objectDescription, objectUrl));
+        }
+        return result;
+    }
+
     @Extension
     public static class DescriptorImpl extends SCMNavigatorDescriptor {
 
@@ -192,4 +216,5 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         }
 
     }
+
 }
