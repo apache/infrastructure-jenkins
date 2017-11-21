@@ -18,14 +18,32 @@ package org.apache.jenkins.gitpubsub;
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import jenkins.scm.api.metadata.AvatarMetadataAction;
+import org.apache.commons.lang.StringUtils;
 
+/**
+ * Provides the avatar information for a {@link ASFGitSCMNavigator}.
+ */
 public class ASFAvatarMetadataAction extends AvatarMetadataAction {
+    /**
+     * The avatar url.
+     */
+    @NonNull
     private final String avatarUrl;
+    /**
+     * The avatar description.
+     */
+    @CheckForNull
     private final String avatarDescription;
 
+    /**
+     * Constructor.
+     *
+     * @param avatarUrl         The avatar url.
+     * @param avatarDescription The avatar description.
+     */
     public ASFAvatarMetadataAction(@NonNull String avatarUrl, @CheckForNull String avatarDescription) {
         this.avatarUrl = avatarUrl;
-        this.avatarDescription = avatarDescription;
+        this.avatarDescription = StringUtils.trimToNull(avatarDescription);
     }
 
     /**

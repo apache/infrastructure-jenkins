@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/history - Jenkinsfile</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - history of Jenkinsfile on 'master' - RSS feed" href="/repos/asf?p=maven.git;a=rss;f=Jenkinsfile;h=refs/heads/master" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - history of Jenkinsfile on 'master' - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;f=Jenkinsfile;h=refs/heads/master;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - history of Jenkinsfile on 'master' - Atom feed" href="/repos/asf?p=maven.git;a=atom;f=Jenkinsfile;h=refs/heads/master" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - history of Jenkinsfile on 'master' - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;f=Jenkinsfile;h=refs/heads/master;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img width="72" height="27" class="logo" src="/static/git-logo.png" alt="git" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / history
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input name="p" value="maven.git" type="hidden" />
+<input name="a" value="search" type="hidden" />
+<input name="h" value="refs/heads/master" type="hidden" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a href="/repos/asf?p=maven.git;a=search_help" title="search help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log">log</a> | <a href="/repos/asf?p=maven.git;a=commit">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree">tree</a><br/>
+first &sdot; prev &sdot; next<br/>
+</div>
+<div class="header">
+<a class="title" href="/repos/asf?p=maven.git;a=commit;h=refs/heads/master">[MNG-6302] display progress at end of &quot;Building&quot; line</a>
+</div>
+<div class="page_path"><a href="/repos/asf?p=maven.git;a=tree;hb=refs/heads/master" title="tree root">[maven.git]</a> / <a href="/repos/asf?p=maven.git;a=blob_plain;f=Jenkinsfile;hb=refs/heads/master" title="Jenkinsfile">Jenkinsfile</a><br/></div>
+<table class="history">
+<tr class="dark">
+<td title="2 months ago"><i>2017-08-29</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Stephen+Connolly;st=author" title="Search for commits authored by Stephen Connolly" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=16" alt="" />&nbsp;Stephen Connolly</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=e44c39c2eb5afda9efe60b9dd0ffc32c62501c5f" title="Update Jenkinsfile to use JENKINS-43507 syntax for resolveScm">Update Jenkinsfile to use JENKINS-43507 syntax for... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=e44c39c2eb5afda9efe60b9dd0ffc32c62501c5f">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=e44c39c2eb5afda9efe60b9dd0ffc32c62501c5f">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 months ago"><i>2017-04-11</i></td>
+<td class="author"><a title="Search for commits authored by Lubomir Varga" class="list" href="/repos/asf?p=maven.git;a=search;s=Lubomir+Varga;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/0e17cad09fac766e8c3f10f0e981b115?s=16" alt="" />&nbsp;Lubomir Varga</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=6a93bbea23e362c9cea7d710a37556258c2dbd47">Improve Javadoc of ComparableVersion#main()</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=6a93bbea23e362c9cea7d710a37556258c2dbd47">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=6a93bbea23e362c9cea7d710a37556258c2dbd47">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=b6c7e19ba74352acc513e10ff9dc8cc9f4fcc1f8;hb=refs/heads/master;hpb=6a93bbea23e362c9cea7d710a37556258c2dbd47">diff to current</a></td>
+</tr>
+<tr class="dark">
+<td title="7 months ago"><i>2017-03-28</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" title="use new &quot;Maven 3 (latest)&quot; and &quot;JDK 1.x (latest)&quot; Ubuntu+win aliases" href="/repos/asf?p=maven.git;a=commit;h=0baa42345283f4fea3938a8ccd7c8e12b34203b1">use new &quot;Maven 3 (latest)&quot; and &quot;JDK 1.x (latest)&quot; Ubunt... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=0baa42345283f4fea3938a8ccd7c8e12b34203b1">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=0baa42345283f4fea3938a8ccd7c8e12b34203b1">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=b6c7e19ba74352acc513e10ff9dc8cc9f4fcc1f8;hb=refs/heads/master;hpb=0baa42345283f4fea3938a8ccd7c8e12b34203b1">diff to current</a></td>
+</tr>
+<tr class="light">
+<td title="7 months ago"><i>2017-03-28</i></td>
+<td class="author"><a title="Search for commits authored by Hervé Boutemy" class="list" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=94c3b600ec3290cda98a66c108ff021b7c4c482e" class="list subject">switch to embedded core ITs run for faster result</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=94c3b600ec3290cda98a66c108ff021b7c4c482e">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=94c3b600ec3290cda98a66c108ff021b7c4c482e">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=be4485ce82105d2e07c83b0d3884427e9840723d;hb=refs/heads/master;hpb=94c3b600ec3290cda98a66c108ff021b7c4c482e">diff to current</a></td>
+</tr>
+<tr class="dark">
+<td title="7 months ago"><i>2017-03-28</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" title="Search for commits authored by Hervé Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=ad514f5cb55d16ca116c5c529ad48dd32d5bac61">added CORE_IT_PROFILES parameter</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=ad514f5cb55d16ca116c5c529ad48dd32d5bac61">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=ad514f5cb55d16ca116c5c529ad48dd32d5bac61">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=0dae3a34f443f10198b061a463694cfcc00e1e6e;hb=refs/heads/master;hpb=ad514f5cb55d16ca116c5c529ad48dd32d5bac61">diff to current</a></td>
+</tr>
+<tr class="light">
+<td title="7 months ago"><i>2017-03-28</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" title="Search for commits authored by Hervé Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=16805f50ea1715c42ad59312f3e64ab70af3acfe">trying to make Jenkinsfile easier to understand</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=16805f50ea1715c42ad59312f3e64ab70af3acfe">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=16805f50ea1715c42ad59312f3e64ab70af3acfe">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=cc9bd92d50d4acbcd7e7f438d3030605d6bb1142;hb=refs/heads/master;hpb=16805f50ea1715c42ad59312f3e64ab70af3acfe">diff to current</a></td>
+</tr>
+<tr class="dark">
+<td title="7 months ago"><i>2017-03-27</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Stephen+Connolly;st=author" title="Search for commits authored by Stephen Connolly" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=16" alt="" />&nbsp;Stephen Connolly</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=33c8d8efe9410e134080bd979a7df82de80bcf74">INFRA have been changing JDK labels again</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=33c8d8efe9410e134080bd979a7df82de80bcf74">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=33c8d8efe9410e134080bd979a7df82de80bcf74">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=123a24637a8341dec4cf3cb99f1257b64af54247;hb=refs/heads/master;hpb=33c8d8efe9410e134080bd979a7df82de80bcf74">diff to current</a></td>
+</tr>
+<tr class="light">
+<td title="8 months ago"><i>2017-02-23</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Stephen+Connolly;st=author" title="Search for commits authored by Stephen Connolly" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=16" alt="" />&nbsp;Stephen Connolly</a></td><td><a title="Switch to resolveScm so that we get auto linking of matching integration test branches" href="/repos/asf?p=maven.git;a=commit;h=5cce371c8aee5d957d9b24e46cddc939a15aff40" class="list subject">Switch to resolveScm so that we get auto linking of... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=5cce371c8aee5d957d9b24e46cddc939a15aff40">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=5cce371c8aee5d957d9b24e46cddc939a15aff40">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=2ac264432e67fed698212776e91fb6d1035ce277;hb=refs/heads/master;hpb=5cce371c8aee5d957d9b24e46cddc939a15aff40">diff to current</a></td>
+</tr>
+<tr class="dark">
+<td title="9 months ago"><i>2017-01-24</i></td>
+<td class="author"><a title="Search for commits authored by Hervé Boutemy" class="list" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=21d1bfb5a08ecf67a10b88a6fdbda98e7361376b">Jenkins file notification email title improvement</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=21d1bfb5a08ecf67a10b88a6fdbda98e7361376b">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=21d1bfb5a08ecf67a10b88a6fdbda98e7361376b">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=5b82d78d7fec98964a812a149af965d0d869253a;hb=refs/heads/master;hpb=21d1bfb5a08ecf67a10b88a6fdbda98e7361376b">diff to current</a></td>
+</tr>
+<tr class="light">
+<td title="10 months ago"><i>2017-01-16</i></td>
+<td class="author"><a title="Search for commits authored by Christian Schulte" class="list" href="/repos/asf?p=maven.git;a=search;s=Christian+Schulte;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/a7b855d54a93692cc35fb18bbc6c9d9b?s=16" alt="" />&nbsp;Christian Schulte</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=c6c5192d4bcb50c1aab6fade53dfb9c2f3d9b7e7" class="list subject">Merge branch 'MNG-5629'</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=c6c5192d4bcb50c1aab6fade53dfb9c2f3d9b7e7">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=c6c5192d4bcb50c1aab6fade53dfb9c2f3d9b7e7">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=07ce2e69da3304b7886e96228256bad3ecced300;hb=refs/heads/master;hpb=c6c5192d4bcb50c1aab6fade53dfb9c2f3d9b7e7">diff to current</a></td>
+</tr>
+<tr class="dark">
+<td title="10 months ago"><i>2017-01-11</i></td>
+<td class="author"><a title="Search for commits authored by Stephen Connolly" class="list" href="/repos/asf?p=maven.git;a=search;s=Stephen+Connolly;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=16" alt="" />&nbsp;Stephen Connolly</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=a83296d795536f43fe38fa277752003ca15ada53">[INFRA-13307] Now we can build on either Windows node</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=a83296d795536f43fe38fa277752003ca15ada53">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=a83296d795536f43fe38fa277752003ca15ada53">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=07ce2e69da3304b7886e96228256bad3ecced300;hb=refs/heads/master;hpb=a83296d795536f43fe38fa277752003ca15ada53">diff to current</a></td>
+</tr>
+<tr class="light">
+<td title="10 months ago"><i>2017-01-09</i></td>
+<td class="author"><a title="Search for commits authored by Stephen Connolly" class="list" href="/repos/asf?p=maven.git;a=search;s=Stephen+Connolly;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/c0de98ae17fa45d01407fcd0e77c6841?s=16" alt="" />&nbsp;Stephen Connolly</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=e51fc87277bb988aed7641d02fd888c77d0a1206">[MNG-6152] Add a Jenkinsfile</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=blob;f=Jenkinsfile;hb=e51fc87277bb988aed7641d02fd888c77d0a1206">blob</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=e51fc87277bb988aed7641d02fd888c77d0a1206">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=blobdiff;f=Jenkinsfile;h=004abcbc22bdcc631b73f1091322e23a163be0b8;hp=755ecb5c7ee48ad95e0a65d32f0dfdff53456e0c;hb=refs/heads/master;hpb=e51fc87277bb988aed7641d02fd888c77d0a1206">diff to current</a></td>
+</tr>
+<tr>
+<td colspan="4"></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a class="rss_logo" href="/repos/asf?p=maven.git;a=rss;f=Jenkinsfile;h=refs/heads/master" title="history of Jenkinsfile on 'master' RSS feed">RSS</a>
+<a title="history of Jenkinsfile on 'master' Atom feed" href="/repos/asf?p=maven.git;a=atom;f=Jenkinsfile;h=refs/heads/master" class="rss_logo">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

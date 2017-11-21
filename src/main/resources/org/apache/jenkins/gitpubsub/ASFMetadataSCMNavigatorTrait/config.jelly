@@ -22,13 +22,13 @@
     <f:entry title="${%Avatar Description}" field="avatarDescription">
       <f:textarea/>
     </f:entry>
-    <f:entry title="${%Object URL}" field="objectUrl">
+    <f:entry title="${%Project URL}" field="objectUrl">
       <f:textbox/>
     </f:entry>
-    <f:entry title="${%Object Display Name}" field="objectDisplayName">
+    <f:entry title="${%Project Name}" field="objectDisplayName">
       <f:textbox/>
     </f:entry>
-    <f:entry title="${%Object Description}" field="objectDescription">
+    <f:entry title="${%Project Description}" field="objectDescription">
       <f:textarea/>
     </f:entry>
   </f:advanced>

@@ -20,6 +20,9 @@ import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMSourceObserver;
 import jenkins.scm.api.trait.SCMNavigatorRequest;
 
+/**
+ * A {@link SCMNavigatorRequest} for {@link ASFGitSCMNavigatorContext}.
+ */
 public class ASFGitSCMNavigatorRequest extends SCMNavigatorRequest {
     /**
      * Constructor.
@@ -28,11 +31,11 @@ public class ASFGitSCMNavigatorRequest extends SCMNavigatorRequest {
      * @param context  the context.
      * @param observer the observer.
      */
-    public ASFGitSCMNavigatorRequest(@NonNull SCMNavigator source,
-                                     @NonNull
-                                             ASFGitSCMNavigatorContext context,
-                                     @NonNull
-                                             SCMSourceObserver observer) {
+    ASFGitSCMNavigatorRequest(@NonNull SCMNavigator source,
+                              @NonNull
+                                      ASFGitSCMNavigatorContext context,
+                              @NonNull
+                                      SCMSourceObserver observer) {
         super(source, context, observer);
     }
 }

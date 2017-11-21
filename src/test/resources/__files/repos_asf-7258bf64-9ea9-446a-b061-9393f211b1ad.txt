@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - maven.git/history - src</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="maven.git - history of src on 'master' - RSS feed" href="/repos/asf?p=maven.git;a=rss;f=src;h=refs/heads/master" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - history of src on 'master' - RSS feed (no merges)" href="/repos/asf?p=maven.git;a=rss;f=src;h=refs/heads/master;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="maven.git - history of src on 'master' - Atom feed" href="/repos/asf?p=maven.git;a=atom;f=src;h=refs/heads/master" type="application/atom+xml" />
+<link rel="alternate" title="maven.git - history of src on 'master' - Atom feed (no merges)" href="/repos/asf?p=maven.git;a=atom;f=src;h=refs/heads/master;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a href="http://git-scm.com/" title="git homepage"><img alt="git" width="72" class="logo" src="/static/git-logo.png" height="27" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=maven.git;a=summary">maven.git</a> / history
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input type="hidden" value="maven.git" name="p" />
+<input type="hidden" name="a" value="search" />
+<input type="hidden" value="refs/heads/master" name="h" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a href="/repos/asf?p=maven.git;a=search_help" title="search help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+<a href="/repos/asf?p=maven.git;a=summary">summary</a> | <a href="/repos/asf?p=maven.git;a=shortlog">shortlog</a> | <a href="/repos/asf?p=maven.git;a=log">log</a> | <a href="/repos/asf?p=maven.git;a=commit">commit</a> | <a href="/repos/asf?p=maven.git;a=commitdiff">commitdiff</a> | <a href="/repos/asf?p=maven.git;a=tree">tree</a><br/>
+first &sdot; prev &sdot; next<br/>
+</div>
+<div class="header">
+<a class="title" href="/repos/asf?p=maven.git;a=commit;h=refs/heads/master">[MNG-6302] display progress at end of &quot;Building&quot; line</a>
+</div>
+<div class="page_path"><a href="/repos/asf?p=maven.git;a=tree;hb=refs/heads/master" title="tree root">[maven.git]</a> / <a href="/repos/asf?p=maven.git;a=tree;f=src;hb=refs/heads/master" title="src">src</a> / <br/></div>
+<table class="history">
+<tr class="dark">
+<td title="9 months ago"><i>2017-02-18</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" title="Search for commits authored by Hervé Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a title="[MNG-6140] maven-core depends on shared-utils (not project-utils)" href="/repos/asf?p=maven.git;a=commit;h=f1cc1d4e5aec96c9bd54219304e1b6b08855b102" class="list subject">[MNG-6140] maven-core depends on shared-utils (not... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f1cc1d4e5aec96c9bd54219304e1b6b08855b102">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f1cc1d4e5aec96c9bd54219304e1b6b08855b102">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="9 months ago"><i>2017-02-01</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=1cb2e92b5ad6bc2baa80c48b6357d5f42df4e48f" title="[MNG-6140] renamed aether to resolver, added slf4j-provider">[MNG-6140] renamed aether to resolver, added slf4j... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=1cb2e92b5ad6bc2baa80c48b6357d5f42df4e48f">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=1cb2e92b5ad6bc2baa80c48b6357d5f42df4e48f">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="9 months ago"><i>2017-01-24</i></td>
+<td class="author"><a title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=84085c0a9ce4febee8be124fe61f02cd40185d20">updated urls (https, plexus) and license header formatting</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=84085c0a9ce4febee8be124fe61f02cd40185d20">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=84085c0a9ce4febee8be124fe61f02cd40185d20">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="9 months ago"><i>2017-01-24</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=733eedc4fb16b0ed0d9cf792dd644e659b738cd9">added standard license and download links</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=733eedc4fb16b0ed0d9cf792dd644e659b738cd9">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=733eedc4fb16b0ed0d9cf792dd644e659b738cd9">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="9 months ago"><i>2017-01-24</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=94bc4de2ea54afa09a353034ed06edf0f68a8d87" title="[MNG-6093] use monkey patched slf4j-simple provider with Maven color">[MNG-6093] use monkey patched slf4j-simple provider... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=94bc4de2ea54afa09a353034ed06edf0f68a8d87">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=94bc4de2ea54afa09a353034ed06edf0f68a8d87">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="2 years ago"><i>2015-08-02</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=337284bdcfa4726887cb0af6767b3d8fc922ec96" class="list subject">Plexus is now at github</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=337284bdcfa4726887cb0af6767b3d8fc922ec96">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=337284bdcfa4726887cb0af6767b3d8fc922ec96">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="2 years ago"><i>2015-02-28</i></td>
+<td class="author"><a title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=e7f3768b51303c07895baf874b7c15350b8cc041" class="list subject" title="[MNG-5740] added maven-builder-support to dependency image">[MNG-5740] added maven-builder-support to dependency... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=e7f3768b51303c07895baf874b7c15350b8cc041">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=e7f3768b51303c07895baf874b7c15350b8cc041">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="4 years ago"><i>2013-08-24</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" title="Search for commits authored by Hervé Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=cc28bb2e11ca3426e102f5989faf048edd9a9534">forgot cropping image</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=cc28bb2e11ca3426e102f5989faf048edd9a9534">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=cc28bb2e11ca3426e102f5989faf048edd9a9534">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="4 years ago"><i>2013-08-24</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" title="Search for commits authored by Hervé Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a title="better representation of the fact that sisu-inject uses stock guice" class="list subject" href="/repos/asf?p=maven.git;a=commit;h=d369c82a56a21c85d60aeadf5e2e8f3c50a5a066">better representation of the fact that sisu-inject... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=d369c82a56a21c85d60aeadf5e2e8f3c50a5a066">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=d369c82a56a21c85d60aeadf5e2e8f3c50a5a066">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="4 years ago"><i>2013-08-24</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=f2e8106bf937d9e0c508f9277d42ce8056f9424e">improved sisu/guice description:</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f2e8106bf937d9e0c508f9277d42ce8056f9424e">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f2e8106bf937d9e0c508f9277d42ce8056f9424e">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="4 years ago"><i>2013-07-27</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Hervé Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=7ffd13af5fe317d152e211be506f5a686eab0504">added links to toolchains descriptor reference</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=7ffd13af5fe317d152e211be506f5a686eab0504">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=7ffd13af5fe317d152e211be506f5a686eab0504">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="4 years ago"><i>2013-03-18</i></td>
+<td class="author"><a title="Search for commits authored by Jason van Zyl" href="/repos/asf?p=maven.git;a=search;s=Jason+van+Zyl;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/14846ec9afadab3f19ea156febe7dcde?s=16" alt="" />&nbsp;Jason van Zyl</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=f50ae7b059fd52f1f5a79a79d9eb9ea803918638">o Merge branch 'master' into eclipse-aether</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f50ae7b059fd52f1f5a79a79d9eb9ea803918638">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f50ae7b059fd52f1f5a79a79d9eb9ea803918638">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="4 years ago"><i>2013-03-14</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Jason+van+Zyl;st=author" title="Search for commits authored by Jason van Zyl"><img width="16" class="avatar" src="//www.gravatar.com/avatar/14846ec9afadab3f19ea156febe7dcde?s=16" alt="" />&nbsp;Jason van Zyl</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=ebf2e4ddeaee2c7634a66b7c08bf4bf197768896" title="Merge branch 'eclipse-aether' of github.com:tesla/tesla-build into eclipse-aether">Merge branch 'eclipse-aether' of github.com:tesla/tesla... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=ebf2e4ddeaee2c7634a66b7c08bf4bf197768896">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=ebf2e4ddeaee2c7634a66b7c08bf4bf197768896">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="4 years ago"><i>2013-02-15</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Jason van Zyl" href="/repos/asf?p=maven.git;a=search;s=Jason+van+Zyl;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/14846ec9afadab3f19ea156febe7dcde?s=16" alt="" />&nbsp;Jason van Zyl</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=137cbd8a9772343f5fa5e48ca0a3cce4fe8e4331">Merge branch 'trunk' into eclipse-aether</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=137cbd8a9772343f5fa5e48ca0a3cce4fe8e4331">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=137cbd8a9772343f5fa5e48ca0a3cce4fe8e4331">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="4 years ago"><i>2013-02-15</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Jason van Zyl" href="/repos/asf?p=maven.git;a=search;s=Jason+van+Zyl;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/14846ec9afadab3f19ea156febe7dcde?s=16" alt="" />&nbsp;Jason van Zyl</a></td><td><a title="Merge branch 'master' of https://git-wip-us.apache.org/repos/asf/maven into trunk" class="list subject" href="/repos/asf?p=maven.git;a=commit;h=8181e7c7fa2ba104187710175c02ad2d042504b9">Merge branch 'master' of https://git-wip-us.apache... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=8181e7c7fa2ba104187710175c02ad2d042504b9">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=8181e7c7fa2ba104187710175c02ad2d042504b9">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="4 years ago"><i>2013-02-15</i></td>
+<td class="author"><a title="Search for commits authored by Jason van Zyl" href="/repos/asf?p=maven.git;a=search;s=Jason+van+Zyl;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/14846ec9afadab3f19ea156febe7dcde?s=16" alt="" />&nbsp;Jason van Zyl</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=27ad9858d215e40ab4853428c144554ae1bbb981" class="list subject" title="Merge branch 'aether' of github.com:bentmann/maven-3 into eclipse-aether">Merge branch 'aether' of github.com:bentmann/maven... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=27ad9858d215e40ab4853428c144554ae1bbb981">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=27ad9858d215e40ab4853428c144554ae1bbb981">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="4 years ago"><i>2013-01-29</i></td>
+<td class="author"><a title="Search for commits authored by Kristian Rosenvold" href="/repos/asf?p=maven.git;a=search;s=Kristian+Rosenvold;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4d56dc8724cf2f1424459ff47a49c56e?s=16" alt="" />&nbsp;Kristian Rosenvold</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=176a85f43c6a69b042024f2daebff25376930ce2">Fixed line feeds, added .gitattributes</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=176a85f43c6a69b042024f2daebff25376930ce2">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=176a85f43c6a69b042024f2daebff25376930ce2">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="4 years ago"><i>2012-12-02</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herv%C3%A9+Boutemy;st=author" title="Search for commits authored by Hervé Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Hervé Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=ab86435af10a9b7dfe2f13daacc978d535f818a7" class="list subject">stay with fluido skin 1.2.1 because of MSKINS-69</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=ab86435af10a9b7dfe2f13daacc978d535f818a7">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=ab86435af10a9b7dfe2f13daacc978d535f818a7">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="5 years ago"><i>2012-11-18</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=fb0cd240f3753535fbe21c753a52f4f8b19d1b4d" class="list subject">added Reference menu</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=fb0cd240f3753535fbe21c753a52f4f8b19d1b4d">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=fb0cd240f3753535fbe21c753a52f4f8b19d1b4d">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="5 years ago"><i>2012-11-18</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=7892b6d493c93f70794f78daf22d1bc764a051d8" class="list subject">added Reference menu</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=7892b6d493c93f70794f78daf22d1bc764a051d8">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=7892b6d493c93f70794f78daf22d1bc764a051d8">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="5 years ago"><i>2012-09-02</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=83436f27a771dc07d9c3373ddd6b97ffec45cfeb">updated skin</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=83436f27a771dc07d9c3373ddd6b97ffec45cfeb">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=83436f27a771dc07d9c3373ddd6b97ffec45cfeb">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="5 years ago"><i>2012-08-26</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=37c44e6a393726539f505155ac0f389340bd266c">upgraded fuildo skin used</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=37c44e6a393726539f505155ac0f389340bd266c">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=37c44e6a393726539f505155ac0f389340bd266c">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="5 years ago"><i>2012-05-14</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Olivier+Lamy;st=author" title="Search for commits authored by Olivier Lamy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/bab29f762bea8e578505424443d8cd41?s=16" alt="" />&nbsp;Olivier Lamy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=55635911ec07b3c1c56b709833924c74038b9278">fluido skin 1.2.1</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=55635911ec07b3c1c56b709833924c74038b9278">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=55635911ec07b3c1c56b709833924c74038b9278">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="5 years ago"><i>2011-12-01</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Olivier+Lamy;st=author" title="Search for commits authored by Olivier Lamy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/bab29f762bea8e578505424443d8cd41?s=16" alt="" />&nbsp;Olivier Lamy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=fe39398f74cd275132a1d370d9fdd175c5aaf3c8">use new fluido skin for core ref site</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=fe39398f74cd275132a1d370d9fdd175c5aaf3c8">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=fe39398f74cd275132a1d370d9fdd175c5aaf3c8">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="5 years ago"><i>2011-12-01</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Olivier Lamy" href="/repos/asf?p=maven.git;a=search;s=Olivier+Lamy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/bab29f762bea8e578505424443d8cd41?s=16" alt="" />&nbsp;Olivier Lamy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=85d20442503e6d8b4ac278745cd250c070894a07" class="list subject">use new fluido skin for core ref site</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=85d20442503e6d8b4ac278745cd250c070894a07">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=85d20442503e6d8b4ac278745cd250c070894a07">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="6 years ago"><i>2011-09-17</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=40cdcb7563f68f7a270526afd1831c469e69d78b">point to Aether and Sisu projects at Eclipse</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=40cdcb7563f68f7a270526afd1831c469e69d78b">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=40cdcb7563f68f7a270526afd1831c469e69d78b">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="6 years ago"><i>2011-09-04</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=6ce900737dd76e1a6346069ee017e6ccb8e601c9">improved documentation</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=6ce900737dd76e1a6346069ee017e6ccb8e601c9">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=6ce900737dd76e1a6346069ee017e6ccb8e601c9">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="6 years ago"><i>2011-09-03</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=3944b817347d4495e71e0061668c1f263de040aa">updated title of introduction pages</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=3944b817347d4495e71e0061668c1f263de040aa">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=3944b817347d4495e71e0061668c1f263de040aa">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="6 years ago"><i>2011-08-29</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=99994254c73377ba8158628bd2824f859408e61a">added Descriptors Reference menu</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=99994254c73377ba8158628bd2824f859408e61a">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=99994254c73377ba8158628bd2824f859408e61a">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="6 years ago"><i>2011-07-20</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=d04c4be779e6462d606987444468bc5130340b38">added missing breadcrumb</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=d04c4be779e6462d606987444468bc5130340b38">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=d04c4be779e6462d606987444468bc5130340b38">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="6 years ago"><i>2011-07-16</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a title="updated url to match site organization: Maven core url is not the whole site but... " href="/repos/asf?p=maven.git;a=commit;h=3c3b778d03855b0f0576660b513f2f3c17431e76" class="list subject">updated url to match site organization: Maven core... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=3c3b778d03855b0f0576660b513f2f3c17431e76">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=3c3b778d03855b0f0576660b513f2f3c17431e76">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="6 years ago"><i>2011-07-16</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=4a6f81e64eb88a2e096ca85752f0fe2843684313" class="list subject">prepare m.jxr.p 2.3 with its new aggregate goal</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=4a6f81e64eb88a2e096ca85752f0fe2843684313">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=4a6f81e64eb88a2e096ca85752f0fe2843684313">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="6 years ago"><i>2011-07-13</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=f79592c3ce0e8ce493418a85bc515494bad51c53" class="list subject">added development menu</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f79592c3ce0e8ce493418a85bc515494bad51c53">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f79592c3ce0e8ce493418a85bc515494bad51c53">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="6 years ago"><i>2011-06-25</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=e15d4a4dadc7fc7dd6bdb8476d06e14acb55e3a1">added links</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=e15d4a4dadc7fc7dd6bdb8476d06e14acb55e3a1">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=e15d4a4dadc7fc7dd6bdb8476d06e14acb55e3a1">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="6 years ago"><i>2011-06-18</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=799d63bf87b5cb7f3d3b7c99c61f35fea016af6d" class="list subject" title="[MNG-5119] added Javadocs and JXR links in left menu for every module to give easy... ">[MNG-5119] added Javadocs and JXR links in left menu... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=799d63bf87b5cb7f3d3b7c99c61f35fea016af6d">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=799d63bf87b5cb7f3d3b7c99c61f35fea016af6d">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 years ago"><i>2010-10-19</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=40f9aafbcb5e03ad0fee4f02c0fcd3dcb29448cb" class="list subject">updated links to Sonatype components to their new home</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=40f9aafbcb5e03ad0fee4f02c0fcd3dcb29448cb">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=40f9aafbcb5e03ad0fee4f02c0fcd3dcb29448cb">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="7 years ago"><i>2010-09-18</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=f0e9201748ed4725f86bc6924e514a8fbe15efe5" class="list subject">renamed spice-inject to sisu</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f0e9201748ed4725f86bc6924e514a8fbe15efe5">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f0e9201748ed4725f86bc6924e514a8fbe15efe5">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 years ago"><i>2010-09-04</i></td>
+<td class="author"><a title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=c82bef82f7fb804cc91dd0f3d48852f038e5f900">fixed typo</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=c82bef82f7fb804cc91dd0f3d48852f038e5f900">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=c82bef82f7fb804cc91dd0f3d48852f038e5f900">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="7 years ago"><i>2010-09-03</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=f52838688f0a755692dfb0a4a1c881703d37cce9" class="list subject">added spice-inject href</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f52838688f0a755692dfb0a4a1c881703d37cce9">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f52838688f0a755692dfb0a4a1c881703d37cce9">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 years ago"><i>2010-09-03</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=ee71e495122c22520d82596bfe5d70baa7dc23a3" class="list subject">updated maven-deps overview</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=ee71e495122c22520d82596bfe5d70baa7dc23a3">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=ee71e495122c22520d82596bfe5d70baa7dc23a3">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="7 years ago"><i>2010-08-31</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=8c541435f53b7f40beb2cb1088789a7c5da0fa45">updated maven-deps overview</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=8c541435f53b7f40beb2cb1088789a7c5da0fa45">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=8c541435f53b7f40beb2cb1088789a7c5da0fa45">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 years ago"><i>2010-06-26</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=75e51335a535cf99fb48ed3410b150e15bdd2c34" class="list subject">updated maven-stylus-skin version</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=75e51335a535cf99fb48ed3410b150e15bdd2c34">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=75e51335a535cf99fb48ed3410b150e15bdd2c34">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="7 years ago"><i>2010-06-25</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=4e202d7d0118e48b9980aae312404655bcbc1eb8" title="removed spellchecker configuration that was causing a red line">removed spellchecker configuration that was causing... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=4e202d7d0118e48b9980aae312404655bcbc1eb8">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=4e202d7d0118e48b9980aae312404655bcbc1eb8">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 years ago"><i>2010-06-20</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=fc64c716a17e83dab4d6356049b97ddfc189d4c2" class="list subject">added image map links to Spice components</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=fc64c716a17e83dab4d6356049b97ddfc189d4c2">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=fc64c716a17e83dab4d6356049b97ddfc189d4c2">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="7 years ago"><i>2010-06-03</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=e2d8c568a5860a3e676a6e4dafd3e38e0d27bf8f" class="list subject" title="added maven-repository-metadata module to dependencies image map">added maven-repository-metadata module to dependencies... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=e2d8c568a5860a3e676a6e4dafd3e38e0d27bf8f">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=e2d8c568a5860a3e676a6e4dafd3e38e0d27bf8f">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="7 years ago"><i>2010-05-31</i></td>
+<td class="author"><a title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a title="moved image .odg source file to avoid its copy when deploying site" class="list subject" href="/repos/asf?p=maven.git;a=commit;h=c63fc3a15411e2f742c6d2cab0047e9fa688ff2b">moved image .odg source file to avoid its copy when... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=c63fc3a15411e2f742c6d2cab0047e9fa688ff2b">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=c63fc3a15411e2f742c6d2cab0047e9fa688ff2b">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="7 years ago"><i>2010-05-30</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" title="Search for commits authored by Herve Boutemy"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a title="[MNG-4693] added a dependency image map to help understand and navigate" href="/repos/asf?p=maven.git;a=commit;h=1ba4a15a547c39811a9b87e12e584fd31a873f1d" class="list subject">[MNG-4693] added a dependency image map to help underst... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=1ba4a15a547c39811a9b87e12e584fd31a873f1d">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=1ba4a15a547c39811a9b87e12e584fd31a873f1d">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="8 years ago"><i>2009-11-09</i></td>
+<td class="author"><a title="Search for commits authored by Benjamin Bentmann" href="/repos/asf?p=maven.git;a=search;s=Benjamin+Bentmann;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/9a790b32ad665e9aa78988ba378250c1?s=16" alt="" />&nbsp;Benjamin Bentmann</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=fb58386561af82213f571140b8f8ab84e2ce288a" class="list subject">o Synced source distro creation with 2.x branch</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=fb58386561af82213f571140b8f8ab84e2ce288a">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=fb58386561af82213f571140b8f8ab84e2ce288a">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="8 years ago"><i>2009-01-16</i></td>
+<td class="author"><a title="Search for commits authored by Vincent Siveton" href="/repos/asf?p=maven.git;a=search;s=Vincent+Siveton;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/6b3c87a9fd95fb1d0af16816a075224e?s=16" alt="" />&nbsp;Vincent Siveton</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=e97df44d2cf232b6cec49daf2b07e5183de785d5">o bump to maven-stylus-skin:1.1</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=e97df44d2cf232b6cec49daf2b07e5183de785d5">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=e97df44d2cf232b6cec49daf2b07e5183de785d5">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="8 years ago"><i>2008-12-23</i></td>
+<td class="author"><a title="Search for commits authored by Vincent Siveton" href="/repos/asf?p=maven.git;a=search;s=Vincent+Siveton;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/6b3c87a9fd95fb1d0af16816a075224e?s=16" alt="" />&nbsp;Vincent Siveton</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=ce4bdb993c5dc52974f04a4268bacd59d2cb5ede" class="list subject">o merged r728997</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=ce4bdb993c5dc52974f04a4268bacd59d2cb5ede">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=ce4bdb993c5dc52974f04a4268bacd59d2cb5ede">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="9 years ago"><i>2008-04-20</i></td>
+<td class="author"><a title="Search for commits authored by Herve Boutemy" href="/repos/asf?p=maven.git;a=search;s=Herve+Boutemy;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/35b0cc47b5e6d602734c636082d630df?s=16" alt="" />&nbsp;Herve Boutemy</a></td><td><a title="added site descriptors to provide modules/parent links (merged from 2.0.x branch... " href="/repos/asf?p=maven.git;a=commit;h=007fe63a03a9bdaa1365181caa46a1bf214670d2" class="list subject">added site descriptors to provide modules/parent links... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=007fe63a03a9bdaa1365181caa46a1bf214670d2">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=007fe63a03a9bdaa1365181caa46a1bf214670d2">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="10 years ago"><i>2007-06-15</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=Brett+Leslie+Porter;st=author" title="Search for commits authored by Brett Leslie Porter" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/1db61ec29963d4a77ef2275140144fd4?s=16" alt="" />&nbsp;Brett Leslie Porter</a></td><td><a href="/repos/asf?p=maven.git;a=commit;h=3efdafe6a8f7936686805ff5e656550f87c6c70b" class="list subject">produce a source assembly as part of the release</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=3efdafe6a8f7936686805ff5e656550f87c6c70b">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=3efdafe6a8f7936686805ff5e656550f87c6c70b">commitdiff</a></td>
+</tr>
+<tr class="dark">
+<td title="10 years ago"><i>2007-01-14</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=maven.git;a=search;s=Jason+van+Zyl;st=author" title="Search for commits authored by Jason van Zyl"><img width="16" class="avatar" src="//www.gravatar.com/avatar/dd2ab408381395402fb0b183d002165c?s=16" alt="" />&nbsp;Jason van Zyl</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=7f5c377cfb0b3985d9d84e1c1f6f7873c98ed83f" title="o i've modified the source plugin to make a aggregrated source jar">o i've modified the source plugin to make a aggregrated... </a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=7f5c377cfb0b3985d9d84e1c1f6f7873c98ed83f">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=7f5c377cfb0b3985d9d84e1c1f6f7873c98ed83f">commitdiff</a></td>
+</tr>
+<tr class="light">
+<td title="11 years ago"><i>2006-04-05</i></td>
+<td class="author"><a href="/repos/asf?p=maven.git;a=search;s=John+Dennis+Casey;st=author" title="Search for commits authored by John Dennis Casey" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/5eb06f355d82f3267f3db16c6359601e?s=16" alt="" />&nbsp;John Dennis Casey</a></td><td><a class="list subject" href="/repos/asf?p=maven.git;a=commit;h=f810fd2ef23de9182ce9e4551ec8ed33ad5234df">Merging from 2.0.x branch, revIds:</a></td>
+<td class="link"><a href="/repos/asf?p=maven.git;a=tree;f=src;hb=f810fd2ef23de9182ce9e4551ec8ed33ad5234df">tree</a> | <a href="/repos/asf?p=maven.git;a=commitdiff;h=f810fd2ef23de9182ce9e4551ec8ed33ad5234df">commitdiff</a></td>
+</tr>
+<tr>
+<td colspan="4"></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Maven</div>
+<a title="history of src on 'master' RSS feed" class="rss_logo" href="/repos/asf?p=maven.git;a=rss;f=src;h=refs/heads/master">RSS</a>
+<a class="rss_logo" href="/repos/asf?p=maven.git;a=atom;f=src;h=refs/heads/master" title="history of src on 'master' Atom feed">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>

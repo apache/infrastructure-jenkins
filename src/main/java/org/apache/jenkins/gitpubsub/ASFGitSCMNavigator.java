@@ -15,6 +15,7 @@
  */
 package org.apache.jenkins.gitpubsub;
 
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.ExtensionList;
@@ -40,11 +41,13 @@ import jenkins.plugins.git.GitSCMBuilder;
 import jenkins.plugins.git.GitSCMSource;
 import jenkins.plugins.git.GitSCMSourceContext;
 import jenkins.plugins.git.traits.GitBrowserSCMSourceTrait;
+import jenkins.scm.api.SCMHeadEvent;
 import jenkins.scm.api.SCMNavigator;
 import jenkins.scm.api.SCMNavigatorDescriptor;
 import jenkins.scm.api.SCMNavigatorEvent;
 import jenkins.scm.api.SCMNavigatorOwner;
 import jenkins.scm.api.SCMSource;
+import jenkins.scm.api.SCMSourceEvent;
 import jenkins.scm.api.SCMSourceObserver;
 import jenkins.scm.api.metadata.ObjectMetadataAction;
 import jenkins.scm.api.trait.SCMNavigatorRequest;
@@ -57,33 +60,75 @@ import jenkins.scm.impl.form.NamedArrayList;
 import jenkins.scm.impl.trait.Discovery;
 import jenkins.scm.impl.trait.Selection;
 import org.apache.commons.lang.StringUtils;
+import org.jenkins.ui.icon.Icon;
+import org.jenkins.ui.icon.IconSet;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 
+/**
+ * A {@link SCMNavigator} that navigates {@code apache.org} hosted git repositories.
+ */
 public class ASFGitSCMNavigator extends SCMNavigator {
 
+    /**
+     * The date format used by GitWeb.
+     */
     static final String RFC_2822 = "EEE, dd MMM yyyy HH:mm:ss Z";
+    /**
+     * The first Git hosting for Apache.
+     */
     static final String GIT_WIP = "https://git-wip-us.apache.org/repos/asf";
+    /**
+     * The second Git hosting for Apache.
+     */
     static final String GIT_BOX = "https://gitbox.apache.org/repos/asf";
+    /**
+     * The server that we are navigating.
+     */
+    @NonNull
     private final String server;
+    /**
+     * The traits to apply.
+     */
     private List<SCMTrait<?>> traits = new ArrayList<>();
 
+    /**
+     * Constructor.
+     *
+     * @param server the server to navigate.
+     */
     @DataBoundConstructor
-    public ASFGitSCMNavigator(String server) {
+    public ASFGitSCMNavigator(@NonNull String server) {
         this.server = server;
     }
 
+    /**
+     * Gets the server to navigate.
+     *
+     * @return the server to navigate.
+     */
+    @NonNull
     public String getServer() {
         return server;
     }
 
+    /**
+     * Gets the traits.
+     *
+     * @return the traits.
+     */
     @NonNull
     public List<SCMTrait<?>> getTraits() {
         return Collections.unmodifiableList(traits);
     }
 
+    /**
+     * Sets the traits.
+     *
+     * @param traits the traits.
+     */
     @DataBoundSetter
-    public void setTraits(List<SCMTrait<?>> traits) {
+    public void setTraits(@CheckForNull List<? extends SCMTrait<?>> traits) {
         this.traits = new ArrayList<>(Util.fixNull(traits));
     }
 
@@ -94,6 +139,24 @@ public class ASFGitSCMNavigator extends SCMNavigator {
     @Override
     protected String id() {
         return server;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void visitSources(@NonNull SCMSourceObserver observer, @NonNull SCMSourceEvent<?> event)
+            throws IOException, InterruptedException {
+        visitSource(event.getSourceName(), observer);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void visitSources(@NonNull SCMSourceObserver observer, @NonNull SCMHeadEvent<?> event)
+            throws IOException, InterruptedException {
+        visitSource(event.getSourceName(), observer);
     }
 
     /**
@@ -124,7 +187,7 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                     @Override
                     public SCMSource create(@NonNull String projectName) throws IOException, InterruptedException {
                         return new ASFGitSCMSourceBuilder(getId() + "::" + projectName,
-                                server , projectName
+                                server, projectName
                         )
                                 .withTraits(traits)
                                 .build();
@@ -151,6 +214,46 @@ public class ASFGitSCMNavigator extends SCMNavigator {
     /**
      * {@inheritDoc}
      */
+    @Override
+    public void visitSource(@NonNull String sourceName, @NonNull SCMSourceObserver observer)
+            throws IOException, InterruptedException {
+        try (ASFGitSCMNavigatorRequest request = new ASFGitSCMNavigatorContext()
+                .withTraits(traits)
+                .newRequest(this, observer)) {
+            observer.getListener().getLogger().format("%n    Checking repository %s%n",
+                    HyperlinkNote
+                            .encodeTo(server + "?p=" + URLEncoder.encode(sourceName, "UTF-8") + ".git;a=summary",
+                                    sourceName));
+            if (request.process(sourceName, new SCMNavigatorRequest.SourceLambda() {
+                @NonNull
+                @Override
+                public SCMSource create(@NonNull String projectName) throws IOException, InterruptedException {
+                    return new ASFGitSCMSourceBuilder(getId() + "::" + projectName,
+                            server, projectName
+                    )
+                            .withTraits(traits)
+                            .build();
+                }
+            }, null, new SCMNavigatorRequest.Witness() {
+                @Override
+                public void record(@NonNull String projectName, boolean isMatch) {
+                    if (isMatch) {
+                        observer.getListener().getLogger().format("      Proposing %s%n", projectName);
+                    } else {
+                        observer.getListener().getLogger().format("      Ignoring %s%n", projectName);
+                    }
+                }
+            })) {
+                observer.getListener().getLogger().format("%n  1 repository was processed (query complete)%n");
+                return;
+            }
+            observer.getListener().getLogger().format("%n  1 repository was processed%n");
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     protected List<Action> retrieveActions(@NonNull SCMNavigatorOwner owner, SCMNavigatorEvent event,
@@ -171,6 +274,9 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         return result;
     }
 
+    /**
+     * Our descriptor.
+     */
     @Extension
     public static class DescriptorImpl extends SCMNavigatorDescriptor {
 
@@ -183,11 +289,46 @@ public class ASFGitSCMNavigator extends SCMNavigator {
             return Messages.ASFGitSCMNavigator_displayName();
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
-        public SCMNavigator newInstance(String name) {
-            return new ASFGitSCMNavigator(GIT_WIP);
+        public String getIconClassName() {
+            return "icon-git-apache-org-folder";
         }
 
+        /**
+         * {@inheritDoc}
+         */
+        @NonNull
+        @Override
+        public String getDescription() {
+            return Messages.ASFGitSCMNavigator_description();
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public String getPronoun() {
+            return Messages.ASFGitSCMNavigator_displayName();
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public SCMNavigator newInstance(String name) {
+            ASFGitSCMNavigator result = new ASFGitSCMNavigator(GIT_BOX);
+            result.setTraits(getTraitsDefaults());
+            return result;
+        }
+
+        /**
+         * Populates the drop-down for {@link ASFGitSCMNavigator#getServer()}
+         *
+         * @return the drop-down entries.
+         */
         public ListBoxModel doFillServerItems() {
             ListBoxModel result = new ListBoxModel();
             result.add(Messages.ASFGitSCMNavigator_gitWip(), GIT_WIP);
@@ -195,6 +336,11 @@ public class ASFGitSCMNavigator extends SCMNavigator {
             return result;
         }
 
+        /**
+         * Populates the available trait descriptors.
+         *
+         * @return the available trait descriptors.
+         */
         @SuppressWarnings("unused") // jelly
         public List<NamedArrayList<? extends SCMTraitDescriptor<?>>> getTraitsDescriptorLists() {
             GitSCMSource.DescriptorImpl sourceDescriptor =
@@ -223,14 +369,19 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                         }
                     },
                     true, result);
-            NamedArrayList.select(all, Messages.ASFGitSCMNavigator_withinRepositories(), NamedArrayList
-                            .anyOf(NamedArrayList.withAnnotation(Discovery.class),
-                                    NamedArrayList.withAnnotation(Selection.class)),
+            NamedArrayList.select(all, Messages.ASFGitSCMNavigator_withinRepositories(),
+                    NamedArrayList.anyOf(NamedArrayList.withAnnotation(Discovery.class),
+                            NamedArrayList.withAnnotation(Selection.class)),
                     true, result);
             NamedArrayList.select(all, Messages.ASFGitSCMNavigator_additionalBehaviours(), null, true, result);
             return result;
         }
 
+        /**
+         * Populate the default traits for new instances.
+         *
+         * @return the default traits.
+         */
         public List<SCMTrait<? extends SCMTrait<?>>> getTraitsDefaults() {
             GitSCMSource.DescriptorImpl descriptor =
                     ExtensionList.lookup(Descriptor.class).get(GitSCMSource.DescriptorImpl.class);
@@ -244,4 +395,22 @@ public class ASFGitSCMNavigator extends SCMNavigator {
 
     }
 
+    static {
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-sm",
+                        "plugin/asf-gitpubsub-jenkins/images/16x16/asf-git-folder.png",
+                        Icon.ICON_SMALL_STYLE));
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-md",
+                        "plugin/asf-gitpubsub-jenkins/images/24x24/asf-git-folder.png",
+                        Icon.ICON_MEDIUM_STYLE));
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-lg",
+                        "plugin/asf-gitpubsub-jenkins/images/32x32/asf-git-folder.png",
+                        Icon.ICON_LARGE_STYLE));
+        IconSet.icons.addIcon(
+                new Icon("icon-git-apache-org-folder icon-xlg",
+                        "plugin/asf-gitpubsub-jenkins/images/48x48/asf-git-folder.png",
+                        Icon.ICON_XLARGE_STYLE));
+    }
 }

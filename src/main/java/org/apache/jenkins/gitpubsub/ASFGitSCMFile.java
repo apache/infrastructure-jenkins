@@ -19,26 +19,51 @@ import edu.umd.cs.findbugs.annotations.NonNull;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import jenkins.scm.api.SCMFile;
+import org.eclipse.jgit.lib.Constants;
+import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import static org.apache.jenkins.gitpubsub.ASFGitSCMFileSystem.TEN_SECONDS_OF_MILLIS;
+import static org.apache.jenkins.gitpubsub.ASFGitSCMNavigator.RFC_2822;
 
+/**
+ * A {@link SCMFile} that is backed by a GitWeb server hosted on {@code apache.org}.
+ */
 public class ASFGitSCMFile extends SCMFile {
 
+    /**
+     * The Git URL from which the project and gitweb server can be derived.
+     */
     private final String remote;
+    /**
+     * The ref or hash that the file is being accessed for.
+     */
     private final String refOrHash;
 
+    /**
+     * Root constructor.
+     * @param remote The Git URL from which the project and gitweb server can be derived.
+     * @param refOrHash The ref or hash that the file is being accessed for.
+     */
     ASFGitSCMFile(String remote, String refOrHash) {
         this.remote = remote;
         this.refOrHash = refOrHash;
     }
 
+    /**
+     * Child constructor.
+     * @param parent the parent file.
+     * @param name the name of the child.
+     */
     ASFGitSCMFile(@NonNull ASFGitSCMFile parent, String name) {
         super(parent, name);
         this.remote = parent.remote;
@@ -88,7 +113,70 @@ public class ASFGitSCMFile extends SCMFile {
      */
     @Override
     public long lastModified() throws IOException, InterruptedException {
-        return 0;
+        if (isRoot()) {
+            if (refOrHash.startsWith(Constants.R_TAGS)) {
+                String tagUrl = ASFGitSCMFileSystem.buildTemplateWithRemote("{+server}{?p}{;a,h}", remote)
+                        .set("a", "tag")
+                        .set("h", refOrHash)
+                        .expand();
+                Document doc;
+                try {
+                    doc = Jsoup.parse(new URL(tagUrl), TEN_SECONDS_OF_MILLIS);
+                } catch (HttpStatusException e) {
+                    if (e.getStatusCode() == 404) {
+                        // must be a lightweight tag
+                        doc = null;
+                    } else {
+                        return 0L;
+                    }
+                }
+                if (doc != null) {
+                    Elements elements = doc.select("table.object_header tr td span.datetime");
+                    try {
+                        return new SimpleDateFormat(RFC_2822).parse(elements.get(0).text())
+                                .getTime();
+                    } catch (ParseException | IndexOutOfBoundsException e) {
+                        return 0L;
+                    }
+                }
+            }
+            String commitUrl = ASFGitSCMFileSystem.buildTemplateWithRemote("{+server}{?p}{;a,h}", remote)
+                    .set("a", "commit")
+                    .set("h", refOrHash)
+                    .expand();
+            Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+            Elements elements = doc.select("table.object_header tr td span.datetime");
+            try {
+                return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
+            } catch (ParseException | IndexOutOfBoundsException e) {
+                return 0L;
+            }
+        }
+        String historyUrl = ASFGitSCMFileSystem.buildTemplateWithRemote("{+server}{?p}{;a,hb,f}", remote)
+                .set("a", "history")
+                .set("hb", refOrHash)
+                .set("f", getPath())
+                .expand();
+        Document doc = Jsoup.parse(new URL(historyUrl), TEN_SECONDS_OF_MILLIS);
+        Elements elements = doc.select("table.history tr td a.subject");
+        if (elements.isEmpty()) {
+            return 0L;
+        }
+        Matcher href = ASFGitSCMFileSystem.URL_EXTRACT_H.matcher(elements.get(0).attr("href"));
+        if (!href.matches()) {
+            return 0L;
+        }
+        String commitUrl = ASFGitSCMFileSystem.buildTemplateWithRemote("{+server}{?p}{;a,h}", remote)
+                .set("a", "commit")
+                .set("h", href.group(1))
+                .expand();
+        doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+        elements = doc.select("table.object_header tr td span.datetime");
+        try {
+            return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
+        } catch (ParseException | IndexOutOfBoundsException e) {
+            return 0L;
+        }
     }
 
     /**
