@@ -26,11 +26,6 @@ public class ASFGitSCMNavigatorContext extends SCMNavigatorContext<ASFGitSCMNavi
     private String objectDisplayName;
     private String objectDescription;
     private String objectUrl;
-    @NonNull
-    @Override
-    public ASFGitSCMNavigatorRequest newRequest(@NonNull SCMNavigator navigator, @NonNull SCMSourceObserver observer) {
-        return new ASFGitSCMNavigatorRequest(navigator, this, observer);
-    }
 
     public String avatarUrl() {
         return avatarUrl;
@@ -75,5 +70,14 @@ public class ASFGitSCMNavigatorContext extends SCMNavigatorContext<ASFGitSCMNavi
     public ASFGitSCMNavigatorContext withObjectUrl(String objectUrl) {
         this.objectUrl = objectUrl;
         return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @NonNull
+    @Override
+    public ASFGitSCMNavigatorRequest newRequest(@NonNull SCMNavigator navigator, @NonNull SCMSourceObserver observer) {
+        return new ASFGitSCMNavigatorRequest(navigator, this, observer);
     }
 }

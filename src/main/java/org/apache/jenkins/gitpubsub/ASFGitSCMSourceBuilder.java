@@ -32,6 +32,7 @@ public class ASFGitSCMSourceBuilder extends SCMSourceBuilder<ASFGitSCMSourceBuil
     private final String id;
 
     private final String server;
+
     public ASFGitSCMSourceBuilder(String id, String server, String projectName) {
         super(GitSCMSource.class, projectName);
         this.id = id;
@@ -46,6 +47,9 @@ public class ASFGitSCMSourceBuilder extends SCMSourceBuilder<ASFGitSCMSourceBuil
         return server;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     public GitSCMSource build() {

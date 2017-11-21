@@ -45,12 +45,18 @@ public class ASFGitSCMFile extends SCMFile {
         this.refOrHash = parent.refOrHash;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     protected SCMFile newChild(@NonNull String name, boolean assumeIsDirectory) {
         return new ASFGitSCMFile(this, name);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     public Iterable<SCMFile> children() throws IOException, InterruptedException {
@@ -77,11 +83,17 @@ public class ASFGitSCMFile extends SCMFile {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public long lastModified() throws IOException, InterruptedException {
         return 0;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     protected Type type() throws IOException, InterruptedException {
@@ -107,6 +119,9 @@ public class ASFGitSCMFile extends SCMFile {
         return Type.NONEXISTENT;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     public InputStream content() throws IOException, InterruptedException {

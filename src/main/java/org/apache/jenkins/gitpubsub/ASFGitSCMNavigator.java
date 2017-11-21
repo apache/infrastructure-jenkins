@@ -87,12 +87,18 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         this.traits = new ArrayList<>(Util.fixNull(traits));
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     protected String id() {
         return server;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void visitSources(@NonNull final SCMSourceObserver observer) throws IOException, InterruptedException {
         try (ASFGitSCMNavigatorRequest request = new ASFGitSCMNavigatorContext()
@@ -142,6 +148,9 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     protected List<Action> retrieveActions(@NonNull SCMNavigatorOwner owner, SCMNavigatorEvent event,
@@ -165,10 +174,13 @@ public class ASFGitSCMNavigator extends SCMNavigator {
     @Extension
     public static class DescriptorImpl extends SCMNavigatorDescriptor {
 
+        /**
+         * {@inheritDoc}
+         */
         @Nonnull
         @Override
         public String getDisplayName() {
-            return "Apache Hosted Git Folder";
+            return Messages.ASFGitSCMNavigator_displayName();
         }
 
         @Override
@@ -178,8 +190,8 @@ public class ASFGitSCMNavigator extends SCMNavigator {
 
         public ListBoxModel doFillServerItems() {
             ListBoxModel result = new ListBoxModel();
-            result.add("Git WIP", GIT_WIP);
-            result.add("Gitbox", GIT_BOX);
+            result.add(Messages.ASFGitSCMNavigator_gitWip(), GIT_WIP);
+            result.add(Messages.ASFGitSCMNavigator_gitBox(), GIT_BOX);
             return result;
         }
 
@@ -211,11 +223,11 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                         }
                     },
                     true, result);
-            NamedArrayList.select(all, "Within repositories", NamedArrayList
+            NamedArrayList.select(all, Messages.ASFGitSCMNavigator_withinRepositories(), NamedArrayList
                             .anyOf(NamedArrayList.withAnnotation(Discovery.class),
                                     NamedArrayList.withAnnotation(Selection.class)),
                     true, result);
-            NamedArrayList.select(all, "Additional behaviours", null, true, result);
+            NamedArrayList.select(all, Messages.ASFGitSCMNavigator_additionalBehaviours(), null, true, result);
             return result;
         }
 

@@ -61,6 +61,9 @@ public class ASFMetadataSCMNavigatorTrait extends SCMNavigatorTrait {
         return objectUrl;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void decorateContext(SCMNavigatorContext<?, ?> context) {
         ((ASFGitSCMNavigatorContext) context)
@@ -73,16 +76,25 @@ public class ASFMetadataSCMNavigatorTrait extends SCMNavigatorTrait {
 
     @Extension
     public static class DescriptorImpl extends SCMNavigatorTraitDescriptor {
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public Class<? extends SCMNavigatorContext> getContextClass() {
             return ASFGitSCMNavigatorContext.class;
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public Class<? extends SCMNavigator> getNavigatorClass() {
             return ASFGitSCMNavigator.class;
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Nonnull
         @Override
         public String getDisplayName() {

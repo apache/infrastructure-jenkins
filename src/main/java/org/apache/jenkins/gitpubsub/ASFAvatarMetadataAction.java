@@ -28,16 +28,25 @@ public class ASFAvatarMetadataAction extends AvatarMetadataAction {
         this.avatarDescription = avatarDescription;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getAvatarDescription() {
         return avatarDescription;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getAvatarImageOf(@NonNull String size) {
         return cachedResizedImageOf(avatarUrl, size);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -57,6 +66,9 @@ public class ASFAvatarMetadataAction extends AvatarMetadataAction {
                 : that.avatarDescription == null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int hashCode() {
         return avatarUrl.hashCode();

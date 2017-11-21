@@ -59,7 +59,7 @@ import static org.apache.jenkins.gitpubsub.ASFGitSCMNavigator.RFC_2822;
 
 public class ASFGitSCMFileSystem extends SCMFileSystem {
 
-    public static final Pattern URL_EXTRACT_H = Pattern.compile(".*[;?]h=([a-fA-F0-9]{40})([;?].*)?");
+    static final Pattern URL_EXTRACT_H = Pattern.compile(".*[;?]h=([a-fA-F0-9]{40})([;?].*)?");
     static final int TEN_SECONDS_OF_MILLIS = 10000;
     private static final Logger LOGGER = Logger.getLogger(ASFGitSCMFileSystem.class.getName());
     static final List<String> GIT_WEB_HOSTS = new ArrayList<>(Arrays.asList(
@@ -85,6 +85,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                         : Constants.R_HEADS + head.getName());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public long lastModified() throws IOException, InterruptedException {
         if (refOrHash.startsWith(Constants.R_TAGS)) {
@@ -132,12 +135,18 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @NonNull
     @Override
     public SCMFile getRoot() {
         return new ASFGitSCMFile(remote, refOrHash);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean changesSince(SCMRevision revision, @NonNull OutputStream changeLogStream)
             throws UnsupportedOperationException, IOException, InterruptedException {
@@ -279,7 +288,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
     @Extension
     public static class TelescopeImpl extends GitSCMTelescope {
 
-
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public boolean supports(@NonNull String remote) {
             for (String prefix : GIT_WEB_HOSTS) {
@@ -290,18 +301,27 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             return false;
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public void validate(@NonNull String remote, StandardCredentials credentials)
                 throws IOException, InterruptedException {
             // no-op because anonymous access
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         protected SCMFileSystem build(@NonNull String remote, StandardCredentials credentials, @NonNull SCMHead head,
                                       SCMRevision rev) throws IOException, InterruptedException {
             return new ASFGitSCMFileSystem(remote, head, rev);
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public long getTimestamp(@NonNull String remote, StandardCredentials credentials, @NonNull String refOrHash)
                 throws IOException, InterruptedException {
@@ -350,6 +370,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             }
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public SCMRevision getRevision(@NonNull String remote, StandardCredentials credentials,
                                        @NonNull String refOrHash)
@@ -436,6 +459,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             }
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public Iterable<SCMRevision> getRevisions(@NonNull String remote, StandardCredentials credentials,
                                                   @NonNull Set<ReferenceType> referenceTypes)
@@ -506,6 +532,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     }
                 }
 
+                /**
+                 * {@inheritDoc}
+                 */
                 @Override
                 public SCMRevision get(int index) {
                     SCMRevision r = cache.get(index);
@@ -537,6 +566,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     return r;
                 }
 
+                /**
+                 * {@inheritDoc}
+                 */
                 @Override
                 public int size() {
                     return result.size();
@@ -544,6 +576,9 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             };
         }
 
+        /**
+         * {@inheritDoc}
+         */
         @Override
         public String getDefaultTarget(@NonNull String remote, StandardCredentials credentials)
                 throws IOException, InterruptedException {
