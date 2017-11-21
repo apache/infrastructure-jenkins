@@ -173,7 +173,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
     @Override
     public boolean changesSince(SCMRevision revision, @NonNull OutputStream changeLogStream)
             throws UnsupportedOperationException, IOException, InterruptedException {
-        if (getRevision() == null ? revision == null : getRevision().equals(revision)) {
+        if (revision == null ? getRevision() == null : revision.equals(getRevision())) {
             // special case where somebody is asking one of two stupid questions:
             // 1. what has changed between the latest and the latest
             // 2. what has changed between the current revision and the current revision

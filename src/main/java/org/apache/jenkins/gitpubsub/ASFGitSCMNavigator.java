@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -168,7 +169,10 @@ public class ASFGitSCMNavigator extends SCMNavigator {
                 .withTraits(traits)
                 .newRequest(this, observer);
              BufferedReader reader = new BufferedReader(
-                     new InputStreamReader(new URL(server + "?a=project_index").openStream()))) {
+                     new InputStreamReader(
+                             new URL(server + "?a=project_index").openStream(),
+                             StandardCharsets.UTF_8 // content is always US-ASCII but content type says UTF-8
+                     ))) {
             int count = 0;
             String line;
             observer.getListener().getLogger().format("%n  Checking repositories...%n");
