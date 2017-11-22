@@ -27,12 +27,11 @@ import java.util.regex.Matcher;
 import jenkins.scm.api.SCMFile;
 import org.eclipse.jgit.lib.Constants;
 import org.jsoup.HttpStatusException;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import static org.apache.jenkins.gitpubsub.ASFGitSCMFileSystem.TEN_SECONDS_OF_MILLIS;
+import static org.apache.jenkins.gitpubsub.ASFGitSCMFileSystem.fetchDocument;
 import static org.apache.jenkins.gitpubsub.ASFGitSCMNavigator.RFC_2822;
 
 /**
@@ -90,7 +89,7 @@ public class ASFGitSCMFile extends SCMFile {
                 .set("hb", refOrHash)
                 .set("f", isRoot() ? null : getPath())
                 .expand();
-        Document doc = Jsoup.parse(new URL(treeUrl), TEN_SECONDS_OF_MILLIS);
+        Document doc = fetchDocument(treeUrl);
         Elements elements = doc.select("table.tree tr td.list a");
         List<SCMFile> result = new ArrayList<>();
         for (Element element : elements) {
@@ -121,7 +120,7 @@ public class ASFGitSCMFile extends SCMFile {
                         .expand();
                 Document doc;
                 try {
-                    doc = Jsoup.parse(new URL(tagUrl), TEN_SECONDS_OF_MILLIS);
+                    doc = fetchDocument(tagUrl);
                 } catch (HttpStatusException e) {
                     if (e.getStatusCode() == 404) {
                         // must be a lightweight tag
@@ -144,7 +143,7 @@ public class ASFGitSCMFile extends SCMFile {
                     .set("a", "commit")
                     .set("h", refOrHash)
                     .expand();
-            Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+            Document doc = fetchDocument(commitUrl);
             Elements elements = doc.select("table.object_header tr td span.datetime");
             try {
                 return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
@@ -157,7 +156,7 @@ public class ASFGitSCMFile extends SCMFile {
                 .set("hb", refOrHash)
                 .set("f", getPath())
                 .expand();
-        Document doc = Jsoup.parse(new URL(historyUrl), TEN_SECONDS_OF_MILLIS);
+        Document doc = fetchDocument(historyUrl);
         Elements elements = doc.select("table.history tr td a.subject");
         if (elements.isEmpty()) {
             return 0L;
@@ -170,7 +169,7 @@ public class ASFGitSCMFile extends SCMFile {
                 .set("a", "commit")
                 .set("h", href.group(1))
                 .expand();
-        doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+        doc = fetchDocument(commitUrl);
         elements = doc.select("table.object_header tr td span.datetime");
         try {
             return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
@@ -192,7 +191,7 @@ public class ASFGitSCMFile extends SCMFile {
                 .set("hb", refOrHash)
                 .set("f", lastSlash == -1 ? null : path.substring(0, lastSlash))
                 .expand();
-        Document doc = Jsoup.parse(new URL(treeUrl), TEN_SECONDS_OF_MILLIS);
+        Document doc = fetchDocument(treeUrl);
         Elements elements = doc.select("table.tree tr td.list a");
         for (Element element : elements) {
             if (element.text().equals(getName())) {

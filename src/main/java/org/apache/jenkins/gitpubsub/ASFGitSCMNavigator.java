@@ -165,6 +165,7 @@ public class ASFGitSCMNavigator extends SCMNavigator {
      */
     @Override
     public void visitSources(@NonNull final SCMSourceObserver observer) throws IOException, InterruptedException {
+        ASFGitSCMFileSystem.preRequestSleep();
         try (ASFGitSCMNavigatorRequest request = new ASFGitSCMNavigatorContext()
                 .withTraits(traits)
                 .newRequest(this, observer);

@@ -20,7 +20,6 @@ import com.damnhandy.uri.template.UriTemplate;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.plugins.git.GitSCM;
-import hudson.plugins.git.UserRemoteConfig;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
@@ -33,11 +32,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import jenkins.plugins.git.AbstractGitSCMSource;
+import jenkins.plugins.git.GitSCMFileSystem;
 import jenkins.plugins.git.GitSCMSource;
 import jenkins.plugins.git.GitSCMTelescope;
 import jenkins.plugins.git.GitTagSCMHead;
@@ -69,10 +70,6 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
      */
     static final Pattern URL_EXTRACT_H = Pattern.compile(".*[;?]h=([a-fA-F0-9]{40})([;?].*)?");
     /**
-     * The default timeout for remote operations.
-     */
-    static final int TEN_SECONDS_OF_MILLIS = 10000;
-    /**
      * Our logger.
      */
     private static final Logger LOGGER = Logger.getLogger(ASFGitSCMFileSystem.class.getName());
@@ -82,6 +79,24 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
     static final List<String> GIT_WEB_HOSTS = new ArrayList<>(Arrays.asList(
             ASFGitSCMNavigator.GIT_WIP, ASFGitSCMNavigator.GIT_BOX
     ));
+    /**
+     * The default timeout for remote operations.
+     */
+    private static /*mostly final*/ int REQUEST_TIMEOUT = Math.max(1000, Math.min(60000,
+            Integer.getInteger(ASFGitSCMFileSystem.class.getName() + ".REQUEST_TIMEOUT", 10000)));
+    /**
+     * A request throttle switch, if greater than {@code 0L} then every request against GitWeb will sleep for
+     * at least this many milliseconds before making the request.
+     */
+    private static /*mostly final*/ long PRE_REQUEST_SLEEP_MILLIS = Math.max(0L, Math.min(30000L,
+            Long.getLong(ASFGitSCMFileSystem.class.getName()+".PRE_REQUEST_SLEEP_MILLIS", 0L)
+    ));
+    /**
+     * A kill switch, if {@code true} then the {@link ASFGitSCMFileSystem} will be disabled and the standard
+     * {@link GitSCMFileSystem} will be used instead, resulting in a local cache of the git repositories on the
+     * Jenkins master.
+     */
+    private static /*mostly final*/ boolean DISABLE = Boolean.getBoolean(ASFGitSCMFileSystem.class.getName()+".DISABLE");
     /**
      * The Git URL from which the project and gitweb server can be derived.
      */
@@ -120,7 +135,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     .expand();
             Document doc;
             try {
-                doc = Jsoup.parse(new URL(tagUrl), TEN_SECONDS_OF_MILLIS);
+                doc = fetchDocument(tagUrl);
             } catch (HttpStatusException e) {
                 if (e.getStatusCode() == 404) {
                     // must be a lightweight tag
@@ -147,7 +162,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                 .set("a", "commit")
                 .set("h", refOrHash)
                 .expand();
-        Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+        Document doc = fetchDocument(commitUrl);
         Elements elements = doc.select("table.object_header tr td span.datetime");
         try {
             return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
@@ -203,7 +218,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                 shortLogTemplate.set("pg", pg);
             }
             pg++;
-            Document doc = Jsoup.parse(new URL(shortLogTemplate.expand()), TEN_SECONDS_OF_MILLIS);
+            Document doc = fetchDocument(shortLogTemplate.expand());
             for (Element element : doc.select("table.shortlog tr td a.subject")) {
                 Matcher href = URL_EXTRACT_H.matcher(element.attr("href"));
                 if (!href.matches()) {
@@ -213,7 +228,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     return count > 0;
                 }
                 commitTemplate.set("h", href.group(1));
-                Document commit = Jsoup.parse(new URL(commitTemplate.expand()), TEN_SECONDS_OF_MILLIS);
+                Document commit = fetchDocument(commitTemplate.expand());
                 log.setLength(0);
                 Elements sha1s = commit.select("table.object_header tr td.sha1");
                 log.append("commit ").append(sha1s.get(0).text().trim()).append('\n');
@@ -314,17 +329,47 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
         return result;
     }
 
+    static void preRequestSleep() throws InterruptedException {
+        long preRequestSleepMillis = Math.max(0L, Math.min(30000L, PRE_REQUEST_SLEEP_MILLIS));
+        if (preRequestSleepMillis > 0L) {
+            LOGGER.log(Level.FINE, "{0}.PRE_REQUEST_SLEEP_MILLIS is set, sleeping for {1}ms",
+                    new Object[]{ASFGitSCMFileSystem.class, preRequestSleepMillis});
+            Thread.sleep(preRequestSleepMillis);
+        }
+    }
+
+    static Document fetchDocument(String commitUrl) throws InterruptedException, IOException {
+        preRequestSleep();
+        return Jsoup.parse(new URL(commitUrl), REQUEST_TIMEOUT);
+    }
+
     /**
      * A {@link GitSCMTelescope} for GitWeb services on {@code apache.org}.
      */
     @Extension
     public static class TelescopeImpl extends GitSCMTelescope {
 
+        private transient boolean disabled;
+
         /**
          * {@inheritDoc}
          */
         @Override
         public boolean supports(@NonNull String remote) {
+            if (DISABLE) {
+                LOGGER.log(disabled ? Level.FINE : Level.WARNING,
+                        "{0} functionality has been disabled using the {0}.DISABLE kill switch",
+                        ASFGitSCMFileSystem.class);
+                disabled = DISABLE;
+                return false;
+            } else {
+                if (disabled) {
+                    LOGGER.log(Level.INFO,
+                            "{0} functionality has been re-enabled by turning off the {0}.DISABLE kill switch",
+                            ASFGitSCMFileSystem.class);
+                    disabled = false;
+                }
+            }
             for (String prefix : GIT_WEB_HOSTS) {
                 if (remote.startsWith(prefix + "/")) {
                     return true;
@@ -364,7 +409,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                         .expand();
                 Document doc;
                 try {
-                    doc = Jsoup.parse(new URL(tagUrl), TEN_SECONDS_OF_MILLIS);
+                    doc = fetchDocument(tagUrl);
                 } catch (HttpStatusException e) {
                     if (e.getStatusCode() == 404) {
                         // must be a lightweight tag
@@ -391,7 +436,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     .set("a", "commit")
                     .set("h", refOrHash)
                     .expand();
-            Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+            Document doc = fetchDocument(commitUrl);
             Elements elements = doc.select("table.object_header tr td span.datetime");
             try {
                 return new SimpleDateFormat(RFC_2822).parse(elements.get(1).text()).getTime();
@@ -417,7 +462,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                         .expand();
                 Document doc;
                 try {
-                    doc = Jsoup.parse(new URL(tagUrl), TEN_SECONDS_OF_MILLIS);
+                    doc = fetchDocument(tagUrl);
                 } catch (HttpStatusException e) {
                     if (e.getStatusCode() == 404) {
                         // must be a lightweight tag
@@ -443,7 +488,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     String actionUrl = buildTemplateWithRemote("{+server}{?p}{;a}", remote)
                             .set("a", "tags")
                             .expand();
-                    doc = Jsoup.parse(new URL(actionUrl), TEN_SECONDS_OF_MILLIS);
+                    doc = fetchDocument(actionUrl);
                     elements = doc.select("table.tags tr td a.name");
                     for (Element element : elements) {
                         if (refOrHash.equals(Constants.R_TAGS + element.text())) {
@@ -468,7 +513,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                     .set("a", "commit")
                     .set("h", refOrHash)
                     .expand();
-            Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+            Document doc = fetchDocument(commitUrl);
             Elements elements = doc.select("table.object_header tr td.sha1");
             String revision = elements.get(0).text();
             if (refOrHash.startsWith(Constants.R_TAGS)) {
@@ -511,7 +556,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                         actionUrl = buildTemplateWithRemote("{+server}{?p}{;a}", remote)
                                 .set("a", "heads")
                                 .expand();
-                        doc = Jsoup.parse(new URL(actionUrl), TEN_SECONDS_OF_MILLIS);
+                        doc = fetchDocument(actionUrl);
                         elements = doc.select("table.heads tr td a.name");
                         prefix = Constants.R_HEADS;
                         break;
@@ -519,7 +564,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                         actionUrl = buildTemplateWithRemote("{+server}{?p}{;a}", remote)
                                 .set("a", "tags")
                                 .expand();
-                        doc = Jsoup.parse(new URL(actionUrl), TEN_SECONDS_OF_MILLIS);
+                        doc = fetchDocument(actionUrl);
                         elements = doc.select("table.tags tr td a.name");
                         prefix = Constants.R_TAGS;
                         break;
@@ -617,7 +662,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
             String commitUrl = buildTemplateWithRemote("{+server}{?p}{;a}", remote)
                     .set("a", "heads")
                     .expand();
-            Document doc = Jsoup.parse(new URL(commitUrl), TEN_SECONDS_OF_MILLIS);
+            Document doc = fetchDocument(commitUrl);
             Elements elements = doc.select("table.heads tr td.current_head a.name");
             if (elements.size() > 0) {
                 return Constants.R_HEADS + elements.get(0).text();
