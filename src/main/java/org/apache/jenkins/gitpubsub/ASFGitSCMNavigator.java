@@ -15,6 +15,8 @@
  */
 package org.apache.jenkins.gitpubsub;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.umd.cs.findbugs.annotations.CheckForNull;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
@@ -25,12 +27,9 @@ import hudson.model.Action;
 import hudson.model.Descriptor;
 import hudson.model.TaskListener;
 import hudson.util.ListBoxModel;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -71,6 +70,10 @@ import org.kohsuke.stapler.DataBoundSetter;
  */
 public class ASFGitSCMNavigator extends SCMNavigator {
 
+    /**
+     * Our object mapper.
+     */
+    private static final ObjectMapper MAPPER = new ObjectMapper();
     /**
      * The date format used by GitWeb.
      */
@@ -168,48 +171,44 @@ public class ASFGitSCMNavigator extends SCMNavigator {
         ASFGitSCMFileSystem.preRequestSleep();
         try (ASFGitSCMNavigatorRequest request = new ASFGitSCMNavigatorContext()
                 .withTraits(traits)
-                .newRequest(this, observer);
-             BufferedReader reader = new BufferedReader(
-                     new InputStreamReader(
-                             new URL(server + "?a=project_index").openStream(),
-                             StandardCharsets.UTF_8 // content is always US-ASCII but content type says UTF-8
-                     ))) {
+                .newRequest(this, observer)) {
+            JsonNode repositories = MAPPER.readTree(new URL(server.replaceAll("repos/[^/]+$", "repositories.json")));
             int count = 0;
             String line;
             observer.getListener().getLogger().format("%n  Checking repositories...%n");
-            while (null != (line = reader.readLine())) {
-                int index = line.indexOf(' ');
-                if (index == -1) {
-                    continue;
-                }
-                final String repo = StringUtils.removeEnd(line.substring(0, index), ".git");
-                count++;
-                observer.getListener().getLogger().format("%n    Checking repository %s%n",
-                        HyperlinkNote
-                                .encodeTo(server + "?p=" + URLEncoder.encode(repo, "UTF-8") + ".git;a=summary", repo));
-                if (request.process(repo, new SCMNavigatorRequest.SourceLambda() {
-                    @NonNull
-                    @Override
-                    public SCMSource create(@NonNull String projectName) throws IOException, InterruptedException {
-                        return new ASFGitSCMSourceBuilder(getId() + "::" + projectName,
-                                server, projectName
-                        )
-                                .withTraits(traits)
-                                .build();
-                    }
-                }, null, new SCMNavigatorRequest.Witness() {
-                    @Override
-                    public void record(@NonNull String projectName, boolean isMatch) {
-                        if (isMatch) {
-                            observer.getListener().getLogger().format("      Proposing %s%n", projectName);
-                        } else {
-                            observer.getListener().getLogger().format("      Ignoring %s%n", projectName);
+            for (JsonNode project : repositories.path("projects")) {
+                for (Iterator<String> i = project.path("repositories").fieldNames(); i.hasNext(); ) {
+                    final String repo = i.next();
+                    count++;
+                    observer.getListener().getLogger().format("%n    Checking repository %s%n",
+                            HyperlinkNote
+                                    .encodeTo(server + "?p=" + URLEncoder.encode(repo, "UTF-8") + ".git;a=summary",
+                                            repo));
+                    if (request.process(repo, new SCMNavigatorRequest.SourceLambda() {
+                        @NonNull
+                        @Override
+                        public SCMSource create(@NonNull String projectName) throws IOException, InterruptedException {
+                            return new ASFGitSCMSourceBuilder(getId() + "::" + projectName,
+                                    server, projectName
+                            )
+                                    .withTraits(traits)
+                                    .build();
                         }
+                    }, null, new SCMNavigatorRequest.Witness() {
+                        @Override
+                        public void record(@NonNull String projectName, boolean isMatch) {
+                            if (isMatch) {
+                                observer.getListener().getLogger().format("      Proposing %s%n", projectName);
+                            } else {
+                                observer.getListener().getLogger().format("      Ignoring %s%n", projectName);
+                            }
+                        }
+                    })) {
+                        observer.getListener().getLogger()
+                                .format("%n  %d repositories were processed (query complete)%n",
+                                        count);
+                        return;
                     }
-                })) {
-                    observer.getListener().getLogger().format("%n  %d repositories were processed (query complete)%n",
-                            count);
-                    return;
                 }
             }
             observer.getListener().getLogger().format("%n  %d repositories were processed%n", count);
