@@ -188,7 +188,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
 
     private class JsonHandler extends AsyncCompletionHandlerBase {
 
-        static final String GITPUBSUB_URL = "http://gitpubsub-wip.apache.org:2069/json/*";
+        static final String GITPUBSUB_URL = "http://pubsub.apache.org:2069/git";
         private ObjectMapper mapper = new ObjectMapper();
 
         private long recycleAt = System.nanoTime() + TimeUnit.MINUTES.toNanos(requestRecycleMins);
