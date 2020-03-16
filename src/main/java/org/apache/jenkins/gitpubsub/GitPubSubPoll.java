@@ -223,7 +223,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
         public synchronized STATE onBodyPartReceived(HttpResponseBodyPart content) throws Exception {
             lastTime = System.currentTimeMillis();
             byte[] body = content.getBodyPartBytes();
-            if (body.length < 2 || body[body.length - 1] != 0x0a || body[body.length - 2] != 0x0d) {
+            if (body.length < 2 || body[body.length - 1] != 0x0a) {
                 LOGGER.log(Level.FINE, "Stashing large message");
                 if (partialBody == null) {
                     partialBody = body;
