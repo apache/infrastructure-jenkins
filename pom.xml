@@ -42,9 +42,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git://github.com/stephenc/asf-gitpubsub-jenkins-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:stephenc/asf-gitpubsub-jenkins-plugin.git</developerConnection>
-    <url>https://github.com/stephenc/asf-gitpubsub-jenkins-plugin</url>
+    <connection>scm:git:git://github.com/apache/infrastructure-jenkins.git</connection>
+    <developerConnection>scm:git:git@github.com:apache/infrastructure-jenkins.git</developerConnection>
+    <url>https://github.com/apache/infrastructure-jenkins</url>
     <tag>HEAD</tag>
   </scm>
 
