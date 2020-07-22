@@ -140,11 +140,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
             LOGGER.log(Level.INFO, "Starting GitPubSub request...");
         }
         RequestBuilder builder = new RequestBuilder("GET")
-                .setUrl(JsonHandler.GITPUBSUB_URL)
-                .setRequestTimeout(requestRecycleMins == -1
-                        ? -1
-                        : (requestRecycleMins + 1) * 60 * 1000
-                );
+                .setUrl(JsonHandler.GITPUBSUB_URL);
         if (lastTS != 0) {
             builder.addHeader("X-Fetch-Since", Long.toString(lastTS));
         }
@@ -152,7 +148,7 @@ public class GitPubSubPoll extends AsyncPeriodicWork {
             LOGGER.log(Level.FINE, "Starting AsyncHttpClient instance");
             client = new AsyncHttpClient(
                     new AsyncHttpClientConfig.Builder()
-                            .setAllowPoolingConnections(false)
+                            .setAllowPoolingConnection( false )
                             .setRequestTimeout(
                                     requestRecycleMins == -1
                                     ? -1
