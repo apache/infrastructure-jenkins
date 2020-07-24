@@ -80,15 +80,14 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
     /**
      * The default timeout for remote operations.
      */
-    private static /*mostly final*/ int REQUEST_TIMEOUT = Math.max(1000, Math.min(60000,
-            Integer.getInteger(ASFGitSCMFileSystem.class.getName() + ".REQUEST_TIMEOUT", 10000)));
+    private static /*mostly final*/ int REQUEST_TIMEOUT =
+        Integer.getInteger(ASFGitSCMFileSystem.class.getName() + ".REQUEST_TIMEOUT", 20000);
     /**
      * A request throttle switch, if greater than {@code 0L} then every request against GitWeb will sleep for
      * at least this many milliseconds before making the request.
      */
-    private static /*mostly final*/ long PRE_REQUEST_SLEEP_MILLIS = Math.max(0L, Math.min(30000L,
-            Long.getLong(ASFGitSCMFileSystem.class.getName()+".PRE_REQUEST_SLEEP_MILLIS", 0L)
-    ));
+    private static /*mostly final*/ long PRE_REQUEST_SLEEP_MILLIS =
+        Long.getLong(ASFGitSCMFileSystem.class.getName()+".PRE_REQUEST_SLEEP_MILLIS", 0L);
     /**
      * A kill switch, if {@code true} then the {@link ASFGitSCMFileSystem} will be disabled and the standard
      * {@link GitSCMFileSystem} will be used instead, resulting in a local cache of the git repositories on the
