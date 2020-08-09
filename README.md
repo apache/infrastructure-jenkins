@@ -2,7 +2,7 @@
 
 ![Java CI with Maven](https://github.com/apache/infrastructure-jenkins/workflows/Java%20CI%20with%20Maven/badge.svg)
 
-See [Apache GitPubSub intro](https://www.apache.org/dev/gitpubsub.html).
+See [Apache GitPubSub introduction](https://www.apache.org/dev/gitpubsub.html).
 
 ## Open issues
 
