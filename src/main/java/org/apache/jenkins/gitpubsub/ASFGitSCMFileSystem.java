@@ -425,7 +425,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                                 "Unexpected date format, expected RFC 2822, got " + elements.get(1).text());
                     } catch (IndexOutOfBoundsException e) {
                         throw new IOException(
-                                "Unexpected response body, expecting two timestamps only got " + elements.size());
+                                "Unexpected response body for page " + tagUrl + ", expecting two timestamps only got " + elements.size());
                     }
                 }
             }
@@ -479,7 +479,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                                 "Unexpected date format, expected RFC 2822, got " + elements.get(1).text());
                     } catch (IndexOutOfBoundsException e) {
                         throw new IOException(
-                                "Unexpected response body, expecting two timestamps only got " + elements.size());
+                                "Unexpected response body for page " + tagUrl + ", expecting two timestamps only got " + elements.size());
                     }
                     // now let's get the revision of the tag object...
                     String actionUrl = buildTemplateWithRemote("{+server}{?p}{;a}", remote)
@@ -624,7 +624,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                                         hash
                                 );
                             } catch (IOException | InterruptedException e) {
-                                throw new RuntimeException(e);
+                                throw new RuntimeException("Tag retrieval Exception for " + result.get(index).substring(Constants.R_TAGS.length()), e);
                             }
                             cache.set(index, r);
                         }
@@ -633,7 +633,7 @@ public class ASFGitSCMFileSystem extends SCMFileSystem {
                         try {
                             r = getRevision(remote, credentials, result.get(index));
                         } catch (IOException | InterruptedException e) {
-                            throw new RuntimeException(e);
+                            throw new RuntimeException("Annotated Tag retrieval Exception for :" + result.get(index), e);
                         }
                         cache.set(index, r);
                     }
