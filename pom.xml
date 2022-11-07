@@ -113,7 +113,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>junit</artifactId>
-      <version>1.3</version>
+      <version>1156.vcf492e95a_a_b_0</version>
       <optional>true</optional>
     </dependency>
     <dependency>
