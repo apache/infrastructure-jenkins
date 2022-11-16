@@ -28,6 +28,8 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      env:
+         GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_ACCESS_TOKEN }}
     - name: Upload Maven build artifact
       uses: actions/upload-artifact@v3.1.1
       with:
