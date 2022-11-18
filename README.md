@@ -12,7 +12,7 @@ See [Apache GitPubSub introduction](https://www.apache.org/dev/gitpubsub.html).
 - [ ] Refactor to multi-module build if additional plugins are required
 - [ ] Implement continuous delivery style non-snapshot version tagging with https://github.com/stephenc/git-timestamp-maven-plugin (may require finding a Maven repository to push to)
 - [ ] Allow configuration of the gitpubsub end-point from the main Jenkins config screen
-- [ ] Figure out where to track issues in JIRA and update this file with issue tracking process
+- [X] Figure out where to track issues in JIRA and update this file with issue tracking process - use INFRA jira.
 
 
 Pull Requests to improve this Jenkins plugin welcome!!
