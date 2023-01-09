@@ -31,7 +31,7 @@ jobs:
       env:
          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_ACCESS_TOKEN }}
     - name: Upload Maven build artifact
-      uses: actions/upload-artifact@v3.1.1
+      uses: actions/upload-artifact@v3.1.2
       with:
         name: asf-gitpubsub-jenkins.hpi
         path: target/asf-gitpubsub-jenkins.hpi
