@@ -19,7 +19,10 @@
   </buildScan>
   <buildCache>
     <local>
-      <enabled>true</enabled>
+      <enabled>#{isFalse(env['JENKINS_URL'])}</enabled>
     </local>
+    <remote>
+      <enabled>false</enabled>
+    </remote>
   </buildCache>
 </gradleEnterprise>
